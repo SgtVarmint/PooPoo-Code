@@ -1,0 +1,100 @@
+Main Level 1:
+ - right click page and inspect element (or just hit F12)
+ - expand the head tag and a ways down is the user and passwd
+Level 2:
+ - F12 to inspect element
+ - expand: body tag, page-wrap class, body-wrap, content-wrap, main-content, row, "col span_18", level-form, POST, and the fieldset of POST
+ - in user and pass fields are CSS tags for color; chamge both from #000000 to #FFFFFF to reveal user and pass
+Level 3:
+ - Inspect element
+ - expand body tag, page-wrap, and the script tag right under page-wrap
+ - find user and pass values in that script tag
+Level 4:
+ - follow the first two points from LEvel 2, in the password tag is an xml link
+ - copy and paste the xml link onto the end of the url
+ - https://www.hackthis.co.uk/levels/main/4../../extras/ssap.xml
+ - shows text of the user and pass
+Level 5:
+ - F12
+ - expand: body, body-wrap, content-wrap, main-content, row, col span_18, level-form
+- expand the script tag for Javascript and the password is in that tag body
+Level 6:
+ - Follow first two points from Main Level 2
+ - in the POST tag, expand fieldset, <select id="user"
+ - right click that tag header and click edit with HTML
+ - in the field type <option>Ronald</option> and select Ronald from the drop down to complete the level
+Level 7:
+ - clicking the hint will tell you that search bots have been excluded
+ - researching search bots show that all websites have a 'robot.txt' file
+ - going to https://www.hackthis.co.uk/robots.txt will show url for a userPass.txt
+ - navigating to that site gives the username and password for level 7
+Level 8:
+ - F12, ctrl+f to find "password"
+ - find extras/secret.txt, add to url 
+ - https://www.hackthis.co.uk/levels/extras/secret.txt
+ - copy binary into hex converter to find user and pass
+Level 9:
+ - F12, ctrl+f to find '?forgot'
+ - ctrl-click that href link, takes you to a field entry window
+ - F12, ctrl+f to find "email"
+ - change email in the field to any email
+ - type that exact same email into the text box to pass
+Level 10:
+ - F12, ctrl+f to find "password"
+ - find text file. go to https://www.hackthis.co.uk/levels/extras/level10pass.txt
+ - 69bfe1e6e44821df7f8a0927bd7e61ef208fdb25deaa4353450bc3fb904abd52:f1abe1b083d12d181ae136cfc75b8d18a8ecb43ac4e9d1a36d6a9c75b6016b61
+ - appears to be hashed; look for hash cracker; crackstation.net; 
+ - copy beginning to the colon, paste into the box to crack user
+ - repeat from colon to the end to get pass
+ 
+Basic+ Level 1:
+ - Download b1.txt
+ - file begins with BM6 (occurs from viewing .bmp as a text file)
+ - save file as .bmp
+ - profit
+ 
+ SQLI 1:
+ -in username and passwd field enter:
+   -  user' or 1=1'
+
+Crypt Level 1:
+ - reverse the given text to find the password
+Level 2:
+ - run text through a Caesar Cipher
+Level 3:
+ - run text through Morse Code translator
+Level 4:
+ - run text through cryptogram solver
+Level 5:
+ - reverse the given text and run through a cryptogram solver to find pass
+Level 6:
+ - run the wav file through a spectrum analyzer
+ - symbols are Maya code, compare the symbols to get a string of numbers
+ - run that string through a hex to text converter to find answer
+
+Real:
+Level 1:
+ - Click the email link
+ - search trash to find password request
+ - copy and go to inbox and click on the World of Peacecraft link and use the password to sign in 
+ 
+Level 4:
+//potentially important info
+Contact sold item to other user for 1.32
+other user (nemisis) (jfelliot@mail.com)
+Contact's SafeTransfer account: 64957746
+
+ - open PlanetBid link and Top 10 link for passwords
+ - log in to admin account usr: admin pass: asdfg
+ - open Members db and Bids db to see that the person is #31 and to see what they sold and to which other user
+ - in the URL for the Members db, change 'email' to 'pass' to get passwords
+ - back at the admin login page, in the top left is a message that says your IP has been logged
+ - click view and at the bottom, click clear logs (failing to do this will result in failure of the level)
+ - run the hashed password through CrackStation to find the plaintext password (chicken)
+ - go to the Safe Transfer link of the HackThis page and click Forgot password
+ - username: nemisis email: jfelliot@mail.com
+ - go to email page and open the email from Safe Transfer that has the password (i.am.awesome)
+ - click Transactions->transfer funds->
+ - amount = 1.32; Account = 64957746
+ - hit credit
+ - profit

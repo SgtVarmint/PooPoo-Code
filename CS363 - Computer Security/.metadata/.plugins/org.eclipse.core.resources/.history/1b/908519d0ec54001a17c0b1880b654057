@@ -1,0 +1,72 @@
+import java.io.*;
+import java.util.*;
+
+import javax.naming.InitialContext;
+
+public class RainbowAttack {
+
+	public static void main(String[] args) throws IOException {
+		int found=0, rounds = 1000;
+
+		int tableArray[][] = new int[10000/rounds][2];
+
+		int j=0;
+		for(j=0;j<tableArray.length;j++){
+			tableArray[j][0] = j;
+			int hashed = hash(j);
+			for(int i=0;i<rounds;i++){
+				System.out.println(i);
+				int reduced = reduce(hashed);
+				hashed = hash(reduced);
+			}
+			tableArray[j][1] = hashed;
+		}
+
+		for(j=0;j<10000;j++){
+			int hashed = hash(j);
+			for(int k=0;k<rounds;k++){
+				if(crack(tableArray, hashed, rounds,j))
+					found++;
+			}
+		}
+		double rate = found/10000.0;
+		System.out.println(rate+"%");
+	}
+
+
+	public static boolean crack(int[][] table, int hash, int chainRounds, int pin){
+		int initialPin=0, i=0, hashed=0;
+		boolean found = false;
+		boolean check = false;
+		int counter = 0;
+		while(!check && counter < chainRounds){
+			for(i=0;i<table.length-1;i++){
+				if(hash == table[i][1]){
+					check = true;
+					initialPin = table[i][0];
+					for(int j=0;j<chainRounds-1;j++){
+						hashed = hash(initialPin);
+						initialPin = reduce(hashed);
+					}
+
+					if(initialPin == pin)
+						found = true;
+				}
+				else{				
+					hash = hash(reduce(hashed));
+					counter ++;
+				}
+			}
+		}
+		return found;
+	}
+
+	public static int hash(int pin){
+		return ((((pin+25)%10000) * ((pin+25)%10000))/100)%10000;
+	}
+
+	//both hash and pin are in same space so reduce() returns hash
+	public static int reduce(int hash){
+		return hash;
+	}
+}

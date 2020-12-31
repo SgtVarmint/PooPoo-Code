@@ -1,0 +1,813 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Eclipse</title>
+	<link>http://planeteclipse.org/planet/</link>
+	<language>en</language>
+	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
+
+<item>
+	<title>Donald Raab: EC by Example: CountBy</title>
+	<guid isPermaLink="false">https://medium.com/p/a2d6411e95e1</guid>
+	<link>https://medium.com/oracledevs/ec-by-example-countby-a2d6411e95e1?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Learn how to use the countBy method in &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections&lt;/a&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*OQCbBTIEwqJ4sDx7qxTaEw.png&quot; /&gt;Count the fruit by color&lt;/figure&gt;&lt;h3&gt;CountBy&lt;/h3&gt;&lt;p&gt;The method &lt;em&gt;countBy&lt;/em&gt; returns a &lt;a href=&quot;https://medium.com/oracledevs/bag-the-counter-2689e901aadb&quot;&gt;Bag&lt;/a&gt; in Eclipse Collections. A &lt;em&gt;Bag&lt;/em&gt; is an unordered &lt;em&gt;Collection&lt;/em&gt; which allows duplicates. The internal structure of the &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/impl/bag/mutable/HashBag.html&quot;&gt;HashBag&lt;/a&gt; implementation in Eclipse Collections is an &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/impl/map/mutable/primitive/ObjectIntHashMap.html&quot;&gt;ObjectIntHashMap&lt;/a&gt;. The keys of the internal map are the items, and the values are the counts stored as ints. The method &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/RichIterable.html#countBy-org.eclipse.collections.api.block.function.Function-&quot;&gt;countBy&lt;/a&gt; takes a &lt;em&gt;Function&lt;/em&gt; as an argument.&lt;/p&gt;&lt;p&gt;The following code will illustrate how to count a collection of &lt;em&gt;Fruit&lt;/em&gt; by their color, using a method reference. We store the result in a variable named &lt;strong&gt;COUNTS_BY_COLOR.&lt;/strong&gt;&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/978/1*Tv5aOiPA8rpoMQiPgxFRBg.png&quot; /&gt;&lt;/figure&gt;&lt;p&gt;We have two methods that query the &lt;em&gt;ImmutableBag&lt;/em&gt; that is created. They are used in the following tests.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*G6naoOt237F4PZ62TEJcjg.png&quot; /&gt;RED is the top fruit color&lt;/figure&gt;&lt;p&gt;Here’s the code in plain text if you would like experiment on your own.&lt;/p&gt;&lt;pre&gt;public enum Fruit&lt;br /&gt;{&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;APPLE&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;BANANA&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;CHERRY&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;PEAR&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;STRAWBERRY&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;LEMON&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;KIWI&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;);&lt;/pre&gt;&lt;pre&gt;    private final Color color;&lt;/pre&gt;&lt;pre&gt;    private static final ImmutableBag&amp;lt;Color&amp;gt; &lt;br /&gt;            &lt;strong&gt;&lt;em&gt;COUNTS_BY_COLOR &lt;/em&gt;&lt;/strong&gt;=&lt;br /&gt;                Bags.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(Fruit.&lt;em&gt;values&lt;/em&gt;())&lt;br /&gt;                        .countBy(Fruit::getColor);&lt;/pre&gt;&lt;pre&gt;    Fruit(Color color)&lt;br /&gt;    {&lt;br /&gt;        this.color = color;&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    public Color getColor()&lt;br /&gt;    {&lt;br /&gt;        return this.color;&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    public static int getColorCount(Color color)&lt;br /&gt;    {&lt;br /&gt;        return &lt;strong&gt;&lt;em&gt;COUNTS_BY_COLOR&lt;/em&gt;&lt;/strong&gt;.occurrencesOf(color);&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    public static boolean isTopColor(Color color)&lt;br /&gt;    {&lt;br /&gt;        return &lt;strong&gt;&lt;em&gt;COUNTS_BY_COLOR&lt;/em&gt;&lt;/strong&gt;.topOccurrences(1)&lt;br /&gt;                .anySatisfy(each -&amp;gt; each.getOne() == &lt;em&gt;color&lt;/em&gt;);&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    public enum Color&lt;br /&gt;    {&lt;br /&gt;        &lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;GREEN&lt;br /&gt;    &lt;/em&gt;&lt;/strong&gt;}&lt;br /&gt;}&lt;/pre&gt;&lt;p&gt;And the code for the test.&lt;/p&gt;&lt;pre&gt;public class FruitTest&lt;br /&gt;{&lt;br /&gt;    @Test&lt;br /&gt;    public void redFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(3, &lt;br /&gt;                Fruit.&lt;em&gt;getColorCount&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;        Assert.&lt;em&gt;assertTrue&lt;/em&gt;(&lt;br /&gt;                Fruit.&lt;em&gt;isTopColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    @Test&lt;br /&gt;    public void yellowFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(2, &lt;br /&gt;                Fruit.&lt;em&gt;getColorCount&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;        Assert.&lt;em&gt;assertFalse&lt;/em&gt;(&lt;br /&gt;                Fruit.&lt;em&gt;isTopColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;/pre&gt;&lt;pre&gt;    @Test&lt;br /&gt;    public void greenFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(2, &lt;br /&gt;                Fruit.&lt;em&gt;getColorCount&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;        Assert.&lt;em&gt;assertFalse&lt;/em&gt;(&lt;br /&gt;                Fruit.&lt;em&gt;isTopColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;APIs covered in the examples&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/ImmutableBag.html#countBy-org.eclipse.collections.api.block.function.Function-&quot;&gt;countBy&lt;/a&gt; — Counts the elements &lt;em&gt;Collection&lt;/em&gt; by the &lt;em&gt;Function&lt;/em&gt; specified and returns a &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/Bag.html&quot;&gt;Bag&lt;/a&gt;.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/impl/factory/Bags.html&quot;&gt;Bags&lt;/a&gt;.immutable.with — Creates an &lt;em&gt;ImmutableBag&lt;/em&gt; with the specified vararg’d elements. There are &lt;a href=&quot;https://medium.com/@donraab/as-a-matter-of-factory-part-1-mutable-75cc2c5d72d9&quot;&gt;mutable&lt;/a&gt; and &lt;a href=&quot;https://medium.com/@donraab/as-a-matter-of-factory-part-2-immutable-8cb72ff897ee&quot;&gt;immutable&lt;/a&gt; Collection factories in Eclipse Collections.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/Bag.html#occurrencesOf-java.lang.Object-&quot;&gt;occurrencesOf&lt;/a&gt; — Returns the count from a &lt;em&gt;Bag&lt;/em&gt; for a particular item.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/Bag.html#topOccurrences-int-&quot;&gt;topOccurrences&lt;/a&gt; — Returns a &lt;em&gt;List&lt;/em&gt; of items and their counts in descending order by the number of occurrences.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Check out this &lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/api-design&quot;&gt;presentation&lt;/a&gt; to learn more about the origins, design and evolution of the Eclipse Collections API.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=a2d6411e95e1&quot; width=&quot;1&quot; /&gt;&lt;hr /&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/oracledevs/ec-by-example-countby-a2d6411e95e1&quot;&gt;EC by Example: CountBy&lt;/a&gt; was originally published in &lt;a href=&quot;https://medium.com/oracledevs&quot;&gt;Oracle Developers&lt;/a&gt; on Medium, where people are continuing the conversation by highlighting and responding to this story.&lt;/p&gt;</description>
+	<pubDate>Sun, 06 Jan 2019 20:26:06 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: EC by Example: GroupBy</title>
+	<guid isPermaLink="false">https://medium.com/p/7ca219358c3b</guid>
+	<link>https://medium.com/oracledevs/ec-by-example-groupby-7ca219358c3b?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Learn how to group elements of a collection using &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections&lt;/a&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/720/1*rGwzDNPD57M1jv7mKPoahw.png&quot; /&gt;&lt;/figure&gt;&lt;h3&gt;Happy New Year!&lt;/h3&gt;&lt;p&gt;This is my first blog in 2019. I will keep it brief. Time for some code.&lt;/p&gt;&lt;h3&gt;Group By&lt;/h3&gt;&lt;p&gt;The method &lt;em&gt;groupBy&lt;/em&gt; returns a &lt;a href=&quot;https://medium.com/oracledevs/multimap-how-it-works-a3430f549d35&quot;&gt;&lt;strong&gt;Multimap&lt;/strong&gt;&lt;/a&gt; in &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections&lt;/a&gt;. A &lt;em&gt;Multimap&lt;/em&gt; looks like a &lt;em&gt;Map&lt;/em&gt; in that it has methods like &lt;em&gt;get&lt;/em&gt; and &lt;em&gt;put&lt;/em&gt;, but the values in a &lt;em&gt;Multimap&lt;/em&gt; are always some &lt;em&gt;Collection&lt;/em&gt; type, like a &lt;em&gt;List&lt;/em&gt;, &lt;em&gt;Set&lt;/em&gt; or a &lt;em&gt;Bag&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;The following code will illustrate how to group a collection of &lt;em&gt;Fruit&lt;/em&gt; by their color. We store the result of the grouping in a variable named &lt;strong&gt;FRUIT_BY_COLOR&lt;/strong&gt;. Notice that the type is a specific kind of &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/multimap/Multimap.html&quot;&gt;&lt;em&gt;Multimap&lt;/em&gt;&lt;/a&gt;, because we called &lt;em&gt;groupBy&lt;/em&gt; on an &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/ImmutableBag.html&quot;&gt;&lt;em&gt;ImmutableBag&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*087ocn6wigM6pzcllXfQRA.png&quot; /&gt;Fruit as an Enum with Color as an inner Enum&lt;/figure&gt;&lt;p&gt;The we can query the &lt;strong&gt;FRUIT_BY_COLOR&lt;/strong&gt; &lt;em&gt;Multimap&lt;/em&gt; for each color using the &lt;em&gt;getFruitByColor&lt;/em&gt; method on the &lt;em&gt;Fruit&lt;/em&gt; enum.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/838/1*pCZeETgNnbABR8pkf9rdmw.png&quot; /&gt;&lt;/figure&gt;&lt;p&gt;Here’s the code in plain text if you would like experiment on your own.&lt;/p&gt;&lt;pre&gt;public enum Fruit&lt;br /&gt;{&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;APPLE&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;BANANA&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;CHERRY&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;PEAR&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;STRAWBERRY&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;LEMON&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;    &lt;strong&gt;&lt;em&gt;KIWI&lt;/em&gt;&lt;/strong&gt;(Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;);&lt;br /&gt;&lt;br /&gt;    private final Color color;&lt;br /&gt;&lt;br /&gt;    private static final ImmutableBagMultimap&amp;lt;Color, Fruit&amp;gt; &lt;br /&gt;            &lt;strong&gt;&lt;em&gt;FRUIT_BY_COLOR &lt;/em&gt;&lt;/strong&gt;=&lt;br /&gt;                Bags.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(Fruit.&lt;em&gt;values&lt;/em&gt;())&lt;br /&gt;                        .groupBy(Fruit::getColor);&lt;br /&gt;&lt;br /&gt;    Fruit(Color color)&lt;br /&gt;    {&lt;br /&gt;        this.color = color;&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    public Color getColor()&lt;br /&gt;    {&lt;br /&gt;        return this.color;&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    public static ImmutableBag&amp;lt;Fruit&amp;gt; getFruitByColor(Color color)&lt;br /&gt;    {&lt;br /&gt;        return &lt;strong&gt;&lt;em&gt;FRUIT_BY_COLOR&lt;/em&gt;&lt;/strong&gt;.get(color);&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    public enum Color&lt;br /&gt;    {&lt;br /&gt;        &lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;GREEN&lt;br /&gt;    &lt;/em&gt;&lt;/strong&gt;}&lt;br /&gt;}&lt;/pre&gt;&lt;p&gt;And the code for the test.&lt;/p&gt;&lt;pre&gt;public class FruitTest&lt;br /&gt;{&lt;br /&gt;    @Test&lt;br /&gt;    public void redFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;                Bags.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;APPLE&lt;/em&gt;&lt;/strong&gt;,&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;CHERRY&lt;/em&gt;&lt;/strong&gt;,&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;STRAWBERRY&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;                Fruit.&lt;em&gt;getFruitByColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;RED&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    @Test&lt;br /&gt;    public void yellowFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;                Bags.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;BANANA&lt;/em&gt;&lt;/strong&gt;,&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;LEMON&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;                Fruit.&lt;em&gt;getFruitByColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;YELLOW&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    @Test&lt;br /&gt;    public void greenFruit()&lt;br /&gt;    {&lt;br /&gt;        Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;                Bags.&lt;strong&gt;&lt;em&gt;immutable&lt;/em&gt;&lt;/strong&gt;.with(&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;PEAR&lt;/em&gt;&lt;/strong&gt;,&lt;br /&gt;                        Fruit.&lt;strong&gt;&lt;em&gt;KIWI&lt;/em&gt;&lt;/strong&gt;),&lt;br /&gt;                Fruit.&lt;em&gt;getFruitByColor&lt;/em&gt;(Fruit.Color.&lt;strong&gt;&lt;em&gt;GREEN&lt;/em&gt;&lt;/strong&gt;));&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;&lt;h3&gt;APIs covered in the examples&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/bag/ImmutableBag.html#groupBy-org.eclipse.collections.api.block.function.Function-&quot;&gt;groupBy&lt;/a&gt; — Groups a &lt;em&gt;Collection&lt;/em&gt; into a &lt;em&gt;Multimap&lt;/em&gt; using the specified function to calculate a key for each object. The type of &lt;em&gt;Collection&lt;/em&gt; determines the type of &lt;em&gt;Multimap&lt;/em&gt; that is returns.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/impl/factory/Bags.html&quot;&gt;Bags&lt;/a&gt;.immutable.with — Creates an &lt;em&gt;ImmutableBag&lt;/em&gt; with the specified vararg’d elements. There are &lt;a href=&quot;https://medium.com/@donraab/as-a-matter-of-factory-part-1-mutable-75cc2c5d72d9&quot;&gt;mutable&lt;/a&gt; and &lt;a href=&quot;https://medium.com/@donraab/as-a-matter-of-factory-part-2-immutable-8cb72ff897ee&quot;&gt;immutable&lt;/a&gt; Collection factories in Eclipse Collections.&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/api/multimap/bag/ImmutableBagMultimap.html#get-K-&quot;&gt;get&lt;/a&gt; — Returns a Collection from a &lt;em&gt;Multimap&lt;/em&gt;. In the case of an &lt;em&gt;ImmutableBagMultimap&lt;/em&gt; returns an &lt;em&gt;ImmutableBag&lt;/em&gt;.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Check out this &lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/api-design&quot;&gt;presentation&lt;/a&gt; to learn more about the origins, design and evolution of the Eclipse Collections API.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=7ca219358c3b&quot; width=&quot;1&quot; /&gt;&lt;hr /&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/oracledevs/ec-by-example-groupby-7ca219358c3b&quot;&gt;EC by Example: GroupBy&lt;/a&gt; was originally published in &lt;a href=&quot;https://medium.com/oracledevs&quot;&gt;Oracle Developers&lt;/a&gt; on Medium, where people are continuing the conversation by highlighting and responding to this story.&lt;/p&gt;</description>
+	<pubDate>Wed, 02 Jan 2019 00:46:32 +0000</pubDate>
+</item>
+<item>
+	<title>Maximilian and Jonas: JSON Forms goes Mobile with Ionic</title>
+	<guid isPermaLink="false">https://eclipsesource.com/?p=40804</guid>
+	<link>https://eclipsesource.com/blogs/2018/12/21/json-forms-goes-mobile-with-ionic/</link>
+	<description>&lt;p&gt;The last couple of weeks we’ve been busy with completing an Ionic 3 based renderer set to JSON Forms. If you don’t...&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://eclipsesource.com/blogs/2018/12/21/json-forms-goes-mobile-with-ionic/&quot; rel=&quot;nofollow&quot;&gt;JSON Forms goes Mobile with Ionic&lt;/a&gt; appeared first on &lt;a href=&quot;https://eclipsesource.com&quot; rel=&quot;nofollow&quot;&gt;EclipseSource&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Fri, 21 Dec 2018 13:09:15 +0000</pubDate>
+</item>
+<item>
+	<title>Wayne Beaton: Eclipse TLP Contributors by Quarter</title>
+	<guid isPermaLink="false">http://waynebeaton.wordpress.com/?p=5477</guid>
+	<link>https://waynebeaton.wordpress.com/2018/12/20/eclipse-tlp-contributors-by-quarter/</link>
+	<description>&lt;p&gt;Alexander posted an interesting tweet the other day.&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;92 different contributors to Eclipse in the last 3 months aka 4.10 . This is probably(not checked) a record high !!! &lt;a href=&quot;https://t.co/AP6bHj5G3g&quot;&gt;https://t.co/AP6bHj5G3g&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Alexander Kurtakov (@akurtakov) &lt;a href=&quot;https://twitter.com/akurtakov/status/1074604537053212672?ref_src=twsrc%5Etfw&quot;&gt;December 17, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;I decided to take a harder look at the data to see if he’s right. It turns out that he’s not. According to my data, the &lt;a href=&quot;https://projects.eclipse.org/projects/eclipse&quot;&gt;Eclipse Top Level Project&lt;/a&gt; (TLP) had the largest number of contributors, &lt;strong&gt;120&lt;/strong&gt;, in 2014Q1.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;eclipse_contributors_quarterly&quot; class=&quot;alignnone size-full wp-image-5478&quot; src=&quot;https://waynebeaton.files.wordpress.com/2018/12/eclipse_contributors_quarterly.png?w=640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Still, &lt;strong&gt;70&lt;/strong&gt; in 2018Q4 is pretty good. And the quarter isn’t even over yet. Those spikes in the chart notwithstanding, the healthy upward contribution trend is encouraging.&lt;/p&gt;
+&lt;p&gt;Note that my numbers are a little different than Alexander’s. His are based on the last three months worth of contributions as of the day that he parsed the chart data. My data is based strictly on traditional quarter boundaries (so his number includes some commits made in September that mine disregards).&lt;/p&gt;
+&lt;p&gt;Normally, I restrict the date range on these sorts of queries, but I decided to run against the full history. You’ll notice that it looks like we had no committers before 2005: we didn’t keep committer records in our database before the Eclipse Foundation was created in 2005.&lt;/p&gt;
+&lt;p&gt;These numbers represent only commits pushed to Git repositories owned by Projects that fall under the &lt;a href=&quot;https://projects.eclipse.org/projects/eclipse&quot;&gt;Eclipse Top Level Project&lt;/a&gt;, which only a fraction of the activity that occurs Eclipse Foundation open source projects.&lt;/p&gt;</description>
+	<pubDate>Thu, 20 Dec 2018 21:22:01 +0000</pubDate>
+</item>
+<item>
+	<title>Webtools News: WTP 3.12 Released!</title>
+	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink186</guid>
+	<link>http://eclipse.org/webtools/releases/3.12</link>
+	<description>&lt;div&gt;
+      The Eclipse Web Tools Platform 3.12 has been released!  &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;Installation&lt;/a&gt; and update can be performed using the
+      &lt;a href=&quot;http://download.eclipse.org/releases/2018-12/&quot;&gt;SimRel 2018-12 Update Site&lt;/a&gt; or through the &lt;a href=&quot;https://marketplace.eclipse.org/user/nitind/listings&quot;&gt;Eclipse Marketplace&lt;/a&gt;.
+      Release 3.12 is included in the 2018-12
+          &lt;a href=&quot;https://www.eclipse.org/downloads/packages/release/2018-12/r/eclipse-ide-enterprise-java-developers&quot;&gt;Eclipse IDE for Enterprise Java Developers&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/downloads/packages/release/2018-12/r/eclipse-ide-javascript-and-web-developers&quot;&gt;Eclipse IDE for JavaScript and Web Developers&lt;/a&gt;, with selected portions also included in &lt;a href=&quot;http://www.eclipse.org/downloads/compare.php&quot;&gt;other packages&lt;/a&gt;.  Adopters can download &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/&quot;&gt;the R3.12 built update site itself&lt;/a&gt; directly.&lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink186&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Thu, 20 Dec 2018 21:01:00 +0000</pubDate>
+</item>
+<item>
+	<title>Maximilian and Jonas: EclipseSource Oomph Profile – updated to 2018-12</title>
+	<guid isPermaLink="false">https://eclipsesource.com/?p=40835</guid>
+	<link>https://eclipsesource.com/blogs/2018/12/20/eclipsesource-oomph-profile-updated-to-2018-12/</link>
+	<description>&lt;p&gt;Yesterday, Eclipse 2018-12 has been released, a new version of the Eclipse IDE and platform. It contains many useful improvements, so...&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://eclipsesource.com/blogs/2018/12/20/eclipsesource-oomph-profile-updated-to-2018-12/&quot; rel=&quot;nofollow&quot;&gt;EclipseSource Oomph Profile – updated to 2018-12&lt;/a&gt; appeared first on &lt;a href=&quot;https://eclipsesource.com&quot; rel=&quot;nofollow&quot;&gt;EclipseSource&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Thu, 20 Dec 2018 15:04:12 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Development Process 2018</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/fDjlvEVMwfo/eclipse-development-process-2018</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/fDjlvEVMwfo/eclipse-development-process-2018</link>
+	<description>In December 7/2018, the Eclipse Foundation's Board of Directors approved a new edition of the Eclipse Development Process (EDP) which introduces one particularly significant change, along with a small number of other useful changes.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/fDjlvEVMwfo&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 19 Dec 2018 14:35:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Foundation Drives $9 Billion in Open Source Innovation</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/V24pkjx8Ki4/Eclipse-Foundation-Drives-9-Billion-in-Open-Source-Innovation.html</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/V24pkjx8Ki4/Eclipse-Foundation-Drives-9-Billion-in-Open-Source-Innovation.html</link>
+	<description>Global open source foundation finishes 2018 with 360+ open source projects, 162+ million lines of code written and more than 275 sponsor members&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/V24pkjx8Ki4&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 19 Dec 2018 14:35:00 +0000</pubDate>
+</item>
+<item>
+	<title>Maximilian and Jonas: EMF Forms and EMF Client Platform 1.19.0 released!</title>
+	<guid isPermaLink="false">https://eclipsesource.com/?p=40783</guid>
+	<link>https://eclipsesource.com/blogs/2018/12/19/emf-forms-and-emf-client-platform-1-19-0-released/</link>
+	<description>&lt;p&gt;We are happy to announce that with the Eclipse Release 2018-12, we have also shipped  EMF Forms and EMF Client Platform...&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://eclipsesource.com/blogs/2018/12/19/emf-forms-and-emf-client-platform-1-19-0-released/&quot; rel=&quot;nofollow&quot;&gt;EMF Forms and EMF Client Platform 1.19.0 released!&lt;/a&gt; appeared first on &lt;a href=&quot;https://eclipsesource.com&quot; rel=&quot;nofollow&quot;&gt;EclipseSource&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Wed, 19 Dec 2018 14:08:31 +0000</pubDate>
+</item>
+<item>
+	<title>Wayne Beaton: Eclipse Development Process 2018</title>
+	<guid isPermaLink="false">http://waynebeaton.wordpress.com/?p=5475</guid>
+	<link>https://waynebeaton.wordpress.com/2018/12/19/eclipse-development-process-2018/</link>
+	<description>&lt;p&gt;On December 7/2018, the Eclipse Foundation’s Board of Directors approved a new edition of the &lt;a href=&quot;https://www.eclipse.org/projects/dev_process&quot;&gt;Eclipse Development Process&lt;/a&gt; (EDP) which introduces one particularly significant change, along with a small number of other useful changes. We rolled this new edition out on December 14/2018.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Note that project teams who are familiar with the previous edition of the EDP can just keep doing what they’ve always done: all changes in this new edition are backwards compatible.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;The big change is the introduction of &lt;em&gt;&lt;a href=&quot;https://www.eclipse.org/projects/dev_process/#6_3_5_Progress_Review&quot;&gt;Progress Reviews&lt;/a&gt;&lt;/em&gt; and the recast of &lt;a href=&quot;https://www.eclipse.org/projects/dev_process/#6_3_3_Release_Review&quot;&gt;Release Reviews&lt;/a&gt; as a type of Progress Review. Progress Reviews are basically the same as Release Reviews with the exception that they can occur at any point in the project lifecycle (while the EDP doesn’t explicitly make any specific requirements, Release Reviews are generally accepted to be timed near the end of a release cycle). The basic idea is that a project team can opt to time a Progress Review at their convenience.&lt;/p&gt;
+&lt;p&gt;Progress Reviews are not in and of themselves interesting. What is interesting is that a project team can declare as many official releases as they’d like for an entire year following a successful Progress Review or Release Review. This should be especially interesting and valuable to projects that need to make very frequent releases.&lt;/p&gt;
+&lt;div class=&quot;wp-caption aligncenter&quot; id=&quot;attachment_5473&quot; style=&quot;width: 653px;&quot;&gt;&lt;img alt=&quot;lifecycle&quot; class=&quot; size-full wp-image-5473 aligncenter&quot; src=&quot;https://waynebeaton.files.wordpress.com/2018/12/lifecycle-1.png?w=640&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;The new release process looks a little something like this.&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;This change in the nature of how we do releases, required that the statement that “the IP Policy has been followed and all approvals have been received” be moved from being a requirement of a Release Review to being a requirement of a release. That is, the change in the nature of releases does not change the requirement the the &lt;a href=&quot;https://www.eclipse.org/org/documents/Eclipse_IP_Policy.pdf&quot;&gt;Eclipse IP Policy&lt;/a&gt; be followed and that projects engage in the full &lt;a href=&quot;https://www.eclipse.org/projects/handbook/#ip&quot;&gt;Eclipse IP Due Diligence Process&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Intellectual property must be properly accounted for and tracked at all times.&lt;/strong&gt; The project team must engage in the Eclipse IP Due Diligence Process on an ongoing basis. The IP Log review and approval that occurs at the time of either a Release Review or Progress Review should be regarded as a means of confirming that intellectual property is being properly managed and not as a trigger to engage in a last minute clean up.&lt;/p&gt;
+&lt;p&gt;Only intellectual property that has been been approved (or &lt;a href=&quot;https://waynebeaton.wordpress.com/2017/01/12/license-certification-due-diligence/&quot;&gt;license certified&lt;/a&gt;) by the Eclipse IP Team may be included in a release.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;In addition to the IP Policy, project teams are expected to continue to engage in the usual sorts of community building activities like open and transparent release planning.&lt;/p&gt;
+&lt;p&gt;The new edition also includes the following changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A long-missing &lt;a href=&quot;https://www.eclipse.org/projects/dev_process/#edp-terms&quot;&gt;Terms and Definitions&lt;/a&gt; section has been added;&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&quot;https://www.eclipse.org/projects/dev_process/#6_4_Releases&quot;&gt;Releases section&lt;/a&gt; has been restructured and is (hopefully) more easily parsed;&lt;/li&gt;
+&lt;li&gt;The content is captured in Asciidoc and rendered using Asciidoctor; and&lt;/li&gt;
+&lt;li&gt;All anchors in the document are self-referential links (which make it easier to get links into the document).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A more comprehensive list of the changes is captured in the &lt;a href=&quot;https://www.eclipse.org/projects/dev_process/#changelog&quot;&gt;change log&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I’ll push out updates to the &lt;a href=&quot;https://www.eclipse.org/projects/handbook/&quot;&gt;Eclipse Project Handbook&lt;/a&gt; that support these changes later this week.&lt;/p&gt;</description>
+	<pubDate>Wed, 19 Dec 2018 13:12:23 +0000</pubDate>
+</item>
+<item>
+	<title>Christian Pontesegger: Jenkins 7: Pipeline Support</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-3460102793186140898.post-7472654809600166607</guid>
+	<link>http://codeandme.blogspot.com/2018/12/jenkins-7-pipeline-support.html</link>
+	<description>Next step in our Jenkins tutorials is to add support for &lt;a href=&quot;https://jenkins.io/doc/book/pipeline/getting-started/&quot; target=&quot;_blank&quot;&gt;pipeline builds&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Jenkins Tutorials&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;For a list of all jenkins related tutorials see &lt;a href=&quot;https://codeandme.blogspot.com/p/jenkins-articles.html&quot; target=&quot;_blank&quot;&gt;Jenkins Tutorials Overview.&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Source code for this tutorial is available on github as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_07_pipeline.zip?raw=true&quot; target=&quot;_blank&quot;&gt;single zip archive&lt;/a&gt;, as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_07_pipeline.psf?raw=true&quot;&gt;Team Project Set&lt;/a&gt; or you can &lt;a href=&quot;https://github.com/Pontesegger/codeandme/tree/master/jenkins/07_pipeline&quot; target=&quot;_blank&quot;&gt;browse the files&lt;/a&gt; online.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 1: Adjusting the code&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Good news first: our code (including jelly) from the &lt;a href=&quot;https://codeandme.blogspot.com/2018/12/jenkins-6-advanced-configuration-area.html&quot; target=&quot;_blank&quot;&gt;previous tutorial&lt;/a&gt; is ready to be used in pipeline without change. There are some &lt;a href=&quot;https://jenkins.io/doc/developer/plugin-development/pipeline-integration/&quot; target=&quot;_blank&quot;&gt;considerations to be taken&lt;/a&gt; when writing pipeline plugins, but we already took care of this.&lt;br /&gt;&lt;br /&gt;In pipeline each build step needs a name to be addressed. By default this would be the class name and a call would look like this:&lt;br /&gt;&lt;pre class=&quot;brush: java&quot;&gt;step([$class: 'HelloBuilder', buildMessage: 'Hello from pipeline'])&lt;/pre&gt;&lt;br /&gt;When using the &lt;i&gt;@Symbol&lt;/i&gt; annotation on the &lt;i&gt;Descriptor&lt;/i&gt; we can provide a nicer name for our build step.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 2: Adding dependencies to the execution environment&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Our current test target does not support pipeline jobs as we did not add the right dependencies to the pom file so far. We will first see how to add dependencies in general, in the next step we will fix the build afterwards.&lt;br /&gt;&lt;br /&gt;To add support for pipeline, add following definition to your &lt;i&gt;pom.xml&lt;/i&gt;:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt; &amp;lt;dependencies&amp;gt;&lt;br /&gt;  &amp;lt;dependency&amp;gt;&lt;br /&gt;   &amp;lt;groupId&amp;gt;org.jenkins-ci.plugins.workflow&amp;lt;/groupId&amp;gt;&lt;br /&gt;   &amp;lt;artifactId&amp;gt;workflow-aggregator&amp;lt;/artifactId&amp;gt;&lt;br /&gt;   &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt;&lt;br /&gt;   &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;&lt;br /&gt;  &amp;lt;/dependency&amp;gt;&lt;br /&gt; &amp;lt;/dependencies&amp;gt;&lt;/pre&gt;&lt;br /&gt;We always need &lt;i&gt;groupId&lt;/i&gt;, &lt;i&gt;artifactId&lt;/i&gt; and a &lt;i&gt;version&lt;/i&gt;. To get these parameters you would typically &lt;a href=&quot;https://plugins.jenkins.io/workflow-aggregator&quot; target=&quot;_blank&quot;&gt;look up a plugin on the Jenkins plugin site&lt;/a&gt;. Locate the link to the &lt;a href=&quot;https://github.com/jenkinsci/workflow-aggregator-plugin&quot; target=&quot;_blank&quot;&gt;source code&lt;/a&gt; (Github) and open the &lt;a href=&quot;https://github.com/jenkinsci/workflow-aggregator-plugin/blob/master/pom.xml&quot; target=&quot;_blank&quot;&gt;pom.xml&lt;/a&gt; of the corresponding plugin. There you will find definitions for &lt;i&gt;groupId&lt;/i&gt; and &lt;i&gt;artifactId&lt;/i&gt;.&lt;br /&gt;&lt;br /&gt;Available versions can be found on the &lt;a href=&quot;https://repo.jenkins-ci.org/&quot; target=&quot;_blank&quot;&gt;Jenkins Artifactory server&lt;/a&gt; (we added this server to our pom already). There navigate to the &lt;i&gt;public&lt;/i&gt; folder, then follow the structure down, first opening folder from the &lt;i&gt;groupId&lt;/i&gt; followed by the &lt;i&gt;artifactId&lt;/i&gt;. For the pipeline dependency we would open &lt;i&gt;public/org/jenkins-ci/plugins/workflow/workflow-aggregator&lt;/i&gt;. &lt;a href=&quot;https://repo.jenkins-ci.org/list/public/org/jenkins-ci/plugins/workflow/workflow-aggregator/2.6/&quot; target=&quot;_blank&quot;&gt;Latest version at the time of writing&lt;/a&gt; is 2.6.&lt;br /&gt;&lt;br /&gt;Setting the &lt;i&gt;scope&lt;/i&gt; to &lt;i&gt;test&lt;/i&gt; means that we do not have a build dependency on the plugin. Instead we need it only deployed and enabled on our test instance.&lt;br /&gt;&lt;br /&gt;When adding build dependencies you should run&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn -DdownloadSources=true -DdownloadJavadocs=true -DoutputDirectory=target/eclipse-classes eclipse:eclipse&lt;/pre&gt;like we did in the first tutorial. It will update the &lt;i&gt;.classpath&lt;/i&gt; file in your eclipse project, automatically adding required libraries to the build path. Take care that also the &lt;i&gt;.project&lt;/i&gt; file gets rewritten!&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 3: Dependency Resolution&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;We added our dependency, so everything should be done, right?&lt;br /&gt;Wrong! The &lt;i&gt;maven-enforcer-plugin&lt;/i&gt; &lt;a href=&quot;https://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html&quot; target=&quot;_blank&quot;&gt;verifies plugin dependencies&lt;/a&gt; for us and will detect some incompatibilities, eg:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;Require upper bound dependencies error for org.jenkins-ci.plugins:script-security:1.39 paths to dependency are:&lt;br /&gt;+-com.codeandme:builder.hello:1.0-SNAPSHOT&lt;br /&gt;  +-org.jenkins-ci.plugins.workflow:workflow-aggregator:2.6&lt;br /&gt;    +-org.jenkins-ci.plugins.workflow:workflow-support:2.20&lt;br /&gt;      +-org.jenkins-ci.plugins:script-security:1.39&lt;br /&gt;and&lt;br /&gt;+-com.codeandme:builder.hello:1.0-SNAPSHOT&lt;br /&gt;  +-org.jenkins-ci.plugins.workflow:workflow-aggregator:2.6&lt;br /&gt;    +-org.jenkins-ci.plugins.workflow:workflow-durable-task-step:2.22&lt;br /&gt;      +-org.jenkins-ci.plugins:script-security:1.39&lt;br /&gt;and&lt;br /&gt;+-com.codeandme:builder.hello:1.0-SNAPSHOT&lt;br /&gt;  +-org.jenkins-ci.plugins.workflow:workflow-aggregator:2.6&lt;br /&gt;    +-org.6wind.jenkins:lockable-resources:2.3&lt;br /&gt;      +-org.jenkins-ci.plugins:script-security:1.26&lt;br /&gt;...&lt;/pre&gt;This is one of multiple dependency conflicts detected. It seems that maven at first resolves the dependency with the lowest version number. As some plugins need a newer version, we need to resolve the dependency by our own.&lt;br /&gt;&lt;br /&gt;The simplest way I found is to check for the highest version of the required plugin (in the upper case: script-security) and add it to our dependencies sections in the &lt;i&gt;pom.xml&lt;/i&gt; file. I was hoping for some maven help on this process, but failed. So I ended up adding required dependencies manually until the build was satisfied.&lt;br /&gt;&lt;br /&gt;You might run into other build problems, eg after adding a &lt;i&gt;test&lt;/i&gt; dependency to the &lt;i&gt;symbol-annotation&lt;/i&gt; plugin, my build started to fail, not being able to resolve &lt;i&gt;Symbol.class&lt;/i&gt; anymore. Reason is that &lt;i&gt;symbol-annotation&lt;/i&gt; is actually a &lt;i&gt;build&lt;/i&gt; dependency rather than a &lt;i&gt;test&lt;/i&gt; dependency. By binding it to the &lt;i&gt;test&lt;/i&gt; scope only we broke the build.&lt;br /&gt;&lt;br /&gt;Once you sorted out all dependencies (&lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/jenkins/07_pipeline/builder.hello/pom.xml&quot; target=&quot;_blank&quot;&gt;see resulting pom.xml&lt;/a&gt;) your test instance will be able to run pipeline jobs.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 4: Testing the Build Step in Pipeline&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;On your test instance create a new &lt;i&gt;Pipeline&lt;/i&gt; and add following &lt;i&gt;script&lt;/i&gt;:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;node {&lt;br /&gt;    stage('Greetings') {&lt;br /&gt;        greet buildDelay: 'long', buildMessage: 'Hello pipeline build'&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;Coding the command line for our build step can either be done manually or by using the &lt;i&gt;Pipeline Syntax&lt;/i&gt; helper. The link is available right below the &lt;i&gt;Script&lt;/i&gt; section in your job configuration. Jenkins makes use of our previous jelly definitions to display a visual helper for the &lt;i&gt;Hello Build&lt;/i&gt; step. We may set all optional parameters on the UI and let Jenkins create the command line to be used in the pipeline script.&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://4.bp.blogspot.com/-NknsyjGDLnM/XBjRQiZXAkI/AAAAAAAABFg/fkARlPXG-dw3sKPdzuLPU7f2uCj0dJVsQCLcBGAs/s1600/jenkins.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;456&quot; src=&quot;https://4.bp.blogspot.com/-NknsyjGDLnM/XBjRQiZXAkI/AAAAAAAABFg/fkARlPXG-dw3sKPdzuLPU7f2uCj0dJVsQCLcBGAs/s640/jenkins.png&quot; width=&quot;640&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;</description>
+	<pubDate>Tue, 18 Dec 2018 11:28:24 +0000</pubDate>
+	<author>noreply@blogger.com (Christian Pontesegger)</author>
+</item>
+<item>
+	<title>Christian Pontesegger: Jenkins 2: A Builder Plugin &amp; Some Jelly</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-3460102793186140898.post-7581451498191257505</guid>
+	<link>http://codeandme.blogspot.com/2018/11/jenkins-2-builder-plugin-some-jelly.html</link>
+	<description>In the previous tutorial we did the basic setup for jenkins plugin development. Now we will try to create a plugin that actually runs a build step.&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Jenkins Tutorials&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;For a list of all jenkins related tutorials see &lt;a href=&quot;https://codeandme.blogspot.com/p/jenkins-articles.html&quot; target=&quot;_blank&quot;&gt;Jenkins Tutorials Overview.&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;div&gt;&lt;div style=&quot;margin: 0px;&quot;&gt;Source code for this tutorial is available on github as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_02_builder_plugin.zip?raw=true&quot;&gt;single zip archive&lt;/a&gt;, as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_02_builder_plugin.psf?raw=true&quot;&gt;Team Project Set&lt;/a&gt; or you can &lt;a href=&quot;https://github.com/Pontesegger/codeandme/tree/master/jenkins/02_builder_plugin&quot; target=&quot;_blank&quot;&gt;browse the files&lt;/a&gt; online.&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 1: The Basic Builder&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Maven allows to create a nice template for a builder plugin by calling&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn archetype:generate -Dfilter=io.jenkins.archetypes:&lt;/pre&gt;then select the &lt;i&gt;hello-world-plugin&lt;/i&gt;. But as we want to do it the hard way, we will add every single bit on our own and continue with the &lt;a href=&quot;https://github.com/Pontesegger/codeandme/tree/master/jenkins/01_empty_plugin&quot; target=&quot;_blank&quot;&gt;empty project&lt;/a&gt; from our &lt;a href=&quot;https://codeandme.blogspot.com/2018/11/jenkins-1-ide-setup-and-empty-plugin.html&quot; target=&quot;_blank&quot;&gt;previous tutorial&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;The first thing we need is a class to implement our builder. Lets create a simple one. Create a new class &lt;i&gt;com.codeandme.jenkins.builder.HelloBuilder&lt;/i&gt;:&lt;br /&gt;&lt;pre class=&quot;brush: java&quot;&gt;package com.codeandme.jenkins.builder;&lt;br /&gt;&lt;br /&gt;import java.io.IOException;&lt;br /&gt;&lt;br /&gt;public class HelloBuilder extends Builder implements SimpleBuildStep {&lt;br /&gt;&lt;br /&gt; @DataBoundConstructor&lt;br /&gt; public HelloBuilder() {&lt;br /&gt; }&lt;br /&gt;&lt;br /&gt; @Override&lt;br /&gt; public void perform(Run&amp;lt;?, ?&amp;gt; run, FilePath workspace, Launcher launcher, TaskListener listener)&lt;br /&gt;   throws InterruptedException, IOException {&lt;br /&gt;  listener.getLogger().println(&quot;This is the Hello plugin!&quot;);&lt;br /&gt; }&lt;br /&gt;&lt;br /&gt; @Symbol(&quot;hello&quot;)&lt;br /&gt; @Extension&lt;br /&gt; public static final class Descriptor extends BuildStepDescriptor&amp;lt;Builder&amp;gt; {&lt;br /&gt;&lt;br /&gt;  @Override&lt;br /&gt;  public boolean isApplicable(Class&amp;lt;? extends AbstractProject&amp;gt; aClass) {&lt;br /&gt;   return true;&lt;br /&gt;  }&lt;br /&gt;&lt;br /&gt;  @Override&lt;br /&gt;  public String getDisplayName() {&lt;br /&gt;   return &quot;Code &amp;amp; Me - Hello World&quot;;&lt;br /&gt;  }&lt;br /&gt; }&lt;br /&gt;}&lt;br /&gt;&lt;/pre&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;Jenkins expects the constructor to be augmented with the &lt;i&gt;@DataBoundConstructor&lt;/i&gt; annotation. Later we will add our build parameters to it.&lt;br /&gt;&lt;br /&gt;The &lt;i&gt;perform()&lt;/i&gt; method is the heart of our implementation. This is where we define what the build step should actually do. In this tutorial we focus on the definition, not the execution so we are just printing some log message to detect that our build step got triggered.&lt;br /&gt;&lt;br /&gt;Now lets put our focus on the &lt;i&gt;Descriptor&lt;/i&gt; class. It actually describes what our plugin looks like, what parameter it uses and whether the user input is valid or not. You need to use a static class as a descriptor and augment it with the &lt;i&gt;@Extension&lt;/i&gt; annotation to allow jenkins to detect it automatically.&lt;br /&gt;&lt;br /&gt;&lt;i&gt;isApplicable()&lt;/i&gt; might be the most important one as it denotes if ou plugin is usable for the current project type.&lt;br /&gt;&lt;br /&gt;Start a jenkins test server using&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn hpi:run -Djetty.port=8090&lt;/pre&gt;Create a new &lt;i&gt;Freestyle Project&lt;/i&gt; and add your custom build step to it. Then execute the job and browse the log for our log message.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Build Considerations&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;When writing a plugin it is vital to understand which parts of the plugin do get executed on the master and which ones on a slave machine. The java code we just wrote does get executed on the master only. Even when a job is executed on a slave machine, the perform() method still gets executed on master. Therefore we cannot use classic java libraries like NIO or the ProcessBuilder to access and execute stuff on the slave. Instead we need to use abstractions like the workspace and the launcher parameters we get from Jenkins. These objects will take care to delegate IO calls or program executions to the slave.&lt;br /&gt;&lt;br /&gt;Make sure you always keep focus which parts of your code get executed where.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 2: Basic UI&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Next we need a &lt;i&gt;*.jelly&lt;/i&gt; file to describe how the UI should look like. Therefore create a new package in &lt;i&gt;src/main/resources&lt;/i&gt; named &lt;i&gt;com.codeandme.jenkins.builder.HelloBuilder&lt;/i&gt;. That is right, the package equals the class name of our builder class. Then create a &lt;i&gt;config.jelly&lt;/i&gt; file inside that package:&lt;br /&gt;&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;&amp;lt;?jelly escape-by-default='true'?&amp;gt;&lt;br /&gt;&amp;lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; xmlns:d=&quot;jelly:define&quot; xmlns:l=&quot;/lib/layout&quot; xmlns:t=&quot;/lib/hudson&quot; xmlns:f=&quot;/lib/form&quot;&amp;gt;&lt;br /&gt;&lt;br /&gt; &amp;lt;f:block&amp;gt;&lt;br /&gt;  &amp;lt;h1&amp;gt;Code &amp;amp;amp; Me Productions&amp;lt;/h1&amp;gt;&lt;br /&gt;  &amp;lt;p&amp;gt;We build the best &amp;lt;i&amp;gt;hellos&amp;lt;/i&amp;gt; in the world&amp;lt;/p&amp;gt;&lt;br /&gt; &amp;lt;/f:block&amp;gt;&lt;br /&gt;&lt;br /&gt;&amp;lt;/j:jelly&amp;gt;&lt;br /&gt;&lt;/pre&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;Inside the jelly definition we can use plain HTML code. Run your test instance again to see your changes in your project configuration view.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 3: Checkbox Input&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Time to add some input. All build parameters need at least 2 steps of implementation: first we need to define the UI in the &lt;i&gt;config.jelly&lt;/i&gt; file, then we need to define the parameters in the java class. Optionally we may add additional checks in the Descriptor class.&lt;br /&gt;&lt;br /&gt;To define the UI for the checkbox we add following code to our jelly file:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt; &amp;lt;f:entry title=&quot;Fail this build&quot; field=&quot;failBuild&quot;&amp;gt;&lt;br /&gt;  &amp;lt;f:checkbox /&amp;gt;&lt;br /&gt; &amp;lt;/f:entry&amp;gt;&lt;/pre&gt;This will create a label using the &lt;i&gt;title&lt;/i&gt; field and a checkbox on the right side of the label. The &lt;i&gt;field&lt;/i&gt; name is important as this is the ID of our field which we now use in the Java code:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;public class HelloBuilder extends Builder implements SimpleBuildStep {&lt;br /&gt;&lt;br /&gt; private boolean fFailBuild;&lt;br /&gt;&lt;br /&gt; @DataBoundConstructor&lt;br /&gt; public HelloBuilder(boolean failBuild) {&lt;br /&gt;  fFailBuild = failBuild;&lt;br /&gt; }&lt;br /&gt;&lt;br /&gt; @Override&lt;br /&gt; public void perform(Run&amp;lt;?, ?&amp;gt; run, FilePath workspace, Launcher launcher, TaskListener listener)&lt;br /&gt;   throws InterruptedException, IOException {&lt;br /&gt;  listener.getLogger().println(&quot;This is the Hello plugin!&quot;);&lt;br /&gt;&lt;br /&gt;  if (isFailBuild())&lt;br /&gt;   throw new AbortException(&quot;Build error forced by plugin settings&quot;);&lt;br /&gt; }&lt;br /&gt;&lt;br /&gt; public boolean isFailBuild() {&lt;br /&gt;  return fFailBuild;&lt;br /&gt; }&lt;br /&gt;}&lt;br /&gt;&lt;/pre&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;The new parameter needs to be added to our constructor. Make sure you use the same name as in the jelly file. Additionally we need a getter for our parameter. It will be queried to populate the UI when you configure your job and when the job gets executed. Jenkins expects the name of the getter to match the field name of your jelly file.&lt;br /&gt;&lt;br /&gt;During the build we evaluate our parameter and throw an &lt;i&gt;AbortException&lt;/i&gt; in case our builder is expected to fail.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 4: Adding Help&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Lots of parameters in Jenkins plugins show a help button on the righthand side of the form. These buttons automatically appear when corresponding help files exist in the right location.&lt;br /&gt;&lt;br /&gt;A general help file for the builder named &lt;i&gt;help.html&lt;/i&gt; needs to be placed next to the &lt;i&gt;config.jelly&lt;/i&gt; file. You may add any arbitrary HTML content there, with no need to use &lt;i&gt;&amp;lt;html&amp;gt;&lt;/i&gt; or &lt;i&gt;&amp;lt;body&amp;gt;&lt;/i&gt; tags.&lt;br /&gt;&lt;br /&gt;To provide help for our checkbox we create another help file named &lt;i&gt;help-failBuild.html&lt;/i&gt;. See the pattern? We again use the field ID and Jenkins figures out the rest.&lt;br /&gt;&lt;br /&gt;Instead of a plain HTML files we could also &lt;a href=&quot;https://wiki.jenkins.io/display/JENKINS/Basic+guide+to+Jelly+usage+in+Jenkins#BasicguidetoJellyusageinJenkins-Helpfiles&quot; target=&quot;_blank&quot;&gt;provide jelly files&lt;/a&gt; following the same name pattern.&lt;br /&gt;&lt;br /&gt;Changes like adding help or beautifying jelly files can be done without restarting our test instance. Simply change the file and reload the page in your webbrowser of your test instance.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Further reading&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Good documentation on writing forms seems to be rare on the internet. To me the best choice seems to find an existing plugin and browse the source code for reference. At least a &lt;a href=&quot;https://reports.jenkins.io/core-taglib/jelly-taglib-ref.html#form&quot; target=&quot;_blank&quot;&gt;list of all control types&lt;/a&gt; is available online.&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;</description>
+	<pubDate>Tue, 18 Dec 2018 08:53:40 +0000</pubDate>
+	<author>noreply@blogger.com (Christian Pontesegger)</author>
+</item>
+<item>
+	<title>vert.x project: Eclipse Vert.x 3.6.2</title>
+	<guid isPermaLink="true">https://vertx.io/blog/eclipse-vert-x-3-6-2</guid>
+	<link>https://vertx.io/blog/eclipse-vert-x-3-6-2</link>
+	<description>&lt;article&gt;&lt;p&gt;We have just released Vert.x 3.6.2, a bug fix release of Vert.x 3.6.x.&lt;/p&gt;
+&lt;p&gt;There is already a 3.6.1 release but that exhibited a (Maven dependency) regression for Vert.x RxJava, so we reacted immediately and
+did a 3.6.2 release to fix the issue, as RxJava is a critical component of the Vert.x stack. Therefore 3.6.2 is instead
+announced.&lt;/p&gt;
+&lt;p&gt;Since the release of Vert.x 3.6.0, quite a few bugs have been reported. We would like to thank you all for reporting these issues.&lt;/p&gt;
+&lt;p&gt;As you might know, the development of Vert.x 4 has started and therefore a few API will be deprecated in Vert.x 3.&lt;/p&gt;
+&lt;p&gt;Such APIs will be deprecated step by step in Vert.x 3 with an alternative API so you can anticipate the API upgrade
+in Vert.x 4 from the Vert.x 3.6, for 3.6.2 here is the list of deprecations you can find&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/vert-x3/wiki/wiki/3.6.2-Deprecations&quot;&gt;https://github.com/vert-x3/wiki/wiki/3.6.2-Deprecations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vert.x 3.6.2 release notes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vert-x3/wiki/wiki/3.6.2-Release-Notes&quot;&gt;https://github.com/vert-x3/wiki/wiki/3.6.2-Release-Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The event bus client using the SockJS bridge are available from NPM, Bower and as a WebJar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/vertx3-eventbus-client&quot;&gt;https://www.npmjs.com/package/vertx3-eventbus-client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vert-x3/vertx-bus-bower&quot;&gt;https://github.com/vert-x3/vertx-bus-bower&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.webjars.org/&quot;&gt;http://www.webjars.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Docker images are also available on the &lt;a href=&quot;https://hub.docker.com/u/vertx/&quot;&gt;Docker Hub&lt;/a&gt;. The Vert.x distribution is also available from &lt;a href=&quot;http://sdkman.io/index.html&quot;&gt;SDKMan&lt;/a&gt; and &lt;a href=&quot;http://brew.sh/&quot;&gt;HomeBrew&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The artifacts have been deployed to &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.vertx%22%20AND%20v%3A%223.5.4%22&quot;&gt;Maven Central&lt;/a&gt; and you can get the distribution on &lt;a href=&quot;https://bintray.com/vertx/downloads/distribution/3.5.4/view&quot;&gt;Bintray&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Happy coding and see you soon on our user or dev &lt;a href=&quot;https://vertx.io/community&quot;&gt;channels&lt;/a&gt;.&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>vert.x project: Vert.x Web API Service Introduction</title>
+	<guid isPermaLink="true">https://vertx.io/blog/vert-x-web-api-service-introduction</guid>
+	<link>https://vertx.io/blog/vert-x-web-api-service-introduction</link>
+	<description>&lt;article&gt;&lt;h1 id=&quot;vert-x-web-api-service&quot;&gt;Vert.x Web API Service&lt;/h1&gt;
+&lt;p&gt;Vert.x 3.6 introduces a new module called &lt;code&gt;vertx-web-api-service&lt;/code&gt;. With the new Web API Services you can easily combine the &lt;a href=&quot;https://vertx.io/docs/vertx-web/java/&quot;&gt;Vert.x Web Router&lt;/a&gt; and the &lt;a href=&quot;https://vertx.io/docs/vertx-web-api-contract/java/&quot;&gt;Vert.x OpenAPI Router Factory&lt;/a&gt; features with &lt;a href=&quot;https://vertx.io/docs/vertx-service-proxy/java/&quot;&gt;Vert.x Services on Event Bus&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;small-recap-on-openapi-and-vert-x-web-api-contract&quot;&gt;Small recap on OpenAPI and Vert.x Web API Contract&lt;/h2&gt;
+&lt;p&gt;Let’s start from this OpenAPI definition:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openapi: &lt;span class=&quot;hljs-number&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;.0&lt;/span&gt;
+paths:
+  /api/transactions:
+    get:
+      operationId: getTransactionsList
+      description: Get transactions list filtered by sender
+      x-vertx-event-bus: transactions_manager.myapp
+      parameters:
+        - name: from
+          &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt;: query
+          description: Matches exactly the email from
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+    post:
+      operationId: addTransaction
+      x-vertx-event-bus: transactions_manager.myapp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: &lt;span class=&quot;hljs-string&quot;&gt;&quot;#/components/schemas/Transaction&quot;&lt;/span&gt;
+      responses: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+  /api/transactions/{transactionId}:
+    parameters:
+      - name: transactionId
+        &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt;: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: updateTransaction
+      x-vertx-event-bus: transactions_manager.myapp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: &lt;span class=&quot;hljs-string&quot;&gt;&quot;#/components/schemas/Transaction&quot;&lt;/span&gt;
+      responses: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+    delete:
+      operationId: removeTransaction
+      x-vertx-event-bus: transactions_manager.myapp
+      responses: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+components:
+  schemas:
+    Transaction: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+    Error: &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We defined &lt;code&gt;getTransactionsList&lt;/code&gt;, &lt;code&gt;addTransaction&lt;/code&gt;, &lt;code&gt;updateTransaction&lt;/code&gt; and &lt;code&gt;removeTransaction&lt;/code&gt; operations. Now with &lt;code&gt;OpenAPI3RouterFactory&lt;/code&gt; we create a &lt;code&gt;Router&lt;/code&gt; that accepts this various operation requests:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;OpenAPI3RouterFactory.create(vertx, &lt;span class=&quot;hljs-string&quot;&gt;&quot;src/main/resources/petstore.yaml&quot;&lt;/span&gt;, ar -&amp;gt; {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (ar.succeeded()) {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Spec loaded with success&lt;/span&gt;
+    OpenAPI3RouterFactory routerFactory = ar.result();
+    routerFactory.addHandlerByOperationId(&lt;span class=&quot;hljs-string&quot;&gt;&quot;getTransactionsList&quot;&lt;/span&gt;, routingContext -&amp;gt; {
+      RequestParameters params = routingContext.get(&lt;span class=&quot;hljs-string&quot;&gt;&quot;parsedParameters&quot;&lt;/span&gt;);
+      RequestParameter from = params.queryParameter(&lt;span class=&quot;hljs-string&quot;&gt;&quot;from&quot;&lt;/span&gt;);
+      &lt;span class=&quot;hljs-comment&quot;&gt;// getTransactionsList business logic&lt;/span&gt;
+    });
+    &lt;span class=&quot;hljs-comment&quot;&gt;// add handlers for addTransaction, updateTransaction and removeTransaction&lt;/span&gt;
+    Router router = routerFactory.getRouter();
+  } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Something went wrong during router factory initialization&lt;/span&gt;
+    Throwable exception = ar.cause();
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Log exception, fail verticle deployment ... etc&lt;/span&gt;
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;OpenAPI3RouterFactory&lt;/code&gt; provides an easy way to create a specification compliant &lt;code&gt;Router&lt;/code&gt;, but it doesn’t provide a mechanism to decouple the business logic from your operation handlers.&lt;/p&gt;
+&lt;p&gt;In a typical Vert.x application, when you receive a request to your router, you would forward it to an event bus endpoint that performs some actions and sends the result back to the operation handler.&lt;/p&gt;
+&lt;p&gt;Vert.x Web API Service simplifies that integration between &lt;code&gt;RouterFactory&lt;/code&gt; and &lt;code&gt;EventBus&lt;/code&gt; with a new code generator. The final result is a &lt;em&gt;loose coupling&lt;/em&gt; between the Web Router logic and your business logic.&lt;/p&gt;
+&lt;h2 id=&quot;let-s-get-started-with-vert-x-web-api-services-&quot;&gt;Let’s get started with Vert.x Web Api Services!&lt;/h2&gt;
+&lt;p&gt;To use &lt;code&gt;vertx-web-api-service&lt;/code&gt; you need to add a couple of dependencies to your project. In a Maven POM file that would be:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;io.vertx&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;vertx-codegen&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;3.6.0&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;classifier&lt;/span&gt;&amp;gt;&lt;/span&gt;processor&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;classifier&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;io.vertx&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;vertx-web-api-service&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;3.6.0&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We will proceed in this order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Model the service interface&lt;/li&gt;
+&lt;li&gt;Rewrite it to work with Web Api Services&lt;/li&gt;
+&lt;li&gt;Implement the service&lt;/li&gt;
+&lt;li&gt;Mount the service on the event bus&lt;/li&gt;
+&lt;li&gt;Use the router factory to build a router with handlers that connects to our event bus services&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;model-your-service&quot;&gt;Model your service&lt;/h2&gt;
+&lt;p&gt;Let’s say that we want to model a service that manages all operations regarding CRUD transactions. An example interface for this asynchronous service could be:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerService&lt;/span&gt; &lt;/span&gt;{
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getTransactionsList&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(List from, Handler&amp;gt;&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;addTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Transaction transaction, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;updateTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String transactionId, Transaction transaction, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;removeTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String transactionId, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For each operation, we have some parameters, depending on the operation, and a callback (&lt;code&gt;resultHandler&lt;/code&gt;) that should be called when the operation succeeds or fails.&lt;/p&gt;
+&lt;p&gt;With &lt;a href=&quot;https://vertx.io/docs/vertx-service-proxy/java/&quot;&gt;Vert.x Service Proxy&lt;/a&gt;, you can define an event bus service with a Java interface similar to the one we just saw and then annotate it with &lt;code&gt;@ProxyGen&lt;/code&gt;. This annotation will generate a &lt;em&gt;service handler&lt;/em&gt; for the defined service that can be plugged to the event bus with &lt;code&gt;ServiceBinder&lt;/code&gt;. &lt;code&gt;vertx-web-api-service&lt;/code&gt; works in a very similar way: you need to annotate the Java interface with &lt;code&gt;@WebApiServiceGen&lt;/code&gt; and it will generate the service handler for the event bus.&lt;/p&gt;
+&lt;p&gt;Let’s rewrite the &lt;code&gt;TransactionsManagerService&lt;/code&gt; to work with Web API Service:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; io.vertx.ext.web.api.*;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; io.vertx.ext.web.api.generator.WebApiServiceGen;
+
+&lt;span class=&quot;hljs-annotation&quot;&gt;@WebApiServiceGen&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerService&lt;/span&gt; &lt;/span&gt;{
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getTransactionsList&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(List from, OperationRequest context, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;addTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Transaction body, OperationRequest context, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;updateTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String transactionId, Transaction body, OperationRequest context, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;removeTransaction&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String transactionId, OperationRequest context, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;;
+
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Factory method to instantiate the implementation&lt;/span&gt;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; TransactionsManagerService &lt;span class=&quot;hljs-title&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Vertx vertx)&lt;/span&gt; &lt;/span&gt;{
+    &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerServiceImpl&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(vertx)&lt;/span&gt;&lt;/span&gt;;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First of all, look at the annotation &lt;code&gt;@WebApiServiceGen&lt;/code&gt;. This annotation will trigger the code generator that generates the event bus handler for this service. Each method has the same two last parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;OperationRequest context&lt;/code&gt;: this data object contains the headers and the parameters of the HTTP request&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Handler&amp;gt; resultHandler&lt;/code&gt;: this callback accepts an &lt;code&gt;OperationResponse&lt;/code&gt; data object that will encapsulate the body of the result, the status code, the status message and the headers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The generated handler receives only the &lt;code&gt;OperationRequest&lt;/code&gt; data object and extracts from it all operation parameters. For example, when the router receives a request at &lt;code&gt;getTransactionsList&lt;/code&gt;, it sends to &lt;code&gt;TransactionsManagerService&lt;/code&gt; the &lt;code&gt;OperationRequest&lt;/code&gt; containing the &lt;code&gt;RequestParameters&lt;/code&gt; map. From this map, the service generated handler extracts the &lt;code&gt;from&lt;/code&gt; parameter. &lt;/p&gt;
+&lt;p&gt;Therefore &lt;strong&gt;operation parameters names should match method parameter names&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;When you want to extract the body you must use &lt;code&gt;body&lt;/code&gt; keyword. For more details, please refer to the &lt;a href=&quot;https://vertx.io/docs/vertx-web-api-service/java/&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;implement-the-service&quot;&gt;Implement the service&lt;/h2&gt;
+&lt;p&gt;Now that you have your interface, you can implement the service:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerServiceImpl&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerService&lt;/span&gt; &lt;/span&gt;{
+
+  &lt;span class=&quot;hljs-keyword&quot;&gt;private&lt;/span&gt; Vertx vertx;
+
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;TransactionsManagerServiceImpl&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Vertx vertx)&lt;/span&gt; &lt;/span&gt;{  &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.vertx = vertx;  }
+
+  &lt;span class=&quot;hljs-annotation&quot;&gt;@Override&lt;/span&gt;
+  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getTransactionsList&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(List from, OperationRequest context, Handler&amp;gt; resultHandler)&lt;/span&gt;&lt;/span&gt;{
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Write your business logic here&lt;/span&gt;
+    resultHandler.handle(Future.succeededFuture(OperationResult.completedWithJson(resultJson)));
+  }
+
+  &lt;span class=&quot;hljs-comment&quot;&gt;// Implement other operations&lt;/span&gt;
+
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Check the &lt;code&gt;OperationResult&lt;/code&gt; documentation to look at various handy methods to create a complete response.&lt;/p&gt;
+&lt;h2 id=&quot;mount-the-service&quot;&gt;Mount the Service&lt;/h2&gt;
+&lt;p&gt;Now that you have your service interface and implementation, you can mount your service with &lt;code&gt;ServiceBinder&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;ServiceBinder serviceBinder = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; ServiceBinder(vertx);
+
+TransactionsManagerService transactionsManagerService = TransactionsManagerService.create(vertx);
+registeredConsumers.add(
+  serviceBinder
+    .setAddress(&lt;span class=&quot;hljs-string&quot;&gt;&quot;transactions_manager.myapp&quot;&lt;/span&gt;)
+    .register(TransactionsManagerService.class, transactionsManagerService)
+);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;and-the-router-factory-&quot;&gt;And the Router Factory?&lt;/h2&gt;
+&lt;p&gt;The service is up and running, but we need to connect it to the &lt;code&gt;Router&lt;/code&gt; built by &lt;code&gt;OpenAPI3RouterFactory&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;OpenAPI3RouterFactory.create(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.vertx, &lt;span class=&quot;hljs-string&quot;&gt;&quot;my_spec.yaml&quot;&lt;/span&gt;, openAPI3RouterFactoryAsyncResult -&amp;gt; {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (openAPI3RouterFactoryAsyncResult.succeeded()) {
+    OpenAPI3RouterFactory routerFactory = openAPI3RouterFactoryAsyncResult.result();
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Mount services on event bus based on extensions&lt;/span&gt;
+    routerFactory.mountServicesFromExtensions(); &lt;span class=&quot;hljs-comment&quot;&gt;// &amp;lt;- Pure magic happens!&lt;/span&gt;
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Generate the router&lt;/span&gt;
+    Router router = routerFactory.getRouter();
+    server = vertx.createHttpServer(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; HttpServerOptions().setPort(&lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;));
+    server.requestHandler(router).listen();
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Initialization completed&lt;/span&gt;
+  } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// Something went wrong during router factory initialization&lt;/span&gt;
+  }
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In our spec example we added an extension &lt;code&gt;x-vertx-event-bus&lt;/code&gt; to each operation that specifies the address of the service. Using this extension, you only need to call &lt;code&gt;OpenAPI3RouterFactory.mountServicesFromExtensions()&lt;/code&gt; to trigger a scan of all operations and mount all found service addresses. For each operation that contains &lt;code&gt;x-vertx-event-bus&lt;/code&gt;, the Router Factory instantiates an handler that routes the incoming requests to the address you specified.&lt;/p&gt;
+&lt;p&gt;This is one of the methods you can use to match services with router operation handlers. Check the documentation for all details.&lt;/p&gt;
+&lt;h2 id=&quot;more-examples&quot;&gt;More examples&lt;/h2&gt;
+&lt;p&gt;Check out the complete example in &lt;a href=&quot;https://github.com/vert-x3/vertx-examples/tree/master/web-api-service-example&quot;&gt;vertx-examples repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks you for your time, stay tuned for more updates! And please provide feedback about this new package!&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: Saturday night’s alright for coding</title>
+	<guid isPermaLink="false">https://medium.com/p/461f86d91299</guid>
+	<link>https://medium.com/oracledevs/saturday-nights-alright-for-coding-461f86d91299?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Programming fun with Java and &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections&lt;/a&gt; on a Saturday night.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*nX1yEEE6CgqRVs_p9g04uw.png&quot; /&gt;Combining upper and lowercase letters of the English alphabet&lt;/figure&gt;&lt;h3&gt;Do you ever just sit down and write code?&lt;/h3&gt;&lt;p&gt;Sometimes I just like to sit down in front of my IDE and write some Java code. I don’t always know what I am going to write, and if I find I am not creating anything useful I will just abandon the work. Other times, I find myself creating something that could become a new code kata or potentially a new useful API.&lt;/p&gt;&lt;p&gt;Saturday night I started coding, and decided I wanted to see if I could use the primitive APIs in &lt;a href=&quot;https://www.eclipse.org/collections/&quot;&gt;Eclipse Collections&lt;/a&gt; to create an alphabet with both uppercase and lowercase letters quickly and fluently.&lt;/p&gt;&lt;pre&gt;@Test&lt;br /&gt;public void alphabet()&lt;br /&gt;{&lt;br /&gt;    var alphabet = IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'A'&lt;/strong&gt;, &lt;strong&gt;'Z'&lt;/strong&gt;)&lt;br /&gt;            .zipInt(IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'a'&lt;/strong&gt;, &lt;strong&gt;'z'&lt;/strong&gt;))&lt;br /&gt;            .collect(i -&amp;gt; Strings.&lt;em&gt;toCodePoints&lt;/em&gt;(&lt;br /&gt;                    i.getOne(),&lt;br /&gt;                    i.getTwo()))&lt;br /&gt;            .makeString(&lt;strong&gt;&quot;,&quot;&lt;/strong&gt;);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;            &lt;strong&gt;&quot;Aa,Bb,Cc,Dd,Ee,Ff,Gg,Hh,Ii,Jj,Kk,Ll,Mm,Nn,&quot; &lt;/strong&gt;+&lt;br /&gt;                    &lt;strong&gt;&quot;Oo,Pp,Qq,Rr,Ss,Tt,Uu,Vv,Ww,Xx,Yy,Zz&quot;&lt;/strong&gt;,&lt;br /&gt;            alphabet);&lt;br /&gt;}&lt;/pre&gt;&lt;p&gt;This is not how I originally wrote the code. I started out coding with JDK 8 using intermediate types, and then switched to JDK 11 so I could use &lt;em&gt;var&lt;/em&gt;. The original version of the code looked like this.&lt;/p&gt;&lt;pre&gt;@Test&lt;br /&gt;public void alphabet()&lt;br /&gt;{&lt;br /&gt;    IntInterval uppercase = IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'A'&lt;/strong&gt;, &lt;strong&gt;'Z'&lt;/strong&gt;);&lt;br /&gt;    IntInterval lowercase = IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'a'&lt;/strong&gt;, &lt;strong&gt;'z'&lt;/strong&gt;);&lt;br /&gt;    ImmutableList&amp;lt;IntIntPair&amp;gt; pairs = uppercase.zipInt(lowercase);&lt;br /&gt;    ImmutableList&amp;lt;CodePointAdapter&amp;gt; strings =&lt;br /&gt;            pairs.collect(pair -&amp;gt;&lt;br /&gt;                    Strings.&lt;em&gt;toCodePoints&lt;/em&gt;(&lt;br /&gt;                            pair.getOne(),&lt;br /&gt;                            pair.getTwo()));&lt;br /&gt;    String alphabet = strings.makeString(&lt;strong&gt;&quot;,&quot;&lt;/strong&gt;);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;            &lt;strong&gt;&quot;Aa,Bb,Cc,Dd,Ee,Ff,Gg,Hh,Ii,Jj,Kk,Ll,Mm,Nn,&quot; &lt;/strong&gt;+&lt;br /&gt;                    &lt;strong&gt;&quot;Oo,Pp,Qq,Rr,Ss,Tt,Uu,Vv,Ww,Xx,Yy,Zz&quot;&lt;/strong&gt;,&lt;br /&gt;            alphabet);&lt;br /&gt;}&lt;/pre&gt;&lt;p&gt;Replacing all of the types with var made the code look like this.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*_UXkXcvCuS50CF4g3jsaBg.png&quot; /&gt;The code is less dense, but I also have less information about the intermediate types&lt;/figure&gt;&lt;p&gt;IntelliJ helps make things really clear and simple when using a fluent coding style in Java by showing the intermediate types on the right. See the text underlined in green below. Using JDK 11 here doesn’t really make too much of a difference here, as &lt;em&gt;var&lt;/em&gt; is only three characters shorter than &lt;em&gt;String&lt;/em&gt;.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*inKqUxYDskBNX-CkYe7uGA.png&quot; /&gt;No need to type on the left, as the IDE displays intermediate types on the right&lt;/figure&gt;&lt;h3&gt;Fluent Primitives&lt;/h3&gt;&lt;p&gt;Having a fluent primitive API available makes coding with primitive types much more fun and productive. In the above examples I was able to leverage &lt;em&gt;IntInterval&lt;/em&gt; to create both uppercase and lowercase alphabets. Then using the &lt;em&gt;zipInt&lt;/em&gt; method, I was able to combine the two &lt;em&gt;IntInterval&lt;/em&gt; instances into an &lt;em&gt;ImmutableList&lt;/em&gt; of &lt;em&gt;IntIntPair&lt;/em&gt;. Then I was able to transform the &lt;em&gt;IntIntPair&lt;/em&gt; instances into &lt;em&gt;CodePointAdapter&lt;/em&gt; instances using the collect method. &lt;em&gt;CodePointAdapter&lt;/em&gt; implements the &lt;em&gt;CharSequence&lt;/em&gt; interface, which is also implemented by the &lt;em&gt;String&lt;/em&gt; class in Java. Finally, &lt;em&gt;makeString&lt;/em&gt;(“,”) creates a comma separated &lt;em&gt;String&lt;/em&gt; combining all of the &lt;em&gt;CodePointAdapter&lt;/em&gt; instances.&lt;/p&gt;&lt;p&gt;There was a limited amount of boxing required here, when I had to create the &lt;em&gt;IntIntPair&lt;/em&gt; and &lt;em&gt;CodePointAdapter&lt;/em&gt; instances. But at no point did I have to box any of the &lt;em&gt;int&lt;/em&gt; values into their &lt;em&gt;Integer&lt;/em&gt; wrapper counterparts to continue the fluent calls.&lt;/p&gt;&lt;h3&gt;Method Reference Preference&lt;/h3&gt;&lt;p&gt;I prefer method references over lambdas in Java. Method references are often more succinct than lambdas, and are usually self-documenting. I had to use a lambda to transform the &lt;em&gt;IntIntPair&lt;/em&gt; to a &lt;em&gt;CodePointAdapter&lt;/em&gt; using Strings.&lt;em&gt;toCodePoints&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;I wonder whether it would be worthwhile to add a new overloaded &lt;em&gt;toCodePoints&lt;/em&gt; method to the Strings class which takes an &lt;em&gt;IntIntPair&lt;/em&gt; as a parameter. I also wonder whether it would be worthwhile to add a version of the method which takes an &lt;em&gt;IntIterable&lt;/em&gt; as well. Right now, &lt;a href=&quot;https://www.eclipse.org/collections/javadoc/9.2.0/org/eclipse/collections/impl/factory/Strings.html#toCodePoints-int...-&quot;&gt;&lt;em&gt;toCodePoints&lt;/em&gt;&lt;/a&gt; takes an &lt;em&gt;int&lt;/em&gt; array.&lt;/p&gt;&lt;p&gt;Here’s what the code would look like if I used a method reference instead of a lambda. I extracted the code contained in the lambda into a method called &lt;em&gt;toCodePoints&lt;/em&gt;. I find I do this quite frequently these days.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*9Wd-THz8dSuUhNGtkj46PA.png&quot; /&gt;&lt;/figure&gt;&lt;p&gt;Maybe next time I am writing code on a Saturday night, I will see if it makes sense to add one or both of the &lt;em&gt;toCodePoints&lt;/em&gt; utility methods to the &lt;em&gt;Strings&lt;/em&gt; class in Eclipse Collections.&lt;/p&gt;&lt;h3&gt;Sunday night’s alright for blogging and coding&lt;/h3&gt;&lt;p&gt;I was thinking I would be finished with the blog Sunday evening, but then decided I wanted to try some additional coding using Java and Streams. I was curious to see if I could come up with a similarly fluent solution to creating an uppercase/lowercase alphabet using primitive Java Streams. I was unsuccessful at keeping everything in one fluent call, but this was the best solution I could come up using only built-in Java types and APIs.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*bHguEzywHj2jFWU-qtTwZQ.png&quot; /&gt;Not quite as fluent as I had to turn the IntStreams into int arrays&lt;/figure&gt;&lt;h3&gt;Final thoughts&lt;/h3&gt;&lt;p&gt;In the future, I might turn these code examples into a new code kata for Eclipse Collections and Java Streams. Until then, here’s the final versions of the code in raw text if you want to experiment with the APIs on your own.&lt;/p&gt;&lt;h4&gt;Eclipse Collections Version&lt;/h4&gt;&lt;pre&gt;@Test&lt;br /&gt;public void alphabet()&lt;br /&gt;{&lt;br /&gt;    var alphabet = IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'A'&lt;/strong&gt;, &lt;strong&gt;'Z'&lt;/strong&gt;)&lt;br /&gt;            .zipInt(IntInterval.&lt;em&gt;fromTo&lt;/em&gt;(&lt;strong&gt;'a'&lt;/strong&gt;, &lt;strong&gt;'z'&lt;/strong&gt;))&lt;br /&gt;            .collect(this::toCodePoints)&lt;br /&gt;            .makeString(&lt;strong&gt;&quot;,&quot;&lt;/strong&gt;);&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;            &lt;strong&gt;&quot;Aa,Bb,Cc,Dd,Ee,Ff,Gg,Hh,Ii,Jj,Kk,Ll,Mm,Nn,&quot; &lt;/strong&gt;+&lt;br /&gt;                    &lt;strong&gt;&quot;Oo,Pp,Qq,Rr,Ss,Tt,Uu,Vv,Ww,Xx,Yy,Zz&quot;&lt;/strong&gt;,&lt;br /&gt;            alphabet);&lt;br /&gt;}&lt;br /&gt;&lt;br /&gt;private CodePointAdapter toCodePoints(IntIntPair pair)&lt;br /&gt;{&lt;br /&gt;    return Strings.&lt;em&gt;toCodePoints&lt;/em&gt;(pair.getOne(), pair.getTwo());&lt;br /&gt;}&lt;/pre&gt;&lt;h4&gt;Java Streams Version&lt;/h4&gt;&lt;pre&gt;@Test&lt;br /&gt;public void alphabetStream()&lt;br /&gt;{&lt;br /&gt;    var upper = IntStream.&lt;em&gt;rangeClosed&lt;/em&gt;(&lt;strong&gt;'A'&lt;/strong&gt;, &lt;strong&gt;'Z'&lt;/strong&gt;).toArray();&lt;br /&gt;    var lower = IntStream.&lt;em&gt;rangeClosed&lt;/em&gt;(&lt;strong&gt;'a'&lt;/strong&gt;, &lt;strong&gt;'z'&lt;/strong&gt;).toArray();&lt;br /&gt;    var alphabet = IntStream.&lt;em&gt;range&lt;/em&gt;(0, 26)&lt;br /&gt;            .mapToObj(i -&amp;gt;&lt;br /&gt;                    new String(new int[]{&lt;em&gt;upper&lt;/em&gt;[i], &lt;em&gt;lower&lt;/em&gt;[i]}, 0, 2))&lt;br /&gt;            .collect(Collectors.&lt;em&gt;joining&lt;/em&gt;(&lt;strong&gt;&quot;,&quot;&lt;/strong&gt;));&lt;br /&gt;    Assert.&lt;em&gt;assertEquals&lt;/em&gt;(&lt;br /&gt;            &lt;strong&gt;&quot;Aa,Bb,Cc,Dd,Ee,Ff,Gg,Hh,Ii,Jj,Kk,Ll,Mm,Nn,&quot; &lt;/strong&gt;+&lt;br /&gt;                    &lt;strong&gt;&quot;Oo,Pp,Qq,Rr,Ss,Tt,Uu,Vv,Ww,Xx,Yy,Zz&quot;&lt;/strong&gt;,&lt;br /&gt;            alphabet);&lt;br /&gt;}&lt;/pre&gt;&lt;p&gt;Happy Coding!&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=461f86d91299&quot; width=&quot;1&quot; /&gt;&lt;hr /&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/oracledevs/saturday-nights-alright-for-coding-461f86d91299&quot;&gt;Saturday night’s alright for coding&lt;/a&gt; was originally published in &lt;a href=&quot;https://medium.com/oracledevs&quot;&gt;Oracle Developers&lt;/a&gt; on Medium, where people are continuing the conversation by highlighting and responding to this story.&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Dec 2018 16:44:24 +0000</pubDate>
+</item>
+<item>
+	<title>Christian Pontesegger: Jenkins 1: IDE Setup and an Empty Plugin</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-3460102793186140898.post-5182433312839995136</guid>
+	<link>http://codeandme.blogspot.com/2018/11/jenkins-1-ide-setup-and-empty-plugin.html</link>
+	<description>I recently started to write my first Jenkins plugin and I thought I share the experience with you. For that reason I started a new series of tutorials.&lt;br /&gt;&lt;br /&gt;Today we are building a simple Jenkins plugin using Eclipse. The basic steps of this tutorial are extracted from the &lt;a href=&quot;https://wiki.jenkins.io/display/JENKINS/Plugin+tutorial&quot; target=&quot;_blank&quot;&gt;Jenkins Plugin Tutorial&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Jenkins Tutorials&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;For a list of all jenkins related tutorials see &lt;a href=&quot;https://codeandme.blogspot.com/p/jenkins-articles.html&quot; target=&quot;_blank&quot;&gt;Jenkins Tutorials Overview.&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Source code for this tutorial is available on github as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_01_empty_plugin.zip?raw=true&quot;&gt;single zip archive&lt;/a&gt;, as a &lt;a href=&quot;https://github.com/Pontesegger/codeandme/blob/master/Code%20&amp;amp;%20Me%20Blog/jenkins_01_empty_plugin.psf?raw=true&quot;&gt;Team Project Set&lt;/a&gt; or you can &lt;a href=&quot;https://github.com/Pontesegger/codeandme/tree/master/jenkins/01_empty_plugin&quot; target=&quot;_blank&quot;&gt;browse the files&lt;/a&gt; online.&lt;br /&gt;&lt;b&gt;&lt;u&gt;&lt;br /&gt;&lt;/u&gt;&lt;/b&gt;&lt;b&gt;&lt;u&gt;Prerequisites&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;As you are interested in writing a plugin for &lt;a href=&quot;https://jenkins.io/&quot; target=&quot;_blank&quot;&gt;Jenkins&lt;/a&gt; I expect that you have a rough idea what Jenkins is used for and how to administer it.&lt;br /&gt;&lt;br /&gt;While our build environment allows to run a test instance of Jenkins with our plugin enabled I also liked to have a 'real' Jenkins instance available to test my plugins. Therefore I use &lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot;&gt;docker&lt;/a&gt; to quickly get started with a woking Jenkins installation.&lt;br /&gt;&lt;br /&gt;Once &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/debian/&quot; target=&quot;_blank&quot;&gt;you have installed docker&lt;/a&gt; (&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-9&quot; target=&quot;_blank&quot;&gt;extended tutorial for debian&lt;/a&gt;), you can download the latest Jenkins container by using&lt;br /&gt;&lt;pre class=&quot;brush: shell&quot;&gt;docker pull jenkins/jenkins:lts&lt;/pre&gt;&lt;br /&gt;Now run your container using&lt;br /&gt;&lt;pre class=&quot;brush: shell&quot;&gt;docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts&lt;/pre&gt;&lt;br /&gt;After the startup process your server is reachable via &lt;a href=&quot;http://localhost:8080/&quot;&gt;http://localhost:8080/&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;To manage containers use commands&lt;br /&gt;&lt;pre class=&quot;brush: shell&quot;&gt;docker container ls&lt;br /&gt;docker container stop &amp;lt;container name&amp;gt;&lt;br /&gt;&lt;/pre&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 1: Maven configuration&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;We will need &lt;a href=&quot;https://maven.apache.org/&quot; target=&quot;_blank&quot;&gt;maven &lt;/a&gt;installed and ready for creating the project, building and testing it, so make sure you have set it up correctly.&lt;br /&gt;&lt;br /&gt;Maven needs some configuration ready to learn about jenkins plugins, therefore you need to adapt the configuration file slightly. On linux change &lt;i&gt;~/.m2/settings.xml&lt;/i&gt;, on windows modify/create &lt;i&gt;%USERPROFILE%\.m2\settings.xml&lt;/i&gt; and set following content:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;&amp;lt;settings&amp;gt;&lt;br /&gt; &amp;lt;pluginGroups&amp;gt;&lt;br /&gt;  &amp;lt;pluginGroup&amp;gt;org.jenkins-ci.tools&amp;lt;/pluginGroup&amp;gt;&lt;br /&gt; &amp;lt;/pluginGroups&amp;gt;&lt;br /&gt;&lt;br /&gt; &amp;lt;profiles&amp;gt;&lt;br /&gt;  &amp;lt;!-- Give access to Jenkins plugins --&amp;gt;&lt;br /&gt;  &amp;lt;profile&amp;gt;&lt;br /&gt;   &amp;lt;id&amp;gt;jenkins&amp;lt;/id&amp;gt;&lt;br /&gt;   &amp;lt;activation&amp;gt;&lt;br /&gt;    &amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt;&lt;br /&gt;   &amp;lt;/activation&amp;gt;&lt;br /&gt;   &amp;lt;repositories&amp;gt;&lt;br /&gt;    &amp;lt;repository&amp;gt;&lt;br /&gt;     &amp;lt;id&amp;gt;repo.jenkins-ci.org&amp;lt;/id&amp;gt;&lt;br /&gt;     &amp;lt;url&amp;gt;https://repo.jenkins-ci.org/public/&amp;lt;/url&amp;gt;&lt;br /&gt;    &amp;lt;/repository&amp;gt;&lt;br /&gt;   &amp;lt;/repositories&amp;gt;&lt;br /&gt;   &amp;lt;pluginRepositories&amp;gt;&lt;br /&gt;    &amp;lt;pluginRepository&amp;gt;&lt;br /&gt;     &amp;lt;id&amp;gt;repo.jenkins-ci.org&amp;lt;/id&amp;gt;&lt;br /&gt;     &amp;lt;url&amp;gt;https://repo.jenkins-ci.org/public/&amp;lt;/url&amp;gt;&lt;br /&gt;    &amp;lt;/pluginRepository&amp;gt;&lt;br /&gt;   &amp;lt;/pluginRepositories&amp;gt;&lt;br /&gt;  &amp;lt;/profile&amp;gt;&lt;br /&gt; &amp;lt;/profiles&amp;gt;&lt;br /&gt; &amp;lt;mirrors&amp;gt;&lt;br /&gt;  &amp;lt;mirror&amp;gt;&lt;br /&gt;   &amp;lt;id&amp;gt;repo.jenkins-ci.org&amp;lt;/id&amp;gt;&lt;br /&gt;   &amp;lt;url&amp;gt;https://repo.jenkins-ci.org/public/&amp;lt;/url&amp;gt;&lt;br /&gt;   &amp;lt;mirrorOf&amp;gt;m.g.o-public&amp;lt;/mirrorOf&amp;gt;&lt;br /&gt;  &amp;lt;/mirror&amp;gt;&lt;br /&gt; &amp;lt;/mirrors&amp;gt;&lt;br /&gt;&amp;lt;/settings&amp;gt;&lt;/pre&gt;&lt;br /&gt;&lt;b&gt;Hint:&lt;/b&gt; On windows I had to remove the settings file &lt;i&gt;&amp;lt;maven install folder&amp;gt;\conf\settings.xml&lt;/i&gt; as it was used in favor of my profile settings.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 2: Create the plugin skeleton&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;To create the initial project open a shell and execute:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn archetype:generate -Dfilter=io.jenkins.archetypes:empty-plugin&lt;/pre&gt;You will be asked some questions how your plugin should be configurated: &lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;[INFO] Scanning for projects...&lt;br /&gt;[INFO]                                                                         &lt;br /&gt;[INFO] ------------------------------------------------------------------------&lt;br /&gt;[INFO] Building Maven Stub Project (No POM) 1&lt;br /&gt;[INFO] ------------------------------------------------------------------------&lt;br /&gt;[INFO] &lt;br /&gt;[INFO] &amp;gt;&amp;gt;&amp;gt; maven-archetype-plugin:3.0.1:generate (default-cli) &amp;gt; generate-sources @ standalone-pom &amp;gt;&amp;gt;&amp;gt;&lt;br /&gt;[INFO] &lt;br /&gt;[INFO] &amp;lt;&amp;lt;&amp;lt; maven-archetype-plugin:3.0.1:generate (default-cli) &amp;lt; generate-sources @ standalone-pom &amp;lt;&amp;lt;&amp;lt;&lt;br /&gt;[INFO] &lt;br /&gt;[INFO] --- maven-archetype-plugin:3.0.1:generate (default-cli) @ standalone-pom ---&lt;br /&gt;[INFO] Generating project in Interactive mode&lt;br /&gt;[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)&lt;br /&gt;Choose archetype:&lt;br /&gt;1: remote -&amp;gt; io.jenkins.archetypes:empty-plugin (Skeleton of a Jenkins plugin with a POM and an empty source tree.)&lt;br /&gt;Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 1&lt;br /&gt;Choose io.jenkins.archetypes:empty-plugin version: &lt;br /&gt;1: 1.0&lt;br /&gt;2: 1.1&lt;br /&gt;3: 1.2&lt;br /&gt;4: 1.3&lt;br /&gt;5: 1.4&lt;br /&gt;Choose a number: 5: &lt;br /&gt;[INFO] Using property: groupId = unused&lt;br /&gt;Define value for property 'artifactId': builder.hello&lt;br /&gt;Define value for property 'version' 1.0-SNAPSHOT: : &lt;br /&gt;[INFO] Using property: package = unused&lt;br /&gt;Confirm properties configuration:&lt;br /&gt;groupId: unused&lt;br /&gt;artifactId: builder.hello&lt;br /&gt;version: 1.0-SNAPSHOT&lt;br /&gt;package: unused&lt;br /&gt; Y: : &lt;br /&gt;[INFO] ----------------------------------------------------------------------------&lt;br /&gt;[INFO] Using following parameters for creating project from Archetype: empty-plugin:1.4&lt;br /&gt;[INFO] ----------------------------------------------------------------------------&lt;br /&gt;[INFO] Parameter: groupId, Value: unused&lt;br /&gt;[INFO] Parameter: artifactId, Value: builder.hello&lt;br /&gt;[INFO] Parameter: version, Value: 1.0-SNAPSHOT&lt;br /&gt;[INFO] Parameter: package, Value: unused&lt;br /&gt;[INFO] Parameter: packageInPathFormat, Value: unused&lt;br /&gt;[INFO] Parameter: version, Value: 1.0-SNAPSHOT&lt;br /&gt;[INFO] Parameter: package, Value: unused&lt;br /&gt;[INFO] Parameter: groupId, Value: unused&lt;br /&gt;[INFO] Parameter: artifactId, Value: builder.hello&lt;br /&gt;[INFO] Project created from Archetype in dir: ~/Eclipse/codeandme.blogspot.com/ws/builder.hello&lt;br /&gt;[INFO] ------------------------------------------------------------------------&lt;br /&gt;[INFO] BUILD SUCCESS&lt;br /&gt;[INFO] ------------------------------------------------------------------------&lt;br /&gt;[INFO] Total time: 36.202 s&lt;br /&gt;[INFO] Finished at: 2018-11-27T20:34:15+01:00&lt;br /&gt;[INFO] Final Memory: 16M/169M&lt;br /&gt;[INFO] ------------------------------------------------------------------------&lt;br /&gt;&lt;/pre&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;We just created the basic skeleton files and could start working right away. But as we want to do it the eclipse way we need to convert the project to a proper eclipse project. Therefore change into the created project directory and execute:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn -DdownloadSources=true -DdownloadJavadocs=true -DoutputDirectory=target/eclipse-classes eclipse:eclipse&lt;/pre&gt;&lt;br /&gt;The first run might take some time as maven has to fetch tons of dependencies. So sit back and enjoy the show...&lt;br /&gt;&lt;br /&gt;Once this step is done we can import our project using the Eclipse import wizard using &lt;i&gt;File / Import...&lt;/i&gt; and then select&lt;i&gt; General/Existing Projects into Workspace&lt;/i&gt;. On the following page select the project folder that was created by maven.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 3: Update configuration files&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;The created &lt;i&gt;pom.xml&lt;/i&gt; file for our plugin provides a good starting point for development. Typically you might want to update it a little before you actually start coding. Fields like &lt;i&gt;name&lt;/i&gt;, &lt;i&gt;description&lt;/i&gt;, &lt;i&gt;license &lt;/i&gt;should be pretty clear. More interesting is&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;    &amp;lt;properties&amp;gt;&lt;br /&gt;        &amp;lt;jenkins.version&amp;gt;2.7.3&amp;lt;/jenkins.version&amp;gt;&lt;br /&gt;        &amp;lt;java.level&amp;gt;7&amp;lt;/java.level&amp;gt;&lt;br /&gt;    &amp;lt;/properties&amp;gt;&lt;/pre&gt;Upgrading the java level to 8 should be pretty safe these days. Further Jenkins 2.7.3 is really outdated. To check out which versions are available you may browse the &lt;a href=&quot;https://repo.jenkins-ci.org/webapp/#/artifacts/browse/tree/General/releases/org/jenkins-ci/main/jenkins-war&quot; target=&quot;_blank&quot;&gt;jenkins artifactory server&lt;/a&gt;. Open the &lt;i&gt;jenkins-war&lt;/i&gt; node and search for a version you would like to use.&lt;br /&gt;&lt;br /&gt;I further adapt the &lt;i&gt;.project&lt;/i&gt; file and remove the &lt;i&gt;groovyNature&lt;/i&gt; as this would trigger install requests for groovy support in eclipse. As we are going to write java code, we do not need groovy.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 4: Build &amp;amp; Deploy the Plugin&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;To build your plugin simply run&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn package&lt;/pre&gt;This will build and test your package. Further it creates an installable *.hpi package in the &lt;i&gt;com.codeandme.jenkins.helloworld/target&lt;/i&gt; folder.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Step 5: Test the plugin in a test instance&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;To see your plugin in action you might want to execute it in a test instance of Jenkins. Maven will help us to set this up:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;mvn hpi:run -Djetty.port=8090&lt;/pre&gt;After the boot phase, open up your browser and point to &lt;a href=&quot;http://localhost:8090/jenkins&quot;&gt;http://localhost:8090/jenkins&lt;/a&gt; to access your test instance.&lt;br /&gt;&lt;br /&gt;Debugging is also quite simple, just add environment settings to setup your remote debugger. On Windows this would be:&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n&lt;/pre&gt;On Linux use&lt;br /&gt;&lt;pre class=&quot;brush: xml&quot;&gt;export MAVEN_OPTS=&quot;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n&quot;&lt;/pre&gt;Then you should be able to setup a &lt;i&gt;Remote Java Application&lt;/i&gt; debug configuration in Eclipse.&lt;br /&gt;&lt;br /&gt;Writing a simple builder will be our next step, stay tuned for the next tutorial.</description>
+	<pubDate>Tue, 11 Dec 2018 15:09:30 +0000</pubDate>
+	<author>noreply@blogger.com (Christian Pontesegger)</author>
+</item>
+<item>
+	<title>vert.x project: HTTP response validation with the Vert.x Web Client</title>
+	<guid isPermaLink="true">https://vertx.io/blog/http-response-validation-with-the-vert-x-web-client</guid>
+	<link>https://vertx.io/blog/http-response-validation-with-the-vert-x-web-client</link>
+	<description>&lt;article&gt;&lt;p&gt;By default, a &lt;a href=&quot;http://vertx.io/docs/vertx-web-client/java/&quot;&gt;Vert.x Web Client&lt;/a&gt; request ends with an error only if something wrong happens at the network level.
+In other words, a &lt;code&gt;404 Not Found&lt;/code&gt; response, or a response with the wrong content type, are &lt;strong&gt;not&lt;/strong&gt; considered as failures.&lt;/p&gt;
+&lt;p&gt;Hence, you would usually perform sanity checks manually after the response is received:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;client
+  .get(&lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;myserver.mycompany.com&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;/some-uri&quot;&lt;/span&gt;)
+  .send(ar -&amp;gt; {
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (ar.succeeded()) {
+      &lt;span class=&quot;hljs-type&quot;&gt;HttpResponse&lt;/span&gt;&amp;lt;&lt;span class=&quot;hljs-type&quot;&gt;Buffer&lt;/span&gt;&amp;gt; response = ar.&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;();
+      &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (response.statusCode() == &lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt; &amp;amp;&amp;amp; response.getHeader(&lt;span class=&quot;hljs-string&quot;&gt;&quot;content-type&quot;&lt;/span&gt;).equals(&lt;span class=&quot;hljs-string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;)) {
+        // &lt;span class=&quot;hljs-type&quot;&gt;Decode&lt;/span&gt; the body &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; a json &lt;span class=&quot;hljs-keyword&quot;&gt;object&lt;/span&gt;
+        &lt;span class=&quot;hljs-type&quot;&gt;JsonObject&lt;/span&gt; body = response.bodyAsJsonObject();
+      } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+        &lt;span class=&quot;hljs-type&quot;&gt;System&lt;/span&gt;.&lt;span class=&quot;hljs-keyword&quot;&gt;out&lt;/span&gt;.println(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Something went wrong &quot;&lt;/span&gt; + response.statusCode());
+      }
+    } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;hljs-type&quot;&gt;System&lt;/span&gt;.&lt;span class=&quot;hljs-keyword&quot;&gt;out&lt;/span&gt;.println(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Something went wrong &quot;&lt;/span&gt; + ar.cause().getMessage());
+    }
+  });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Starting with &lt;a href=&quot;http://vertx.io/blog/eclipse-vert-x-3-6-0-released/&quot;&gt;Vert.x 3.6&lt;/a&gt;, you can can trade flexibility for clarity and conciseness using &lt;em&gt;response predicates&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;response-predicates&quot;&gt;Response predicates&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://vertx.io/docs/apidocs/io/vertx/ext/web/client/predicate/ResponsePredicate.html&quot;&gt;Response predicates&lt;/a&gt; can fail a request when the response does not match criterion.&lt;/p&gt;
+&lt;p&gt;The Web Client module comes with a set of ready-to-use predicates:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;client
+  .get(&lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;myserver.mycompany.com&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;/some-uri&quot;&lt;/span&gt;)
+  .expect(&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.&lt;span class=&quot;hljs-type&quot;&gt;SC_SUCCESS&lt;/span&gt;)
+  .expect(&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.&lt;span class=&quot;hljs-type&quot;&gt;JSON&lt;/span&gt;)
+  .send(ar -&amp;gt; {
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (ar.succeeded()) {
+      &lt;span class=&quot;hljs-type&quot;&gt;HttpResponse&lt;/span&gt;&amp;lt;&lt;span class=&quot;hljs-type&quot;&gt;Buffer&lt;/span&gt;&amp;gt; response = ar.&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;();
+      // &lt;span class=&quot;hljs-type&quot;&gt;Safely&lt;/span&gt; decode the body &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; a json &lt;span class=&quot;hljs-keyword&quot;&gt;object&lt;/span&gt;
+      &lt;span class=&quot;hljs-type&quot;&gt;JsonObject&lt;/span&gt; body = response.bodyAsJsonObject();
+    } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+      &lt;span class=&quot;hljs-type&quot;&gt;System&lt;/span&gt;.&lt;span class=&quot;hljs-keyword&quot;&gt;out&lt;/span&gt;.println(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Something went wrong &quot;&lt;/span&gt; + ar.cause().getMessage());
+    }
+  });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The web is full of HTTP/JSON endpoints, so there is no doubt the &lt;code&gt;ResponsePredicate.SC_SUCCESS&lt;/code&gt; and &lt;code&gt;ResponsePredicate.JSON&lt;/code&gt; can be handy.&lt;/p&gt;
+&lt;p&gt;Nevertheless, you might also need to check that the status code is whithin a specific range:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;client
+  .&lt;span class=&quot;hljs-keyword&quot;&gt;get&lt;/span&gt;(&lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;myserver.mycompany.com&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;/some-uri&quot;&lt;/span&gt;)
+  .expect(ResponsePredicate.status(&lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;202&lt;/span&gt;))
+  .send(ar -&amp;gt; {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// ....&lt;/span&gt;
+  });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or that the content is of a specific type: &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;client
+  .&lt;span class=&quot;hljs-keyword&quot;&gt;get&lt;/span&gt;(&lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;myserver.mycompany.com&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;/some-uri&quot;&lt;/span&gt;)
+  .expect(ResponsePredicate.contentType(&lt;span class=&quot;hljs-string&quot;&gt;&quot;some/content-type&quot;&lt;/span&gt;))
+  .send(ar -&amp;gt; {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// ....&lt;/span&gt;
+  });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please refer to the &lt;a href=&quot;http://vertx.io/docs/apidocs/io/vertx/ext/web/client/predicate/ResponsePredicate.html&quot;&gt;&lt;code&gt;ResponsePredicate&lt;/code&gt; documentation&lt;/a&gt; for a full list of predefined predicates.&lt;/p&gt;
+&lt;h3 id=&quot;custom-predicates&quot;&gt;Custom predicates&lt;/h3&gt;
+&lt;p&gt;Eventually, predicates were not designed for status code and content type checking only, so feel free to create your own validation code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// Check CORS header allowing to do POST&lt;/span&gt;
+Function&lt;span class=&quot;hljs-subst&quot;&gt;&amp;lt;&lt;/span&gt;HttpResponse&lt;span class=&quot;hljs-subst&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;hljs-literal&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;hljs-subst&quot;&gt;&amp;gt;&lt;/span&gt;, ResponsePredicateResult&lt;span class=&quot;hljs-subst&quot;&gt;&amp;gt;&lt;/span&gt; methodsPredicate &lt;span class=&quot;hljs-subst&quot;&gt;=&lt;/span&gt; resp &lt;span class=&quot;hljs-subst&quot;&gt;-&amp;gt; &lt;/span&gt;{
+  &lt;span class=&quot;hljs-built_in&quot;&gt;String&lt;/span&gt; methods &lt;span class=&quot;hljs-subst&quot;&gt;=&lt;/span&gt; resp&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;getHeader(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Access-Control-Allow-Methods&quot;&lt;/span&gt;);
+  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (methods &lt;span class=&quot;hljs-subst&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;null&lt;/span&gt;) {
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (methods&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;contains(&lt;span class=&quot;hljs-string&quot;&gt;&quot;POST&quot;&lt;/span&gt;)) {
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; ResponsePredicateResult&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;success();
+    }
+  }
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; ResponsePredicateResult&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;failure(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Does not work&quot;&lt;/span&gt;);
+};
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// Send pre-flight CORS request&lt;/span&gt;
+client
+  &lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;request(HttpMethod&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;OPTIONS, &lt;span class=&quot;hljs-number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;myserver.mycompany.com&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;/some-uri&quot;&lt;/span&gt;)
+  &lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;putHeader(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Origin&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;Server-b.com&quot;&lt;/span&gt;)
+  &lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;putHeader(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Access-Control-Request-Method&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;POST&quot;&lt;/span&gt;)
+  &lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;expect(methodsPredicate)
+  &lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;send(ar &lt;span class=&quot;hljs-subst&quot;&gt;-&amp;gt; &lt;/span&gt;{
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (ar&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;succeeded()) {
+      &lt;span class=&quot;hljs-comment&quot;&gt;// Process the POST request now&lt;/span&gt;
+    } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+      System&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;println(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Something went wrong &quot;&lt;/span&gt; &lt;span class=&quot;hljs-subst&quot;&gt;+&lt;/span&gt; ar&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;cause()&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;getMessage());
+    }
+  });&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that response predicates are evaluated &lt;em&gt;before&lt;/em&gt; the response body is received.
+Therefore &lt;strong&gt;you can’t inspect the response body&lt;/strong&gt; in a predicate test function, only status code, status message and response headers.&lt;/p&gt;
+&lt;h2 id=&quot;dealing-with-failures&quot;&gt;Dealing with failures&lt;/h2&gt;
+&lt;p&gt;By default, response predicates (including the predefined ones) use a generic error converter which discards the response body and conveys a simple message.
+You can customize the exception class by changing the error converter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt; predicate = &lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.create(&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.&lt;span class=&quot;hljs-type&quot;&gt;SC_SUCCESS&lt;/span&gt;, &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; -&amp;gt; {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; new &lt;span class=&quot;hljs-type&quot;&gt;MyCustomException&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;.message());
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Beware that creating exceptions in Java comes with the &lt;strong&gt;performance cost&lt;/strong&gt; of capturing the call stack.
+The generic error converter generates exceptions that do not capture it.&lt;/p&gt;
+&lt;h3 id=&quot;reading-details-in-error-responses&quot;&gt;Reading details in error responses&lt;/h3&gt;
+&lt;p&gt;Many web APIs provide details in error responses.
+For example, the &lt;a href=&quot;https://developer.marvel.com/docs&quot;&gt;Marvel API&lt;/a&gt; uses this JSON object format:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;{
+  &quot;&lt;span class=&quot;hljs-attribute&quot;&gt;code&lt;/span&gt;&quot;: &lt;span class=&quot;hljs-value&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&quot;InvalidCredentials&quot;&lt;/span&gt;&lt;/span&gt;,
+  &quot;&lt;span class=&quot;hljs-attribute&quot;&gt;message&lt;/span&gt;&quot;: &lt;span class=&quot;hljs-value&quot;&gt;&lt;span class=&quot;hljs-string&quot;&gt;&quot;The passed API key is invalid.&quot;&lt;/span&gt;
+&lt;/span&gt;}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To avoid losing this information, it is possible to wait for the response body to be fully received before the error converter is called:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-type&quot;&gt;ErrorConverter&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;converter&lt;/span&gt; = &lt;span class=&quot;hljs-type&quot;&gt;ErrorConverter&lt;/span&gt;.createFullBody(&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; -&amp;gt; {
+
+  // &lt;span class=&quot;hljs-type&quot;&gt;Invoked&lt;/span&gt; after the response body &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; fully received
+  &lt;span class=&quot;hljs-type&quot;&gt;HttpResponse&lt;/span&gt;&amp;lt;&lt;span class=&quot;hljs-type&quot;&gt;Buffer&lt;/span&gt;&amp;gt; response = &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;.response();
+
+  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (response.getHeader(&lt;span class=&quot;hljs-string&quot;&gt;&quot;content-type&quot;&lt;/span&gt;).equals(&lt;span class=&quot;hljs-string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;)) {
+    // &lt;span class=&quot;hljs-type&quot;&gt;Error&lt;/span&gt; body &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;hljs-type&quot;&gt;JSON&lt;/span&gt; data
+    &lt;span class=&quot;hljs-type&quot;&gt;JsonObject&lt;/span&gt; body = response.bodyAsJsonObject();
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; new &lt;span class=&quot;hljs-type&quot;&gt;MyCustomException&lt;/span&gt;(body.getString(&lt;span class=&quot;hljs-string&quot;&gt;&quot;code&quot;&lt;/span&gt;), body.getString(&lt;span class=&quot;hljs-string&quot;&gt;&quot;message&quot;&lt;/span&gt;));
+  }
+
+  // &lt;span class=&quot;hljs-type&quot;&gt;Fallback&lt;/span&gt; to defaut message
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; new &lt;span class=&quot;hljs-type&quot;&gt;MyCustomException&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;.message());
+});
+
+&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt; predicate = &lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.create(&lt;span class=&quot;hljs-type&quot;&gt;ResponsePredicate&lt;/span&gt;.&lt;span class=&quot;hljs-type&quot;&gt;SC_SUCCESS&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;converter&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s it! Feel free to comment here or ask questions on our &lt;a href=&quot;http://vertx.io/community&quot;&gt;community channels&lt;/a&gt;.&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>vert.x project: The RSS reader tutorial. Step 3.</title>
+	<guid isPermaLink="true">https://vertx.io/blog/the-rss-reader-tutorial-step-3</guid>
+	<link>https://vertx.io/blog/the-rss-reader-tutorial-step-3</link>
+	<description>&lt;article&gt;&lt;h1 id=&quot;quick-recap&quot;&gt;Quick recap&lt;/h1&gt;
+&lt;p&gt;Now that &lt;a href=&quot;https://vertx.io/blog/eclipse-vert-x-3-6-0-released/&quot;&gt;Vert.x 3.6.0 has been released&lt;/a&gt;, it’s the perfect time to conclude our &lt;a href=&quot;https://vertx.io/docs/vertx-cassandra-client/java/&quot;&gt;Vert.x Cassandra Client&lt;/a&gt; tutorial!&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&quot;https://vertx.io/blog/the-rss-reader-tutorial-step-2/&quot;&gt;the previous step&lt;/a&gt; we have successfully implemented the second endpoint 
+of the RSS reader app.&lt;/p&gt;
+&lt;p&gt;The RSS reader example assumes implementing 3 endpoints. This article is dedicated to implementing the last &lt;code&gt;GET /articles/by_rss_link?link={rss_link}&lt;/code&gt; endpoint.&lt;/p&gt;
+&lt;p&gt;Before completing this step, make sure your are in the &lt;code&gt;step_3&lt;/code&gt; git branch:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs bash&quot;&gt;git checkout step_3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;implementing-the-3rd-endpoint&quot;&gt;Implementing the 3rd endpoint&lt;/h1&gt;
+&lt;p&gt;The 3rd endpoint serves a list of articles, related to a specific RSS channel. In a request, we specify RSS channel by providing a link. On the application side, after receiving a request we execute the following query:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;SELECT&lt;/span&gt; title, article_link, description, pubDate &lt;span class=&quot;hljs-keyword&quot;&gt;FROM&lt;/span&gt; articles_by_rss_link &lt;span class=&quot;hljs-keyword&quot;&gt;WHERE&lt;/span&gt; rss_link = RSS_LINK_FROM_REQUEST ;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;implementation&quot;&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;For obtaining articles by RSS link we need to prepare a related statement first. Change &lt;code&gt;AppVerticle#prepareSelectArticlesByRssLink&lt;/code&gt; in this way:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;private&lt;/span&gt; Future &lt;span class=&quot;hljs-title&quot;&gt;prepareSelectArticlesByRssLink&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;{
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; Util.prepareQueryAndSetReference(client,
+            &lt;span class=&quot;hljs-string&quot;&gt;&quot;SELECT title, article_link, description, pubDate FROM articles_by_rss_link WHERE rss_link = ? ;&quot;&lt;/span&gt;,
+            selectArticlesByRssLink
+    );
+}&lt;/code&gt;&lt;/pre&gt; 
+
+&lt;p&gt;And now, we can implement the &lt;code&gt;AppVerticle#getArticles&lt;/code&gt; method. Basically, it will use the &lt;code&gt;selectArticlesByRssLink&lt;/code&gt; statement for finding articles by the given link. Here’s the implementation:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getArticles&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(RoutingContext ctx)&lt;/span&gt; &lt;/span&gt;{
+    String link = ctx.request().getParam(&lt;span class=&quot;hljs-string&quot;&gt;&quot;link&quot;&lt;/span&gt;);
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (link == &lt;span class=&quot;hljs-keyword&quot;&gt;null&lt;/span&gt;) {
+        responseWithInvalidRequest(ctx);
+    } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+        client.executeWithFullFetch(selectArticlesByRssLink.bind(link), handler -&amp;gt; {
+            &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (handler.succeeded()) {
+                List rows = handler.result();
+
+                JsonObject responseJson = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject();
+                JsonArray articles = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonArray();
+
+                rows.forEach(eachRow -&amp;gt; articles.add(
+                        &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject()
+                                .put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;title&quot;&lt;/span&gt;, eachRow.getString(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;))
+                                .put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;link&quot;&lt;/span&gt;, eachRow.getString(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;))
+                                .put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;description&quot;&lt;/span&gt;, eachRow.getString(&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;))
+                                .put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;pub_date&quot;&lt;/span&gt;, eachRow.getTimestamp(&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;).getTime())
+                ));
+
+                responseJson.put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;articles&quot;&lt;/span&gt;, articles);
+                ctx.response().end(responseJson.toString());
+            } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+                log.error(&lt;span class=&quot;hljs-string&quot;&gt;&quot;failed to get articles for &quot;&lt;/span&gt; + link, handler.cause());
+                ctx.response().setStatusCode(&lt;span class=&quot;hljs-number&quot;&gt;500&lt;/span&gt;).end(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Unable to retrieve the info from C*&quot;&lt;/span&gt;);
+            }
+        });
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;During the series we have showed how the RSS reader app can be implemented with &lt;a href=&quot;https://github.com/vert-x3/vertx-cassandra-client&quot;&gt;Vert.x Cassandra client&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for reading this. I hope you enjoyed reading this series. See you soon on our &lt;a href=&quot;https://gitter.im/eclipse-vertx/vertx-users&quot;&gt;Gitter channel&lt;/a&gt;!&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Tom Schindl: Slides from JavaFX-Days Zürich on e(fx)clipse APIs</title>
+	<guid isPermaLink="false">http://tomsondev.bestsolution.at/?p=5183</guid>
+	<link>https://tomsondev.bestsolution.at/2018/12/05/slides-from-javafx-days-zurich-on-efxclipse-apis/</link>
+	<description>&lt;p&gt;If you could not attend &lt;a href=&quot;https://www.javafx-days.com/&quot;&gt;my talk at the JavaFX-Days Zürich&lt;/a&gt; yesterday or you did and wanted to recap what you’ve presented. Here are the &lt;a href=&quot;https://tomsondev.bestsolution.at/2018/12/05/slides-from-javafx-days-zurich-on-efxclipse-apis/javafx-days/&quot; rel=&quot;attachment wp-att-5184&quot;&gt;slides&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I enjoyed the conference and I hope you did as well. See you next year!&lt;/p&gt;</description>
+	<pubDate>Wed, 05 Dec 2018 08:57:45 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Ditto: Using Eclipse Hono's Command&amp;Control with Eclipse Ditto</title>
+	<guid isPermaLink="true">https://www.eclipse.org/ditto/2018-12-05-example-command-and-control.html</guid>
+	<link>https://www.eclipse.org/ditto/2018-12-05-example-command-and-control.html</link>
+	<description>&lt;p&gt;With &lt;a href=&quot;https://www.eclipse.org/ditto/release_notes_080.html&quot;&gt;version 0.8.0&lt;/a&gt; Eclipse Ditto can now interact with Eclipse Hono using the 
+&lt;a href=&quot;https://www.eclipse.org/hono/concepts/command-and-control&quot;&gt;Command &amp;amp; Control&lt;/a&gt; feature. It is possible to send a 
+Thing (or Feature) message at the Ditto Message API, which is then forwarded to Hono as a 
+command message. Hono routes the message to the device, which in turn can send a response to the command including a 
+status, telling if the command was successfully processed or not. 
+This response is routed back via Hono to the Ditto Message API.&lt;/p&gt;
+
+&lt;p&gt;In this example we connect the &lt;a href=&quot;https://ditto.eclipse.org/&quot;&gt;Ditto sandbox&lt;/a&gt; and the 
+&lt;a href=&quot;https://www.eclipse.org/hono/sandbox/&quot;&gt;Hono sandbox&lt;/a&gt; to send a message (3) to a simulated device via the 
+Ditto Messages API. The device receives the command from the Hono HTTP Adapter and responds with a message (4) 
+that is routed back to the caller at the Ditto Message API (5). For the sake of simplicity we use simple curl 
+commands both for the Ditto and Hono HTTP APIs.&lt;/p&gt;
+
+&lt;p&gt;The following steps are covered in this example:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setup a connection between Eclipse Ditto and Hono sandboxes&lt;/li&gt;
+  &lt;li&gt;Signal availability of the device&lt;/li&gt;
+  &lt;li&gt;Send a Ditto message&lt;/li&gt;
+  &lt;li&gt;Device receives command and sends command response&lt;/li&gt;
+  &lt;li&gt;Caller receives response at Ditto Message API&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Command and Control&quot; src=&quot;https://www.eclipse.org/ditto/images/blog/2018-12-14-command-and-control.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;prerequisites-a-ditto-digital-twin-and-a-hono-device&quot;&gt;Prerequisites: A Ditto digital twin and a Hono device&lt;/h3&gt;
+
+&lt;p&gt;The creation of a Hono device and Ditto digital twin has already been covered in the blog post 
+&lt;a href=&quot;https://www.eclipse.org/ditto/2018-05-02-connecting-ditto-hono.html&quot;&gt;Connecting Eclipse Ditto to Eclipse Hono&lt;/a&gt;. For brevity we will just list the 
+required commands to create a twin/device here. For a detailed explanation of the steps please refer to the previous 
+post.&lt;/p&gt;
+
+&lt;h4 id=&quot;create-hono-device&quot;&gt;Create Hono device&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# setup a tenant&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;tenant-id&quot;: &quot;org.eclipse.ditto&quot;}'&lt;/span&gt; http://hono.eclipse.org:28080/tenant
+&lt;span class=&quot;c&quot;&gt;# create a device&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;device-id&quot;: &quot;org.eclipse.ditto:teapot&quot;}'&lt;/span&gt; http://hono.eclipse.org:28080/registration/org.eclipse.ditto
+&lt;span class=&quot;c&quot;&gt;# add device credentials&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ PWD_HASH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'teapot'&lt;/span&gt; | openssl dgst &lt;span class=&quot;nt&quot;&gt;-binary&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sha512&lt;/span&gt; | base64 &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; 0&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+  &quot;device-id&quot;: &quot;org.eclipse.ditto:teapot&quot;,
+  &quot;type&quot;: &quot;hashed-password&quot;,
+  &quot;auth-id&quot;: &quot;teapot&quot;,
+  &quot;secrets&quot;: [{
+      &quot;hash-function&quot; : &quot;sha-512&quot;,
+      &quot;pwd-hash&quot;: &quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD_HASH&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;
+  }]
+}'&lt;/span&gt; http://hono.eclipse.org:28080/credentials/org.eclipse.ditto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;create-ditto-digital-twin&quot;&gt;Create Ditto digital twin&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# create thing in Ditto&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; PUT &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; demo5:demo &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+    &quot;features&quot;: {
+      &quot;water&quot;: {
+        &quot;properties&quot;: {
+          &quot;temperature&quot;: 20
+        }
+      }
+    }
+}'&lt;/span&gt; https://ditto.eclipse.org/api/2/things/org.eclipse.ditto:teapot 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;setup-a-connection-for-command--control&quot;&gt;Setup a connection for Command &amp;amp; Control&lt;/h3&gt;
+&lt;p&gt;In order to forward Ditto Messages to the device as a Hono command we first need to setup and configure a 
+&lt;a href=&quot;https://www.eclipse.org/ditto/connectivity-manage-connections.html&quot;&gt;connection&lt;/a&gt; between Eclipse Ditto and Eclipse Hono that is prepared for 
+&lt;em&gt;Command &amp;amp; Control&lt;/em&gt; messages. According to the 
+&lt;a href=&quot;https://www.eclipse.org/hono/concepts/command-and-control&quot;&gt;Hono documentation&lt;/a&gt; 
+the connection must contain a target with the address &lt;code class=&quot;highlighter-rouge&quot;&gt;control/&amp;lt;tenant-id&amp;gt;/&amp;lt;device-id&amp;gt;&lt;/code&gt; 
+and a source with the address &lt;code class=&quot;highlighter-rouge&quot;&gt;control/&amp;lt;tenant-id&amp;gt;/&amp;lt;reply-identifier&amp;gt;&lt;/code&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;reply-identifier&lt;/code&gt; can be 
+chosen arbitrarily, but must be set as the &lt;code class=&quot;highlighter-rouge&quot;&gt;reply-to&lt;/code&gt; header of a command exactly as defined in the connection:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; devops:devopsPw1! &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+           &quot;targetActorSelection&quot;: &quot;/system/sharding/connection&quot;,
+           &quot;headers&quot;: {
+             &quot;aggregate&quot;: false
+           },
+           &quot;piggybackCommand&quot;: {
+             &quot;type&quot;: &quot;connectivity.commands:createConnection&quot;,
+             &quot;connection&quot;: {
+               &quot;id&quot;: &quot;command-and-control-connection&quot;,
+               &quot;connectionType&quot;: &quot;amqp-10&quot;,
+               &quot;connectionStatus&quot;: &quot;open&quot;,
+               &quot;uri&quot;: &quot;amqp://consumer%40HONO:verysecret@hono.eclipse.org:15672&quot;,
+               &quot;failoverEnabled&quot;: true,
+               &quot;sources&quot;: [{
+                   &quot;addresses&quot;: [
+                     &quot;control/org.eclipse.ditto/replies&quot;
+                   ],
+                   &quot;authorizationContext&quot;: [
+                     &quot;nginx:demo5&quot;
+                   ],
+                   &quot;headerMapping&quot;: {
+                     &quot;correlation-id&quot;: &quot;{{ header:correlation-id }}&quot;,
+                     &quot;status&quot;: &quot;{{ header:status }}&quot;
+                   }
+                 }
+               ],
+               &quot;targets&quot;: [{
+                   &quot;address&quot;: &quot;control/org.eclipse.ditto/{{ thing:id }}&quot;,
+                   &quot;authorizationContext&quot;: [
+                     &quot;nginx:demo5&quot;
+                   ],
+                   &quot;headerMapping&quot;: {
+                     &quot;correlation-id&quot;: &quot;{{ header:correlation-id }}&quot;,
+                     &quot;subject&quot;: &quot;{{ topic:subject }}&quot;,
+                     &quot;reply-to&quot;: &quot;control/org.eclipse.ditto/replies&quot;
+                   }
+                 }
+               ]
+             }
+           }
+         }'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    https://ditto.eclipse.org/devops/piggyback/connectivity?timeout&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As described in the 
+&lt;a href=&quot;https://www.eclipse.org/hono/api/command-and-control-api/#send-a-request-response-command&quot;&gt;Hono API description&lt;/a&gt; 
+a command message has three mandatory properties: &lt;code class=&quot;highlighter-rouge&quot;&gt;correlation-id&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;subject&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;reply-to&lt;/code&gt;, these are defined in the 
+target header mapping of the connection. 
+The source header mapping defines a mapping for &lt;code class=&quot;highlighter-rouge&quot;&gt;correlation-id&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;status&lt;/code&gt; to internal headers, they are required 
+to properly map the Hono command response to a Ditto message response.&lt;/p&gt;
+
+&lt;h3 id=&quot;signal-availability-of-device&quot;&gt;Signal availability of device&lt;/h3&gt;
+
+&lt;p&gt;As we are using the Hono HTTP Adapter to connect our device, send telemetry and receive commands, the designated way 
+is therefor to signal readiness to receive a command by specifying the &lt;code class=&quot;highlighter-rouge&quot;&gt;hono-ttd&lt;/code&gt; parameter on an arbitrary event (for 
+detailed description please consult the 
+[Hono HTTP Adapter] (https://www.eclipse.org/hono/user-guide/http-adapter/#specifying-the-time-a-device-will-wait-for-a-response) 
+guide).&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; teapot@org.eclipse.ditto:teapot &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hono-ttd: 60'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+           &quot;topic&quot;: &quot;org.eclipse.ditto/teapot/things/twin/commands/modify&quot;,
+           &quot;path&quot;: &quot;/features/water/properties/temperature&quot;,
+           &quot;value&quot;: 23
+         }'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     http://hono.eclipse.org:8080/telemetry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The request is now open to receive a command for 60 seconds before it is terminated.&lt;/p&gt;
+
+&lt;h3 id=&quot;send-a-ditto-message&quot;&gt;Send a Ditto message&lt;/h3&gt;
+
+&lt;p&gt;Now we can use the &lt;a href=&quot;https://www.eclipse.org/ditto/protocol-specification-things-messages.html#using-the-messages-api&quot;&gt;Ditto Messages API&lt;/a&gt; to send a 
+message to the device waiting for a command:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;s1&quot;&gt;'https://ditto.eclipse.org/api/2/things/org.eclipse.ditto:teapot/inbox/messages/brew?timeout=60'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; demo5:demo &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'x-correlation-id: command-and-control'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;targetTemperature&quot;:85}'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;device-receives-the-command&quot;&gt;Device receives the command&lt;/h3&gt;
+
+&lt;p&gt;The message is forwarded to Hono as configured in the connection and finally terminates the pending request we opened 
+before with a status code of &lt;code class=&quot;highlighter-rouge&quot;&gt;200 OK&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTTP/1.1 200 OK
+hono-command: brew
+hono-cmd-req-id: 013command-and-controlreplies
+Content-Type: application/octet-stream
+Content-Length: 17
+Connection: Keep-Alive
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hono adds two headers besides the standard HTTP headers: &lt;code class=&quot;highlighter-rouge&quot;&gt;hono-command&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;hono-cmd-req-id&lt;/code&gt;. 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;hono-command&lt;/code&gt; contains the subject of the message and &lt;code class=&quot;highlighter-rouge&quot;&gt;hono-cmd-req-id&lt;/code&gt; identifies the messages and is used to 
+correlate the request and the response we are now going to send.&lt;/p&gt;
+
+&lt;h3 id=&quot;device-sends-a-command-response&quot;&gt;Device sends a command response&lt;/h3&gt;
+
+&lt;p&gt;We use the header value of &lt;code class=&quot;highlighter-rouge&quot;&gt;hono-cmd-req-id&lt;/code&gt; to construct the response address: 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;http://hono.eclipse.org:8080/control/res/013command-and-controlreplies&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Another curl command completes the roundtrip with a response from the simulated device:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; teapot@org.eclipse.ditto:teapot &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hono-cmd-status: 200'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+           &quot;topic&quot;: &quot;org.eclipse.ditto/teapot/things/live/messages/brew&quot;,
+           &quot;headers&quot;: {
+             &quot;content-type&quot;: &quot;application/json&quot;,
+             &quot;correlation-id&quot;: &quot;command-and-control&quot;
+           },
+           &quot;path&quot;: &quot;/inbox/messages/brew&quot;,
+           &quot;value&quot;: { &quot;eta&quot;: 56},
+           &quot;status&quot;: 200
+         }'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     http://hono.eclipse.org:8080/control/res/013command-and-controlreplies
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;message-response-is-received-at-ditto-message-api&quot;&gt;Message response is received at Ditto Message API&lt;/h3&gt;
+&lt;p&gt;And finally we receive the command response at the Ditto Message API where we sent the original message:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTTP/1.1 200 OK
+correlation-id: command-and-control
+message-id: command-and-control
+status: 200
+Content-Type: application/json
+Content-Length: 10
+
+{&quot;eta&quot;:56}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;alternative-receive-command-and-send-response-via-mqtt&quot;&gt;Alternative: Receive command and send response via MQTT&lt;/h3&gt;
+
+&lt;p&gt;Alternatively we can also receive the command by subscribing to the MQTT topic &lt;code class=&quot;highlighter-rouge&quot;&gt;control/+/+/req/#&lt;/code&gt; at the 
+&lt;a href=&quot;https://www.eclipse.org/hono/user-guide/mqtt-adapter/#command-control&quot;&gt;Hono MQTT Adapter&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mosquitto_sub &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; hono.eclipse.org &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8883 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'teapot@org.eclipse.ditto'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; teapot &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'control/+/+/req/#'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And also publish the command response on the MQTT topic &lt;code class=&quot;highlighter-rouge&quot;&gt;control///res/013command-and-controlreplies/200&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mosquitto_pub &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; hono.eclipse.org &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8883 &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'teapot@org.eclipse.ditto'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; teapot &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; control///res/013command-and-controlreplies/200 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{
+                    &quot;topic&quot;: &quot;org.eclipse.ditto/teapot/things/live/messages/brew&quot;,
+                    &quot;headers&quot;: {
+                      &quot;content-type&quot;: &quot;application/json&quot;,
+                      &quot;correlation-id&quot;: &quot;command-and-control&quot;
+                    },
+                    &quot;path&quot;: &quot;/inbox/messages/brew&quot;,
+                    &quot;value&quot;: {
+                      &quot;eta&quot;: 58
+                    },
+                    &quot;status&quot;: 200
+                  }'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you have any wishes, improvements, are missing something
+or just want to get in touch with us, you can use one of
+our &lt;a href=&quot;https://www.eclipse.org/ditto/feedback.html&quot;&gt;feedback channels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;&lt;img alt=&quot;Ditto&quot; class=&quot;docimage&quot; src=&quot;https://www.eclipse.org/ditto/images/ditto.svg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;–&lt;br /&gt;
+The Eclipse Ditto team&lt;/p&gt;</description>
+	<pubDate>Wed, 05 Dec 2018 05:00:00 +0000</pubDate>
+</item>
+
+</channel>
+</rss>
