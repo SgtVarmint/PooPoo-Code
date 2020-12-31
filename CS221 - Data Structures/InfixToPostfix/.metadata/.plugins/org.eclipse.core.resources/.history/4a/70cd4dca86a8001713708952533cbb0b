@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class InfixToPostfix {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int i=0;
+		operatorStack stack=new operatorStack<Character>();
+		operandStack operandStack=new operandStack<Double>();
+
+		
+		System.out.print("Enter infix notation: ");
+		String infixExp=in.next();
+		
+		boolean isDigit;
+		if(Character.isDigit(infixExp.charAt(i)))
+			isDigit=true;
+		else
+			isDigit=false;
+		
+		System.out.println(isDigit);
+		
+		while(i<infixExp.length()){
+			if(Character.isDigit(infixExp.charAt(i)))//if the char at the index is a digit
+				operandStack.push(infixExp.charAt(i));//pushes operators onto operatorStack
+			
+			
+		}
+		
+		System.out.println(infixExp);
+
+	}
+}

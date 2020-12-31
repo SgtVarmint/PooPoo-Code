@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class test {
+	public static void main(String[] args){
+		Scanner in=new Scanner(System.in);
+
+		String test="-145.0125";
+		
+		if(Character.isDigit(test.charAt(4)))
+			System.out.println("OK");
+		else
+			System.out.println("NOK");
+
+	}
+
+}

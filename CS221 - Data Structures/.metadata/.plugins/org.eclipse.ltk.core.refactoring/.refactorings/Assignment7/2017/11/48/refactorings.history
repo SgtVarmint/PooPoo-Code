@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;sortedValues&apos; in &apos;Sorting.merge(...)&apos; to &apos;values&apos;&#x0D;&#x0A;- Original project: &apos;Assignment7&apos;&#x0D;&#x0A;- Original element: &apos;Sorting.merge(int[], int[], int[]).sortedValues&apos;&#x0D;&#x0A;- Renamed element: &apos;sortedValues&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;sortedValues&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Sorting.java[Sorting~merge~\[I~\[I~\[I@sortedValues!2447!2464!2453!2464!\[I!0!true" name="values" references="true" stamp="1511973891504" version="1.0"/>
+</session>

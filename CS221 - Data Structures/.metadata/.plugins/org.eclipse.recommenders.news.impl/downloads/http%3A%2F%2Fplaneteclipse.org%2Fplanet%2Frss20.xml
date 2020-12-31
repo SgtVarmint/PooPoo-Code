@@ -1,0 +1,713 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Eclipse</title>
+	<link>http://planeteclipse.org/planet/</link>
+	<language>en</language>
+	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
+
+<item>
+	<title>Eclipse Announcements: Eclipse Foundation Announces 2018 Board Member Election Results</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/yj4XVjcSRCM/20180307-boardelectionresults2018.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/yj4XVjcSRCM/20180307-boardelectionresults2018.php</link>
+	<description>Today we are please to announce the results of the Eclipse Foundation Sustaining Member and Committer Member elections.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/yj4XVjcSRCM&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 23:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Chris Aniszczyk: CNCF Annual Report for 2017 and Kubernetes Graduation</title>
+	<guid isPermaLink="false">http://aniszczyk.org/?p=4208</guid>
+	<link>http://aniszczyk.org/2018/03/07/cncf-annual-report-for-2017-and-kubernetes-graduation/</link>
+	<description>&lt;p&gt;We recently published the &lt;a href=&quot;https://www.cncf.io/wp-content/uploads/2018/03/CNCF-Annual-Report-2017.pdf&quot;&gt;first annual report&lt;/a&gt; for the &lt;a href=&quot;https://cncf.io&quot;&gt;Cloud Native Computing Foundation (CNCF)&lt;/a&gt; which encompassed our community’s work in 2017:&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;&lt;img alt=&quot;⚡&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/26a1.png&quot; style=&quot;height: 1em;&quot; /&gt; happy to have us publish our first annual report for &lt;a href=&quot;https://twitter.com/CloudNativeFdn?ref_src=twsrc%5Etfw&quot;&gt;@CloudNativeFdn&lt;/a&gt;, we will continue to do this annually from now on! &lt;a href=&quot;https://t.co/9nwvBMoN10&quot;&gt;https://t.co/9nwvBMoN10&lt;/a&gt; &lt;a href=&quot;https://t.co/n3La6Y55Jz&quot;&gt;pic.twitter.com/n3La6Y55Jz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Chris Aniszczyk (@cra) &lt;a href=&quot;https://twitter.com/cra/status/970824589646364674?ref_src=twsrc%5Etfw&quot;&gt;March 6, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;The CNCF is technically a little over two years old and it was about time we start publishing annual reports based on our progress. This is a well treaded path by other open source foundations out there like the &lt;a href=&quot;https://www.eclipse.org/org/foundation/reports/annual_report.php&quot;&gt;Eclipse Foundation&lt;/a&gt; and &lt;a href=&quot;https://www.mozilla.org/en-US/foundation/annualreport/2016/&quot;&gt;Mozilla&lt;/a&gt; so we thank them for inspiration to be more transparent.&lt;/p&gt;
+&lt;p&gt;Another thing that we launched this week was the &lt;a href=&quot;https://landscape.cncf.io/&quot;&gt;Cloud Native Landscape&lt;/a&gt; (interactive edition) and more importantly, the &lt;a href=&quot;https://github.com/cncf/landscape#trail-map&quot;&gt;Cloud Native Trailmap&lt;/a&gt; which guides you through the journey of becoming cloud native by adopting different projects in the foundation.&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;… oh also forgot to mention we launched the Cloud Native Trail Map today which provides an overview for enterprises starting their cloud native journey &lt;a href=&quot;https://t.co/clwcqeay86&quot;&gt;https://t.co/clwcqeay86&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/lfosls?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#lfosls&lt;/a&gt; &lt;a href=&quot;https://t.co/2S1nQ7chqG&quot;&gt;pic.twitter.com/2S1nQ7chqG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Chris Aniszczyk (@cra) &lt;a href=&quot;https://twitter.com/cra/status/971087176304795648?ref_src=twsrc%5Etfw&quot;&gt;March 6, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Finally, it was fantastic for&lt;a href=&quot;https://www.forbes.com/sites/janakirammsv/2018/03/07/kubernetes-becomes-the-first-project-to-graduate-from-the-cloud-native-computing-foundation/#4c7a5c884b8f&quot;&gt; Kubernetes to be the first project to graduate from the CNCF&lt;/a&gt;.  What does this exactly mean? This is very akin to graduation in other open source foundations such as the ASF. Graduation here is really about confidence in CNCF development processes and really a stamp from the CNCF Technical Oversight Committee (TOC) on what is a sustainable, production ready and mature open source project  you can bet your business on. As projects mature in the CNCF in terms of following solid open source governance processes and become widely adopted, expect to see more projects graduating in the future.&lt;/p&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 20:03:18 +0000</pubDate>
+</item>
+<item>
+	<title>JBoss Tools Team: JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.3</title>
+	<guid isPermaLink="true">https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</guid>
+	<link>https://tools.jboss.org/blog/4.5.3.am2-for-oxygen.3.html</link>
+	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.3.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Downloads available at &lt;a href=&quot;https://tools.jboss.org/downloads/jbosstools/oxygen/4.5.3.AM2.html&quot;&gt;JBoss Tools 4.5.3 AM2&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;what-is-new&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-is-new&quot;&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Full info is at &lt;a href=&quot;https://tools.jboss.org/documentation/whatsnew/jbosstools/4.5.3.AM2.html&quot;&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;openshift&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#openshift&quot;&gt;&lt;/a&gt;OpenShift&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#cdk-and-minishift-server-adapter-better-developer-experience&quot;&gt;&lt;/a&gt;CDK and Minishift Server Adapter better developer experience&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When working with both CDK and upstream Minishift, it is recommanded to distinguish environments through the MINISHIFT_HOME variable.
+      It was possible before to use this parameter but it requires a two steps process:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;first create the server adapter (through the wizard)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;then change the MINISHIFT_HOME in the server adapter editor&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;It is now possible to set this parameter from the server adapter wizard. So now, everything is correctly setup when you create the
+      server adapter.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Let’s see an example with the CDK server adapter.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;From the &lt;strong&gt;Servers&lt;/strong&gt; view, select the new Server menu item and enter cdk in the filter:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Select Red Hat Container Development Kit 3.2+&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard1&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Click the &lt;strong&gt;Next&lt;/strong&gt; button:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;cdk server adapter wizard2&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard2.png&quot; width=&quot;600&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The MINISHIFT_HOME parameter can be set here and is defaulted.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;fuse-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#fuse-tooling&quot;&gt;&lt;/a&gt;Fuse Tooling&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#display-fuse-version-corresponding-to-camel-version-proposed&quot;&gt;&lt;/a&gt;Display Fuse version corresponding to Camel version proposed&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When you create a new project, you select the Camel version from a list. Now, the list of Camel versions includes the Fuse version to help you choose the version that corresponds to your production version.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Fuse Version also displayed in drop-down list close to Camel version&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/listOfFuseVersion.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#update-validation-for-similar-ids-between-a-component-and-its-definition&quot;&gt;&lt;/a&gt;Update validation for similar IDs between a component and its definition&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Starting with Camel 2.20, you can use similar IDs for the component name and its definition unless the specific property &quot;registerEndpointIdsFromRoute&quot; is provided.
+      The validation process checks the Camel version and the value of the &quot;registerEndpointIdsFromRoute&quot; property.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;For example:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;listingblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;from id=&quot;timer&quot; uri=&quot;timer:timerName&quot;/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#improved-guidance-in-method-selection-for-factory-methods-on-global-bean&quot;&gt;&lt;/a&gt;Improved guidance in method selection for factory methods on Global Bean&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean’s global definition type (bean or bean factory).&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;customize-eip-labels-in-the-diagram&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#customize-eip-labels-in-the-diagram&quot;&gt;&lt;/a&gt;Customize EIP labels in the diagram&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Fuse Tooling preferences page for the Editor view includes a new &quot;Preferred Labels&quot; option.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Fuse Tooling editor preference page&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabels.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Use this option to define the label of EIP components (except endpoints) shown in the Editor’s Design view.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;Dialog for defining the display text for an EIP&quot; src=&quot;https://tools.jboss.org/documentation/whatsnew/fusetools/images/prefEIPLabelsResult.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;general&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#general&quot;&gt;&lt;/a&gt;General&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;credentials-framework&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#credentials-framework&quot;&gt;&lt;/a&gt;Credentials Framework&lt;/h4&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;sunsetting-jboss-org-credentials&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#sunsetting-jboss-org-credentials&quot;&gt;&lt;/a&gt;Sunsetting jboss.org credentials&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;code&gt;Download Runtimes&lt;/code&gt; and &lt;code&gt;CDK Server Adapter&lt;/code&gt; used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
+      as the underlying service used by these components does not support these credentials.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;aerogear&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear&quot;&gt;&lt;/a&gt;Aerogear&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;aerogear-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#aerogear-component-deprecation&quot;&gt;&lt;/a&gt;Aerogear component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Aerogear component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;arquillian&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian&quot;&gt;&lt;/a&gt;Arquillian&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;arquillian-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#arquillian-component-removal&quot;&gt;&lt;/a&gt;Arquillian component removal&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Arquillian component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;browsersim&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim&quot;&gt;&lt;/a&gt;BrowserSim&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;browsersim-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#browsersim-component-deprecation&quot;&gt;&lt;/a&gt;BrowserSim component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The BrowserSim component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;freemarker&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker&quot;&gt;&lt;/a&gt;Freemarker&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;freemarker-component-removal&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#freemarker-component-removal&quot;&gt;&lt;/a&gt;Freemarker component removal&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;livereload&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload&quot;&gt;&lt;/a&gt;LiveReload&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;livereload-component-deprecation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#livereload-component-deprecation&quot;&gt;&lt;/a&gt;LiveReload component deprecation&lt;/h4&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The LiveReload component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+      and may be removed in the future.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Enjoy!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Jeff Maury&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Wed, 07 Mar 2018 09:39:23 +0000</pubDate>
+</item>
+<item>
+	<title>EclipseCon France 2018: A sneak peek at the 2018 program</title>
+	<guid isPermaLink="false">https://www.eclipsecon.org/france2018/news/3718 at https://www.eclipsecon.org/france2018</guid>
+	<link>https://www.eclipsecon.org/france2018/news/sneak-peek-2018-program</link>
+	<description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Congratulations to the speakers on these five talks. The program committee has chosen them for early acceptance into the program.&lt;/p&gt;
+
+&lt;p&gt;Remember, the &lt;a href=&quot;https://www.eclipsecon.org/france2018/cfp&quot; target=&quot;_blank&quot;&gt;final submission deadline&lt;/a&gt; is on &lt;strong&gt;Monday, March 19&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/jakarta-ee-not-your-fathers-java-ee&quot; target=&quot;_blank&quot;&gt;Jakarta EE - Not Your Parents' Java EE&lt;/a&gt; - Kevin Sutter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/making-emf-intelligent-ai&quot; target=&quot;_blank&quot;&gt;Making EMF Intelligent with AI&lt;/a&gt; - Niranjan Babu&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/scalable-cloud-ide-eclipse-che-and-kubernetesopenshift&quot; target=&quot;_blank&quot;&gt;Scalable Cloud IDE with Eclipse Che and Kubernetes / OpenShift&lt;/a&gt; - Sergii Kabashniuk&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/practical-cloud-native-java-development-microprofile&quot; target=&quot;_blank&quot;&gt;Practical Cloud Native Java Development with MicroProfile&lt;/a&gt; - Alasdair Nottingham&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/session/cloud-scale-iot-messaging&quot; target=&quot;_blank&quot;&gt;Cloud Scale IoT Messaging&lt;/a&gt; - Jens Reimann and Dejan Bosanac&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-news-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/news/sneak-peek-2018-program&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;img-responsive block-center&quot; height=&quot;250&quot; src=&quot;https://www.eclipsecon.org/france2018/sites/default/files/styles/solstice_news_-_default_-_thumbnail/public/news/talk2_0.jpg?itok=1e3XuQt7&quot; width=&quot;250&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Tue, 06 Mar 2018 20:21:55 +0000</pubDate>
+</item>
+<item>
+	<title>Benjamin Cabe: Open IoT Challenge: What Have the Participants Been up To?</title>
+	<guid isPermaLink="false">https://blog.benjamin-cabe.com/?p=3118</guid>
+	<link>http://feedproxy.google.com/~r/benjamin-cabe-planet-eclipse/~3/QosXx71uUos/open-iot-challenge-participants</link>
+	<description>&lt;p&gt;It’s now been a bit over two months since the participants to the &lt;a href=&quot;https://iot.eclipse.org/open-iot-challenge&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Open IoT Challenge&lt;/a&gt; have started to work on their projects, and like every year, I am pretty impressed by the creativity and the technical skills of all the teams.&lt;/p&gt;
+&lt;p&gt;There are about &lt;strong&gt;12 teams&lt;/strong&gt; actively participating and &lt;a href=&quot;https://iot.eclipse.org/open-iot-challenge-entries/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;blogging&lt;/a&gt; about their journey (and probably more that are working in “stealth mode”), and I thought I would take some time to highlight some of the really cool things they are working on.&lt;/p&gt;
+&lt;h2&gt;Trusted indoor positioning system for nursing homes&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https://trusted827.wordpress.com&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Trusted IoT Approach&lt;/a&gt; team is not only working on building an indoor geolocation solution (using Bluetooth beacons), but they are also combining it with IOTA (i.e a distributed ledger) to turn it into a &lt;span style=&quot;text-decoration: underline;&quot;&gt;trusted&lt;/span&gt; indoor positioning system.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/03.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignright size-medium wp-image-3129&quot; height=&quot;244&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/03-300x244.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;Their main use case is nursing homes, and I think it is quite brilliant. What if there could be an immutable ledger of all the current and past positions of patients and nurses within a nursing home?  Clearly, this can help with scenarios where for example there are doubts as to whether a patient has properly been checked up on.&lt;/p&gt;
+&lt;p&gt;They are building their project as Eclipse Kura plugins, and everything is open source – check out their code! &lt;a href=&quot;https://bitbucket.org/p-iot/jura&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;https://bitbucket.org/p-iot/jura&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Connected Industry Sensor Solutions&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/CISSOS.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-3131 size-large&quot; height=&quot;123&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/CISSOS-1024x266.png&quot; width=&quot;474&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Year after year, I always hope that more participants to the IoT Challenge get into industrial scenarios, vs. simply focusing on building cool IoT gadgets. This year I am really happy to see that a team from Bosch Connected Industry is working on an Industrial IoT scenario and bridging the gap between the physical world of industrial equipment, and the Internet of Things. They are using &lt;a href=&quot;https://eclipse.org/ditto&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Eclipse Ditto&lt;/a&gt; for building Digital Twins which I find really cool too &lt;img alt=&quot;🙂&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f642.png&quot; style=&quot;height: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Activ-IoTy: automatic sports timing system&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/activioty-e1520010528632.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;alignright size-medium wp-image-3135&quot; height=&quot;300&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/activioty-175x300.png&quot; width=&quot;175&quot; /&gt;&lt;/a&gt;Activ-IoTy aims at enhancing sports timekeeping systems accurately, through IoT low-cost devices.&lt;/p&gt;
+&lt;p&gt;The project is progressing really fast and the team’s &lt;a href=&quot;https://www.espinr.es/post/171411615533/activioty-controller-mqtt-subscriber&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;latest blog post&lt;/a&gt; contains lots of promising screenshots of the solution in action.&lt;/p&gt;
+&lt;p&gt;There is a lot going on on &lt;a href=&quot;https://github.com/espinr/activioty&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Martin’s Github repository&lt;/a&gt; so you may want to have a look!&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;Alya, a DIY open-source smart mirror&lt;/h2&gt;
+&lt;p&gt;Many of the participants are getting their hands really dirty with some hardware hacking, and the Alya team is no exception!&lt;/p&gt;
+&lt;p&gt;They are building a smart mirror using the &lt;a href=&quot;http://www.up-board.org/upkits/up-squared-grove-iot-development-kit/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;UP Squared Grove IoT Development Kit&lt;/a&gt; that Intel was kind enough to give to the participants with the most promising ideas. They also use a Microsoft Kinect and a &lt;a href=&quot;https://www.matrix.one/products/creator&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;MATRIX creator&lt;/a&gt; to do advanced voice and gesture recognition.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/alya-smart-mirror.gif&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-3138&quot; height=&quot;238&quot; src=&quot;https://blog.benjamin-cabe.com/wp-content/uploads/2018/03/alya-smart-mirror.gif&quot; width=&quot;600&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Like most of the participants, they are making their work available in open source on their Github repo: &lt;a href=&quot;https://github.com/alya-mirror&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;https://github.com/alya-mirror&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Of course, there are many other teams participating to the challenge, so I really encourage you to have a look at &lt;a href=&quot;https://iot.eclipse.org/open-iot-challenge-entries/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;all the articles&lt;/a&gt; that the contestants have put together, and you can also follow the &lt;a href=&quot;https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23OpenIoTChallenge&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;#OpenIoTChallenge&lt;/a&gt; hashtag on Twitter.&lt;/p&gt;
+&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://blog.benjamin-cabe.com/2018/03/02/open-iot-challenge-participants&quot; rel=&quot;nofollow&quot;&gt;Open IoT Challenge: What Have the Participants Been up To?&lt;/a&gt; appeared first on &lt;a href=&quot;https://blog.benjamin-cabe.com&quot; rel=&quot;nofollow&quot;&gt;Benjamin Cabé&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/benjamin-cabe-planet-eclipse/~4/QosXx71uUos&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Fri, 02 Mar 2018 17:40:41 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: A Tale of Two Katas</title>
+	<guid isPermaLink="false">https://medium.com/p/ec956410d26d</guid>
+	<link>https://medium.com/@donraab/a-tale-of-two-katas-ec956410d26d?source=rss-df39b86e9f04------2</link>
+	<description>&lt;p&gt;Learn a modern Java Collections Library with more features and less waste.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*HlR_WuzRz0JxGOZlT-wZgA.png&quot; /&gt;Demonstrating the Pet Kata at the Eclipse Foundation booth at JavaOne&lt;/figure&gt;&lt;h3&gt;Have you tried a Code Kata?&lt;/h3&gt;&lt;p&gt;It really is the best way to learn a new framework or library. We have two katas for Eclipse Collections hosted on &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata&quot;&gt;GitHub&lt;/a&gt;. They are free hands-on training for what I would describe is the most feature rich and memory friendly Java Collections framework available today.&lt;/p&gt;&lt;h3&gt;What is a Code Kata?&lt;/h3&gt;&lt;p&gt;From the &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;&lt;blockquote&gt;A &lt;a href=&quot;https://en.wikipedia.org/wiki/Kata&quot;&gt;kata&lt;/a&gt; is an exercise in martial arts. A &lt;a href=&quot;http://codekata.com/&quot;&gt;code kata&lt;/a&gt; is an exercise in programming which helps hone your skills through practice and repetition. The Eclipse Collections Kata is a fun way to help you learn idiomatic Eclipse Collections usage. This particular kata is set up as a series of unit tests which fail. Your task is to make them pass, using Eclipse Collections.&lt;/blockquote&gt;&lt;p&gt;We learn best by doing. Try one of the Eclipse Collections Code Katas and learn an amazing framework at your own pace in your IDE with hands-on coding exercises.&lt;/p&gt;&lt;h3&gt;The Company Kata&lt;/h3&gt;&lt;p&gt;The Company Kata was the first kata developed for Eclipse Collections. It has been used to teach thousands of developers how to use Eclipse Collections over the past ten years. It is a comprehensive set of exercises in the form of unit tests, built around a domain model focused on simple concepts like Company, Supplier, Customer, Order and LineItem.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/880/1*dBFhrMxJS1Bs0lwOWmhGFQ.png&quot; /&gt;The Company Kata Domain &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata/blob/master/docs/company-kata/company-domain.png&quot;&gt;Diagram&lt;/a&gt; from the web based slides&lt;/figure&gt;&lt;p&gt;Here are the &lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/company-kata/#/&quot;&gt;web based slides&lt;/a&gt; that teach the concepts required to complete the Company Kata. The slides can also be read more quickly in convenient &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata/blob/master/docs/company-kata/slides.md&quot;&gt;markdown format&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;The Pet Kata&lt;/h3&gt;&lt;p&gt;The Pet Kata was developed three or four years ago in order to create a TL;DR kata for developers who didn’t want to spend eight hours in a class learning the Company Kata or three to four hours completing it on their own. The domain of the Pet Kata is simpler. There are classes for Person, Pet and PetType. A Person can have many Pets and a Pet has one Pet Type.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*4woUzzEdE1i9MwpQDV7hpQ.png&quot; /&gt;The Pet Kata domain &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata/blob/master/docs/pet-kata/pet-domain.png&quot;&gt;diagram&lt;/a&gt; from the web based slides&lt;/figure&gt;&lt;p&gt;Here are the &lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/pet-kata/#/&quot;&gt;web based slides&lt;/a&gt; that teach the concepts required to complete the Company Kata. The slides can also be read more quickly in convenient &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata/blob/master/docs/pet-kata/slides.md&quot;&gt;markdown format&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;Getting started&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Clone the repo here— &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata&quot;&gt;https://github.com/eclipse/eclipse-collections-kata&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Import the pom.xml file located in the root as a Maven Project in your favorite IDE&lt;/li&gt;&lt;li&gt;Pick one of the Kata folders (company-kata or pet-kata) and go to the tests directory&lt;/li&gt;&lt;li&gt;Start with Exercise 1&lt;/li&gt;&lt;li&gt;Run the unit tests — They should fail!&lt;/li&gt;&lt;li&gt;Get the tests to pass one by one&lt;/li&gt;&lt;li&gt;When you complete the last exercise— Congratulations!&lt;/li&gt;&lt;li&gt;Repeat as desired or complete the other kata to learn more iteration patterns and hone your skills using Eclipse Collections&lt;/li&gt;&lt;li&gt;Star the repo if you enjoyed the kata&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Additional References&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;http://www.baeldung.com/eclipse-collections&quot;&gt;Introduction to Eclipse Collections&lt;/a&gt; (Baeldung Article)&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.infoq.com/articles/eclipse-collections&quot;&gt;The Java Evolution of Eclipse Collections&lt;/a&gt; (InfoQ Article)&lt;/li&gt;&lt;li&gt;The &lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/docs/guide.md&quot;&gt;Eclipse Collections Reference Guide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;The &lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/api-design/#/&quot;&gt;API Design of Eclipse Collections&lt;/a&gt; — (&lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata/blob/master/docs/api-design/slides.md&quot;&gt;markdown format&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/wiki/Conference-talks-and-meetups&quot;&gt;Conference Talks and Meetups&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.eclipse.org/collections/&quot;&gt;Eclipse Collections Website&lt;/a&gt; — (available in English, Chinese, Japanese, Russian and Brazilian Portuguese)&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;If you attend GIDS 2018 (Great Indian Developer Summit — Bangalore, India) in April, you can sign up and learn the &lt;a href=&quot;http://www.developermarch.com/developersummit/session.html?insert=NikhilNanivadekar2&quot;&gt;Eclipse Collections Kata in a GIDS.DEEPDIVE session on April 28th&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=ec956410d26d&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Fri, 02 Mar 2018 03:59:36 +0000</pubDate>
+</item>
+<item>
+	<title>Wim Jongman: The new Bling. Part 1: Nebula and Opal</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-4740251930569090138.post-723630388355890490</guid>
+	<link>http://industrial-tsi-wim.blogspot.com/2018/03/the-new-bling-part-1-nebula-and-opal.html</link>
+	<description>Recent studies [1] seem to suggest that companies are becoming tired of building web applications in favor of the rich client. Good news for the newly weds: Nebula and Opal!&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;/div&gt;&lt;br /&gt;&lt;a href=&quot;https://2.bp.blogspot.com/-CWBPqeMckbo/Wpg26zVyBuI/AAAAAAAABDQ/OCY7J6LFWxYjlabgfycmXFU0qWOzfoQDgCLcBGAs/s1600/opal.png&quot; style=&quot;clear: right; float: right; margin-bottom: 1em; margin-left: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;285&quot; src=&quot;https://2.bp.blogspot.com/-CWBPqeMckbo/Wpg26zVyBuI/AAAAAAAABDQ/OCY7J6LFWxYjlabgfycmXFU0qWOzfoQDgCLcBGAs/s400/opal.png&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;br /&gt;You &lt;a href=&quot;https://eclipse.org/nebula&quot; target=&quot;_blank&quot;&gt;might know Nebula&lt;/a&gt;, which provides of a number of beautiful and functional widgets to spice up your RCP applications. You might not know Opal. Opal has been roaming freely on the internet and has been programmed largely by Laurent Caron.&lt;br /&gt;&lt;br /&gt;I have been chasing Laurent to join the Nebula project since 2014 and after some hard work over the last couple of months we finally did it:&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br /&gt;&lt;span style=&quot;font-size: large;&quot;&gt;&lt;span&gt;&quot;two dozen new widgets have moved to Eclipse.&quot;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;A great time to remove my blog from the mothballs (a Dutch saying, but you get the idea) and put some of Nebula's new widgets in the spotlight.&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;h3 style=&quot;text-align: left;&quot;&gt;The new Bling. Part 1. The CheckboxGroup&lt;/h3&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Laurent, this is such a great idea! There are many times when you want to enable a group of  widgets based on an initial selection. The whole boilerplate code of such a pattern in standard SWT is ugly as mud. Check this code and tell me if you recognize it:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;    proxyBox.addSelectionListener( event -&amp;gt; { &lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;       server.setEnabled(&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;proxyBox&lt;/span&gt;&lt;/span&gt;.getSelection();&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;       port.setEnabled(&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;proxyBox&lt;/span&gt;&lt;/span&gt;.getSelection());&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;       user.setEnabled(&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;proxyBox&lt;/span&gt;&lt;/span&gt;.getSelection());&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;       password.setEnabled(&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;proxyBox&lt;/span&gt;&lt;/span&gt;.getSelection());&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;span&gt;    });&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: small;&quot;&gt; &lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Enter the CheckboxGroup. On:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://wiki.eclipse.org/images/e/ef/CheckBoxGroup1.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://wiki.eclipse.org/images/e/ef/CheckBoxGroup1.png&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;and off:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://wiki.eclipse.org/images/d/d6/CheckBoxGroup2.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://wiki.eclipse.org/images/d/d6/CheckBoxGroup2.png&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;From Laurent's wiki documentation:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;You can set/get the text and the font of the checkbox, and you get the value of the selection by calling &lt;span style=&quot;font-size: x-small;&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;&lt;i&gt;isActivated()&lt;/i&gt;&lt;/span&gt;. &lt;/span&gt;&lt;/span&gt;In case you want to set the state of this checkbox programmatically (and thus enable or disable the content of the group) you use &lt;span&gt;&lt;i&gt;&lt;span style=&quot;font-size: xx-small;&quot;&gt;activate()&lt;/span&gt;&lt;/i&gt;&lt;/span&gt; and &lt;span style=&quot;font-size: small;&quot;&gt;&lt;i&gt;&lt;span style=&quot;font-size: xx-small;&quot;&gt;&lt;span&gt;deactivate()&lt;/span&gt;&lt;/span&gt;&lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size: small;&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;The content, which is a Composite, is accessible with the getter &lt;span style=&quot;font-size: small;&quot;&gt;&lt;i&gt;&lt;span style=&quot;font-size: xx-small;&quot;&gt;&lt;span&gt;getContent()&lt;/span&gt;&lt;/span&gt;&lt;/i&gt;&lt;/span&gt;.&lt;br /&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Pretty slick! And this is only one of the 24 new widgets!  You can &lt;a href=&quot;https://wiki.eclipse.org/Nebula_CheckboxGroup&quot; target=&quot;_blank&quot;&gt;get the CheckboxGrou&lt;/a&gt;p from the &lt;a href=&quot;https://www.eclipse.org/nebula/downloads.php&quot; target=&quot;_blank&quot;&gt;latest nighly builds&lt;/a&gt;.&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Cheers,&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Wim&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;[1] fake news&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;</description>
+	<pubDate>Thu, 01 Mar 2018 18:15:14 +0000</pubDate>
+	<author>noreply@blogger.com (Wim Jongman)</author>
+</item>
+<item>
+	<title>Benjamin Cabe: Last Days to Participate to Our Annual IoT Developer Survey</title>
+	<guid isPermaLink="false">https://blog.benjamin-cabe.com/?p=3095</guid>
+	<link>http://feedproxy.google.com/~r/benjamin-cabe-planet-eclipse/~3/KP_BkZXoelM/last-days-participate-annual-iot-developer-survey</link>
+	<description>&lt;p&gt;For the past three years, we have been partnering with a number of organizations – IEEE, Open Mobile Alliance and Agile-IoT – to get a sense of the general trends in the IoT industry through an &lt;strong&gt;&lt;a href=&quot;https://www.surveymonkey.com/r/iotsurvey18&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;online survey&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The fourth edition of this survey ends on March 5th&lt;/strong&gt;, and I am hoping that many of you who haven’t already will be participating – it litteraly takes just 5 minutes to answer. Whether you are actually a developer, or simply involved in building IoT solutions one way or the other, your input will be key to understanding what kind of IoT solutions people are building today, and more importantly how they are doing it.&lt;/p&gt;
+&lt;p&gt;Like in previous years, we will be making publicly available both the consolidated and raw results of the survey, which should be one more reason to help us get as many respondents as possible so that the results can be even more valuable to your own organization, and to the community at large! &lt;img alt=&quot;🙂&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f642.png&quot; style=&quot;height: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a class=&quot;&quot; href=&quot;http://bit.ly/iotsurvey2017&quot;&gt;results from last year&lt;/a&gt;, for example, provided interesting feedback on the rising interest in Industrial IoT, who people see as IoT corporate leaders, or what are the programming languages and frameworks typically used by developers.&lt;/p&gt;
+&lt;p&gt;Please don’t wait and &lt;strong&gt;&lt;a href=&quot;https://www.surveymonkey.com/r/iotsurvey18&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;take the survey now&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://blog.benjamin-cabe.com/2018/03/01/last-days-participate-annual-iot-developer-survey&quot; rel=&quot;nofollow&quot;&gt;Last Days to Participate to Our Annual IoT Developer Survey&lt;/a&gt; appeared first on &lt;a href=&quot;https://blog.benjamin-cabe.com&quot; rel=&quot;nofollow&quot;&gt;Benjamin Cabé&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/benjamin-cabe-planet-eclipse/~4/KP_BkZXoelM&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 01 Mar 2018 11:08:36 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: From Java EE to Jakarta EE</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/Ee7V_dfSCPk/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/Ee7V_dfSCPk/</link>
+	<description>We are happy to announce that the new name for the technology formerly known as Java EE is... Jakarta EE!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/Ee7V_dfSCPk&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 26 Feb 2018 19:50:00 +0000</pubDate>
+</item>
+<item>
+	<title>Mike Milinkovich: And the Name Is…</title>
+	<guid isPermaLink="false">http://mmilinkov.wordpress.com/?p=1431</guid>
+	<link>https://mmilinkov.wordpress.com/2018/02/26/and-the-name-is/</link>
+	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;We are happy to announce that the new name for the technology formerly known as Java EE is….[insert drumroll]… &lt;/span&gt;&lt;b&gt;Jakarta EE&lt;/b&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Almost 7,000 people voted in our community poll, and over 64% voted in favour of Jakarta EE. Thanks to everyone who voted, &lt;/span&gt;&lt;a href=&quot;http://www.tomitribe.com/blog/2018/02/java-ee-to-jakarta-ee/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;blogged&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, or tweeted! This has been &lt;/span&gt;&lt;a href=&quot;https://mmilinkov.wordpress.com/2017/11/15/help-pick-the-new-name-for-java-ee/&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;quite the process&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;, and we are all really happy with the community support throughout.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;naming_poll_results&quot; class=&quot;alignnone size-full wp-image-1432&quot; src=&quot;https://mmilinkov.files.wordpress.com/2018/02/naming_poll_results.png?w=700&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;As we have been making progress on migrating Java EE to the Eclipse Foundation there have been a lot of moving pieces and parallel threads, especially around naming. Thankfully, we think we are getting to the end of this, and the names at least are starting to sort themselves out.  We have prepared this handy table to assist with the translation from the old names to the new names. &lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;1&quot; style=&quot;height: 186px;&quot; width=&quot;704&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;Old Name&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;New Name&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Java EE&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Jakarta EE&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Glassfish&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse Glassfish&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Java Community Process (JCP) [*]&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.eclipse.org/org/workinggroups/eclipse_ee_next_charter.php&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Eclipse EE.next Working Group&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; (EE.next)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Oracle development management&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;a href=&quot;https://projects.eclipse.org/projects/ee4j/charter&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Eclipse Enterprise for Java&lt;/a&gt; (EE4J)&lt;br /&gt;
+&lt;a href=&quot;https://projects.eclipse.org/projects/ee4j/pmc&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Project Management Committee&lt;/a&gt; (PMC)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Note that permission for products to formally use the Jakarta EE trademark will be dependent upon passing a as-yet-to-be-defined compatibility program run by EE.next. However, as of today, it is preferred that when you are generically referring to this open source software platform that you call it Jakarta EE rather than EE4J. EE4J, the Eclipse Top-level project,  is the only name we’ve had for a couple of months, but as we at least tried to make clear, that was &lt;a href=&quot;https://mmilinkov.wordpress.com/2017/09/30/on-naming/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;never intended to be the brand name&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Update: Fixed a typo plus the formatting of the Glassfish row in the translation table.&lt;br /&gt;
+&lt;/small&gt;&lt;small&gt;Update 2: [*] To be clear, the Java Community Process will continue to exist and to support the Java SE and ME communities. However, it will not be the place where Jakarta EE specifications will be developed.&lt;/small&gt;&lt;/p&gt;</description>
+	<pubDate>Mon, 26 Feb 2018 19:00:19 +0000</pubDate>
+</item>
+<item>
+	<title>EclipseCon France 2018: March 5th is the early selection deadline</title>
+	<guid isPermaLink="false">https://www.eclipsecon.org/france2018/news/3685 at https://www.eclipsecon.org/france2018</guid>
+	<link>https://www.eclipsecon.org/france2018/news/march-5th-early-selection-deadline</link>
+	<description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;In just a few days the Program Committee will select the first handful of talks before the final submission deadline on March 19th. Why do we do this? The early selections allow us to promote the core of the conference - your talks. Take the opportunity to get even more eyes on your technology - submit by March 5th to qualify!&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-news-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/news/march-5th-early-selection-deadline&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;img-responsive block-center&quot; height=&quot;250&quot; src=&quot;https://www.eclipsecon.org/france2018/sites/default/files/styles/solstice_news_-_default_-_thumbnail/public/news/Early%20deadline.png?itok=8D4pDAFP&quot; width=&quot;250&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Mon, 26 Feb 2018 08:51:09 +0000</pubDate>
+</item>
+<item>
+	<title>Doug Schaefer: Building a Custom Viewer for VS Code</title>
+	<guid isPermaLink="false">https://cdtdoug.ca/tag/eclipse/rss/5a906bbc65afdf75547a1cd3</guid>
+	<link>https://cdtdoug.ca/building-a-custom-viewer-for-vs-code/</link>
+	<description>&lt;div class=&quot;kg-card-markdown&quot;&gt;&lt;p&gt;I attended the online CheConf this week and was impressed by a few of the sessions. Now don't get me wrong, I still have reservations over the practicality of having your IDE in the cloud, at least in the embedded space where engineers tend to be more conservative. Certainly running tools inside docker containers makes sense and I believe all IDEs, cloud and desktop, need to be able to interface with them and Jeff from Red Hat is making good progress with that in the CDT. So we're not so different.&lt;/p&gt;
+&lt;p&gt;What did impress me from the sessions, though, is the progress we're starting to see with advanced visualizations using Web front ends. I was especially excited to see Mélanie from Obeo show Sirius there. And Silexica is doing some interesting visualizations of call graphs of C++ code with what I believe is D3.js. The charts you see come out of D3 are amazing, especially with animation. Being able to visualize complex systems this way will be a huge help to developers, epecially embedded engineers.&lt;/p&gt;
+&lt;p&gt;As I mentioned at the beginning of last year, I'm very excited about Electron as a desktop IDE platform. After playing around a bit on my own, I decided to give up and start working with one that's already well ahead, Visual Studio Code. Despite their claims to be focused on providing a great text editor, the community is working hard to make it a full fledged IDE. With the extensibility available today, you can do the same advanced visualizations we saw at CheConf as well as many other online tools.&lt;/p&gt;
+&lt;p&gt;I have created a demo of this capability as shown below. Click on the picture to see the github repo and the description in the README. It's dead simple but it shows how you can create a VS Code extension that renders in a webview whatever you would like with data fed from an embedded http server. It's a little weird, but once you get the plumbing done, you're on your way, and hopefully this demo can help you get started.&lt;/p&gt;
+&lt;a href=&quot;https://github.com/dschaefer/vscode-custom-viewer&quot;&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/dschaefer/vscode-custom-viewer/18de5338b6bc6a5455efea521255dde6e6d28558/images/Capture.png&quot; style=&quot;display: block; margin: 0 auto;&quot; /&gt;
+&lt;/a&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;There are many reasons why this move is important. There is so much momentum behind  web technologies with a seemingly endless line up of libraries on npm, to tutorials on the web, to people who know how to do this stuff. It only makes sense that we start to ride this wave as we did when the Eclipse IDE first came along. And, you know, fire this stuff up in a SWT Browser widget and you get that same experience and we can breath some new life into our old friend. It's an exciting future and it's a lot of fun trying to get there.&lt;/p&gt;
+&lt;/div&gt;</description>
+	<pubDate>Sat, 24 Feb 2018 01:12:47 +0000</pubDate>
+</item>
+<item>
+	<title>Donald Raab: Help Wanted!</title>
+	<guid isPermaLink="false">https://medium.com/p/b1acf25d8c8d</guid>
+	<link>https://medium.com/@donraab/help-wanted-b1acf25d8c8d?source=rss-df39b86e9f04------2</link>
+	<description>&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*Rp2ZAp0GMnbnuIubHOrxeA.png&quot; /&gt;Contribute to an open source project!&lt;/figure&gt;&lt;p&gt;Shhhh! I’m going to tell you a secret. It’s something that for a few people might just change their software development lives in unexpected and exciting ways.&lt;/p&gt;&lt;h4&gt;Contribute to an open source project!&lt;/h4&gt;&lt;p&gt;That’s not the secret though. I realize many of you have probably already thought of contributing to an open source project but were unsure how to get started.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;I can help you get started and it might be easier than you expect.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;That’s the secret.&lt;/p&gt;&lt;p&gt;There is a project called &lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;Eclipse Collections &lt;/a&gt;which is managed at the &lt;a href=&quot;https://projects.eclipse.org/projects/technology.collections&quot;&gt;Eclipse Foundation&lt;/a&gt; and is open for contributions from anyone. As open source libraries go, Eclipse Collections has a relatively low barrier of entry. Eclipse Collections is a library of Java data structures and algorithms.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: I am not a lawyer, and cannot dispense legal advice. I won’t be able to help you determine what you will be able or allowed to do given your personal situation. You will need to determine whether you are allowed to do something, and what if any approvals and process you need to follow from your employer if you are employed by someone else given their policies, procedures, agreements, etc. for contributing to FOSS projects. If you are unsure of what you are able to do, I would suggest not getting started until you clarify that and are 150% comfortable. Contact the &lt;a href=&quot;https://www.eclipse.org/legal/&quot;&gt;Eclipse Foundation&lt;/a&gt; if you want to understand the legal and governance rules over projects managed at the Foundation. The folks at the Eclipse Foundation are very helpful.&lt;/p&gt;&lt;p&gt;If you’d like to get started and are sure you are able to given your personal situation, here are some suggestions that might help you break through the initial barrier of contributing to an open source project. Not all contributions need to be made through code.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Try out the &lt;a href=&quot;https://github.com/eclipse/eclipse-collections-kata&quot;&gt;Eclipse Collections Kata&lt;/a&gt;s — this will help you understand what Eclipse Collection is all about. Once you understand Eclipse Collections, you may want to use it in your projects. If you use it in your projects, you may discover something that is missing that you would like to suggest and contribute. This is the best kind of code contribution to make to a project. Here you are helping yourself provide the functionality that you need. Eclipse Collections evolved from a single class called Iterate over the past 12+ years because folks like myself and &lt;a href=&quot;https://medium.com/u/4285d8a2ca86&quot;&gt;Nikhil&lt;/a&gt; and &lt;a href=&quot;https://medium.com/u/82b613b921f6&quot;&gt;Craig&lt;/a&gt; and &lt;a href=&quot;https://medium.com/u/18b43cac5e00&quot;&gt;Hiroshi&lt;/a&gt; and many others added things that they needed or wanted in the framework.&lt;/li&gt;&lt;li&gt;If you use and like Eclipse Collections you can also contribute to the community in many different ways. For instance you could… &lt;strong&gt;a)&lt;/strong&gt; give a talk on Eclipse Collections perhaps at a Java User Group meet-up &lt;strong&gt;b)&lt;/strong&gt; teach the katas to developers you know or at a Java User Group meet-up &lt;strong&gt;c)&lt;/strong&gt; write about it in a blog or article. This can help people discover that Eclipse Collections exists. This is an amazing contribution and can help introduce you to the growing community of Java developers!&lt;/li&gt;&lt;li&gt;If you are ready to try your hand at contributing code, the best place to start is the &lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;Contribution Guide&lt;/a&gt; in Eclipse Collections.&lt;/li&gt;&lt;li&gt;What will you need to get started? &lt;strong&gt;1)&lt;/strong&gt; GitHub Account &lt;strong&gt;2)&lt;/strong&gt; Read, Understand and Sign Eclipse Foundation Contributor Agreement electronically &lt;strong&gt;3)&lt;/strong&gt; Git Client &lt;strong&gt;4) &lt;/strong&gt;JDK 8 &lt;strong&gt;5)&lt;/strong&gt; Maven &lt;strong&gt;6)&lt;/strong&gt; a Java IDE. The instructions in the &lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;contribution guide&lt;/a&gt; can help you on some of these things.&lt;/li&gt;&lt;li&gt;Find something you’d like to work on. This could come from the &lt;a href=&quot;https://github.com/eclipse/eclipse-collections/issues&quot;&gt;issue log&lt;/a&gt; or may be something you would like added based on a use case you have that hasn’t been addressed before.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;What types of things can you work on that are potentially low cost?&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Documentation — You could add or update something in the Reference Guide which is in this &lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/docs/guide.md&quot;&gt;Markdown file&lt;/a&gt;.&lt;/li&gt;&lt;li&gt;Test Coverage — If you find missing test coverage, adding test cases is a noble and much appreciated addition to any project.&lt;/li&gt;&lt;li&gt;Static Utility — Static utility methods are isolated, easy to test and can be a great place to start experimenting with new API ideas.&lt;/li&gt;&lt;li&gt;Bug Fixes — This is a great contribution which will include some investigation, a little coding in the library and maybe some additional testing to make sure the bug never comes back.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Beyond these low cost, low complexity options there is a table that shows the cost and complexity of different things that can be contributed to Eclipse Collections. &lt;a href=&quot;https://medium.com/u/4285d8a2ca86&quot;&gt;Nikhil&lt;/a&gt; and I gave a talk on a Eclipse Foundation virtual meet-up which is now on &lt;a href=&quot;https://www.youtube.com/watch?v=Xrx_407Dt-I&quot;&gt;YouTube&lt;/a&gt;.&lt;/p&gt;&lt;a href=&quot;https://medium.com/media/2ab2cb59ae47379914362745e7bbc2ee/href&quot;&gt;https://medium.com/media/2ab2cb59ae47379914362745e7bbc2ee/href&lt;/a&gt;&lt;p&gt;The talk included the following table that we displayed from our slide content.&lt;/p&gt;&lt;figure&gt;&lt;img alt=&quot;&quot; src=&quot;https://cdn-images-1.medium.com/max/1024/1*-VEtsFPSrTA2f01sylzvrA.png&quot; /&gt;&lt;/figure&gt;&lt;p&gt;&lt;a href=&quot;http://eclipse.github.io/eclipse-collections-kata/api-design/#/4&quot;&gt;API Deep Dive: Designing Eclipse Collections&lt;/a&gt;&lt;/p&gt;&lt;p&gt;As you gain more experience and confidence, you might want to tackle problems with increasing levels of complexity. All of the infrastructural skills you learn while contributing to Eclipse Collections will help you on any open source project you want to contribute to in the future.&lt;/p&gt;&lt;h4&gt;Help is wanted and available&lt;/h4&gt;&lt;p&gt;Not only will you be helping an open source project and community by contributing, but there are committers on the project who will help you grow and learn as a developer by providing feedback on any issues and pull requests you submit. I always look forward to code reviews and feedback from the community of Eclipse Collections project leads, committers and contributors. I have learned so much over the years from all of them. They continue to help me grow as a professional software developer.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections&quot;&gt;&lt;em&gt;Eclipse Collections&lt;/em&gt;&lt;/a&gt;&lt;em&gt; is open for &lt;/em&gt;&lt;a href=&quot;https://github.com/eclipse/eclipse-collections/blob/master/CONTRIBUTING.md&quot;&gt;&lt;em&gt;contributions&lt;/em&gt;&lt;/a&gt;&lt;em&gt;. If you like the library, you can let us know by starring it on GitHub.&lt;/em&gt;&lt;/p&gt;&lt;img height=&quot;1&quot; src=&quot;https://medium.com/_/stat?event=post.clientViewed&amp;amp;referrerSource=full_rss&amp;amp;postId=b1acf25d8c8d&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Fri, 23 Feb 2018 19:56:40 +0000</pubDate>
+</item>
+<item>
+	<title>Melanie Bats: Modeling tools go up to the cloud</title>
+	<guid isPermaLink="true">http://melb.enix.org/2018/02/22/up-to-the-cloud/</guid>
+	<link>http://melb.enix.org/2018/02/22/up-to-the-cloud/</link>
+	<description>&lt;p&gt;TLDR; at &lt;a href=&quot;https://www.obeo.fr/en&quot;&gt;Obeo&lt;/a&gt;, we have done the first steps to &lt;strong&gt;bring Sirius to the web&lt;/strong&gt;. Today we are ready to work with you to bring &lt;strong&gt;your own modeling tool up to the cloud&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are curious about details, this is the longer story…&lt;/p&gt;
+
+&lt;p&gt;As you know, at Obeo, we have been working on modeling tools for a long time now, and we therefore have a lot of experience developing graphical tools. Obeo is a key player in the Modeling ecosystem: we are involved in open source through numerous Eclipse projects: &lt;a href=&quot;https://www.eclipse.org/sirius/&quot;&gt;Sirius&lt;/a&gt;, &lt;a href=&quot;https://www.eclipse.org/acceleo/&quot;&gt;Acceleo&lt;/a&gt;, EMF/GMF, &lt;a href=&quot;https://www.eclipse.org/ecoretools/&quot;&gt;EcoreTools&lt;/a&gt;, &lt;a href=&quot;https://www.eclipse.org/emf/compare/&quot;&gt;EMF Compare&lt;/a&gt;…
+One of our great success is Sirius: a framework to easily and quickly create a modeling workbench dedicated to your domain.&lt;/p&gt;
+
+&lt;p&gt;Today, Sirius relies on the Eclipse platform, consequently the graphical modelers based on it are desktop applications.&lt;/p&gt;
+
+&lt;p&gt;You know that &lt;strong&gt;Desktop&lt;/strong&gt; vs &lt;strong&gt;Web&lt;/strong&gt; applications are in war since time immemorial…&lt;/p&gt;
+
+&lt;p&gt;In the past, we already won some battles, by mixing both approaches, switching from one to another. 
+For instance, our Enterprise Architecture solution &lt;a href=&quot;https://www.obeosmartea.com/en/solution&quot;&gt;Obeo SmartEA&lt;/a&gt;, provides :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;light client experience to explore a model,
+&lt;img alt=&quot;Explore model with light client&quot; src=&quot;https://www.obeosmartea.com/images/my_gallery/10-details-page.png&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;and a rich application to edit it.
+&lt;img alt=&quot;Edit model with rich application&quot; src=&quot;https://www.obeosmartea.com/images/my_gallery/05-graphical-modeling-workbench.png&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since December, you already know that we are working to reconcile the two worlds… For Sirius 6, we are developing a new solution to &lt;strong&gt;use Sirius definition with HTML Renderer within Eclipse workbenches&lt;/strong&gt;. We will use an hybrid model to be able to get the best of both worlds and make them coexist in the same rich application. In collaboration with Thales, we are prototyping what would be a &lt;a href=&quot;http://www.polarsys.org/capella/&quot;&gt;Capella&lt;/a&gt; graphical modeler using the dynamic visualisation capabilities offered by &lt;a href=&quot;https://github.com/theia-ide/sprotty&quot;&gt;Sprotty&lt;/a&gt; and &lt;a href=&quot;https://www.eclipse.org/elk/&quot;&gt;Eclipse Layout Kernel&lt;/a&gt;. I really appreciate that the &lt;a href=&quot;https://typefox.io/&quot;&gt;TypeFox&lt;/a&gt; guys lent us a hand about that, this was truly in the open source spirit!&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;HTML renderer within Sirius workbenches&quot; src=&quot;http://melb.enix.org/img/dear-santa/HTMLRendererInSirius.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am really happy to announce that now we are going one step further: we are making Sirius evolve to &lt;strong&gt;bring modeling tools up to the cloud&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Up&quot; src=&quot;http://static.alfabetajuega.com/abj_public_files/multimedia/imagenes/201501/95918.alfabetajuega-up-10012015.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Modeling tools based on Sirius today look like this. You have a graphical editor with a palette to manage elements.
+&lt;img alt=&quot;Modeling tool today&quot; src=&quot;http://melb.enix.org/img/up-to-the-cloud/Today.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Modeling tools based on Sirius tomorrow could look like this. You still have a graphical editor with a palette to manage elements.
+&lt;img alt=&quot;Modeling tool tomorrow&quot; src=&quot;http://melb.enix.org/img/up-to-the-cloud/Tomorrow.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The main difference is that tomorrow Sirius applications will be based on web technologies, and therefore the graphical modelers will be cloud applications. With a cloud application :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;you &lt;strong&gt;no&lt;/strong&gt; longer &lt;strong&gt;need to install&lt;/strong&gt; it, it simply do not require any installation process,&lt;/li&gt;
+  &lt;li&gt;it does not occupy extra space on your hard drive,&lt;/li&gt;
+  &lt;li&gt;your graphical workbench is &lt;strong&gt;easy to access&lt;/strong&gt; from any browser and you can use it from any device,&lt;/li&gt;
+  &lt;li&gt;it adapts to the workload increase.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is still a long way to go.
+&lt;img alt=&quot;Path to go&quot; src=&quot;http://melb.enix.org/img/up-to-the-cloud/Architecture.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As said before, today our modeling tools are based on Eclipse RCP technologies.
+We are working on a new architecture to make this work in a client/server world. 
+Sirius will be split in different pieces providing services to clients rendering the modeling tool in the browser.&lt;/p&gt;
+
+&lt;p&gt;To bring those technologies further to the web, from day 1 we were convinced that we needed a standard communication protocol.
+A few months ago, an impressive community effort was started around the Language Server Protocol to ease the integration of languages to textual editors. 
+We found that inspiring and that’s why we decided to start working on a &lt;a href=&quot;https://github.com/ObeoNetwork/GraphicalServerProtocol&quot;&gt;Graphical Server Protocol&lt;/a&gt;.
+This initiative defines the protocol between an editor or an IDE and a graphical server that provides graphical features like tools, mappings, layout, layers…
+We based our work on what was done by Typefox in Sprotty.&lt;/p&gt;
+
+&lt;p&gt;I am glad to reveal our &lt;a href=&quot;https://www.youtube.com/watch?v=cOxQtBwKhow&quot;&gt;first prototypes&lt;/a&gt; of Sirius exposing its services through the Graphical Server Protocol to render diagrams specified in a browser.
+Today we can take any existing graphical workbench specified with Sirius and render it in a browser. Not only we render the graphical elements but also we interpret at runtime the creation tools available in the palette according to the one defined in the Sirius specification. And as we can see on the following video, it is possible to create new model elements thanks to those tools from the palette.&lt;/p&gt;
+
+
+&lt;p&gt;In the next &lt;a href=&quot;https://www.youtube.com/watch?v=S1cyefHKOjU&quot;&gt;video&lt;/a&gt;, just by updating the Sirius specification as usual, you can see in the browser how the elements are rendered and you can work on the look and feel of your modeler iteratively.
+Here at the beginning all the edges and labels are black. One can update the Sirius specification to set the men labels and edges in blue. Immediately when the configuration is saved you see that the colors changed in the browser.&lt;/p&gt;
+
+
+&lt;p&gt;A diagram can provide different layers. This &lt;a href=&quot;https://www.youtube.com/watch?v=Pms9pvdzxCY&quot;&gt;demo&lt;/a&gt; shows the capability to enable/disable layers.
+It will filter accordingly the graphical elements visible in the diagram and the tools available in the palette. 
+You see that the layout is automatically recalculated every time a layer is enabled to provide a smart layout for the diagram at all times.&lt;/p&gt;
+
+
+&lt;p&gt;I believe that both desktop and web applications will continue to coexist for a long time.
+While both desktop and web applications have their pros and cons, what is important is that the application fits users needs. Users don’t care whether your app is native or web based as long as it does the job properly.
+We do not give up one world for another, we are making what is needed to get the best of the two worlds.&lt;/p&gt;
+
+&lt;p&gt;That’s why we are really excited by the fact that Eclipse Che decided to replace its GWT IDE by a new one relying on modern technologies: &lt;a href=&quot;https://github.com/theia-ide/theia&quot;&gt;Theia&lt;/a&gt;. Pursuing the same line as Eclipse RCP, Theia is an open framework that allows users to compose their own applications. I believe that this extensibility model should foster the emergence of a new ecosystem.Thanks to the extensibility offered by Theia, we can envision in the future the development of modeling tools for both desktop and web applications equally and even going further by integrating such tools to cloud frameworks such as Che.
+&lt;img alt=&quot;Mockup of Sirius based modeler integrated in Che&quot; src=&quot;http://melb.enix.org/img/up-to-the-cloud/SiriusInChe.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the expectation of the modeling community is to be able to simplify deployment, that’s one of our initial goal by going to cloud based applications.&lt;/p&gt;
+
+&lt;p&gt;As you saw in our videos, we are making Sirius evolve to bring modeling tools to the cloud.&lt;/p&gt;
+
+&lt;p&gt;We need you to go beyond.&lt;/p&gt;
+
+&lt;p&gt;As open source is in our DNA, most of these changes will be contributed to Sirius. The actual Sirius project will evolve to a client/server architecture.
+Let’s work together to bring your tooling to this new platform !&lt;/p&gt;
+
+&lt;p&gt;We would also like to invite all of you to participate to the Graphical Server Protocol initiative to make this an open collaboration providing a common protocol for graphical editors.&lt;/p&gt;
+
+&lt;p&gt;Finally remember that we are available to work with other organizations to bring modeling tools to the Web, including integration with web &amp;amp; cloud tooling such as Theia &amp;amp; Che.&lt;/p&gt;
+
+&lt;p&gt;Contact us, join us, support us!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We’re gonna get it, get it together
+I know, we’re gonna get it, get it together and flow
+We’re gonna get it, get it together and go
+Up, and up, and up&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/BPNTC7uZYrI&quot;&gt;Coldplay up &amp;amp; up&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Thu, 22 Feb 2018 10:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Newsletter | Boot &amp; Build Eclipse Projects</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/bCrdt0F33Sc/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/bCrdt0F33Sc/</link>
+	<description>Featuring articles about Spring Tools, Gradle plugin (Buildship), Dirigible cloud platform, and EMF Parsley.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/bCrdt0F33Sc&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 22 Feb 2018 08:51:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Countdown: 2 weeks | Complete IoT Developer Survey</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/iqMjTYobxp8/eclipseorg</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/iqMjTYobxp8/eclipseorg</link>
+	<description>Take 10 minutes to complete the fourth annual IoT Developer survey!&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/iqMjTYobxp8&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 20 Feb 2018 09:27:00 +0000</pubDate>
+</item>
+<item>
+	<title>JBoss Tools Team: Integration Tooling for Eclipse Oxygen</title>
+	<guid isPermaLink="true">https://tools.jboss.org/blog/integration-stack-4.5.2.Final.html</guid>
+	<link>https://tools.jboss.org/blog/integration-stack-4.5.2.Final.html</link>
+	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;Try our complete Eclipse Oxygen and Red Hat JBoss Developer Studio 11 compatible integration tooling.&lt;/strong&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;imageblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      &lt;img alt=&quot;jbosstools jbdevstudio blog header&quot; src=&quot;https://tools.jboss.org/blog/images/jbosstools-jbdevstudio-blog-header.png&quot; /&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;JBoss Tools Integration Stack 4.5.2.Final / Developer Studio Integration Stack 11.2.0.GA&lt;/strong&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;admonitionblock note&quot;&gt;
+      &lt;table&gt;
+      &lt;tbody&gt;&lt;tr&gt;
+      &lt;td class=&quot;icon&quot;&gt;
+      &lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+      &lt;/td&gt;
+      &lt;td class=&quot;content&quot;&gt;
+      All of the Integration Stack components have been verified to work with the same dependencies as JBoss Tools 4.5 and Developer Studio 11.
+      &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/tbody&gt;&lt;/table&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;what-s-new-for-this-release&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-s-new-for-this-release&quot;&gt;&lt;/a&gt;What’s new for this release?&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;This release provides full Teiid Designer tooling support for JBoss Data Virtualization 6.4 runtime.  It provides an updated BPMN2 Modeler and jBPM/Drools for our Business Process Modeling friends.  It also provides full synchronization with Devstudio 11.2.0.GA, JBoss Tools 4.5.2.Final and Eclipse Oxygen.2.  Please note that SwitchYard is deprecated in this release.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;released-tooling-highlights&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#released-tooling-highlights&quot;&gt;&lt;/a&gt;Released Tooling Highlights&lt;/h3&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;jboss-business-process-and-rules-development&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#jboss-business-process-and-rules-development&quot;&gt;&lt;/a&gt;JBoss Business Process and Rules Development&lt;/h4&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;bpmn2-modeler-known-issues&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#bpmn2-modeler-known-issues&quot;&gt;&lt;/a&gt;BPMN2 Modeler Known Issues&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;See the &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/11.2.0_release_notes_and_known_issues/resolved_issues#bpmn2_1_4_2_final&quot;&gt;BPMN2 1.4.2.Final Known Issues Section&lt;/a&gt; of the Integration Stack 11.2.0.GA release notes.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;drools-jbpm6-known-issues&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#drools-jbpm6-known-issues&quot;&gt;&lt;/a&gt;Drools/jBPM6 Known Issues&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;See the &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/11.2.0_release_notes_and_known_issues/resolved_issues#drools_7_5_0_final&quot;&gt;Drools 7.5.0.Final Known Issues Section&lt;/a&gt; of the Integration Stack 11.2.0.GA release notes.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;switchyard-highlights&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#switchyard-highlights&quot;&gt;&lt;/a&gt;SwitchYard Highlights&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;See the &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/11.2.0_release_notes_and_known_issues/resolved_issues#switchyard_2_4_1_final&quot;&gt;SwitchYard 2.4.1.Final Resolved Issues Section&lt;/a&gt; of the Integration Stack 11.2.0.GA release notes.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect3&quot;&gt;
+      &lt;h4 id=&quot;data-virtualization-highlights&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#data-virtualization-highlights&quot;&gt;&lt;/a&gt;Data Virtualization Highlights&lt;/h4&gt;
+      &lt;div class=&quot;sect4&quot;&gt;
+      &lt;h5 id=&quot;teiid-designer&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#teiid-designer&quot;&gt;&lt;/a&gt;Teiid Designer&lt;/h5&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;See the &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/11.2.0_release_notes_and_known_issues/resolved_issues#teiid_designer_11_1_1_final&quot;&gt;Teiid Designer 11.1.1.Final Resolved Issues Section&lt;/a&gt; of the Integration Stack 11.2.0.GA release notes.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;what-s-an-integration-stack&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#what-s-an-integration-stack&quot;&gt;&lt;/a&gt;What’s an Integration Stack?&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Red Hat JBoss Developer Studio Integration Stack is a set of Eclipse-based development tools. It further enhances the IDE functionality provided by JBoss Developer Studio, with plug-ins specifically for use when developing for other Red Hat JBoss products.  It’s where DataVirt Tooling, SOA tooling and BRMS tooling are aggregated.  The following frameworks are supported:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;jboss-business-process-and-rules-development-2&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#jboss-business-process-and-rules-development-2&quot;&gt;&lt;/a&gt;JBoss Business Process and Rules Development&lt;/h3&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/bpel.html&quot;&gt;BPEL Designer&lt;/a&gt; - Orchestrating your business processes.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/bpmn2.html&quot;&gt;BPMN2 Modeler&lt;/a&gt; - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/drools.html&quot;&gt;Drools&lt;/a&gt; - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing including KIE.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/jbpm.html&quot;&gt;jBPM&lt;/a&gt; - A flexible Business Process Management (BPM) suite.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;jboss-data-virtualization-development&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#jboss-data-virtualization-development&quot;&gt;&lt;/a&gt;JBoss Data Virtualization Development&lt;/h3&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/teiiddesigner.html&quot;&gt;Teiid Designer&lt;/a&gt; - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;jboss-integration-and-soa-development&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#jboss-integration-and-soa-development&quot;&gt;&lt;/a&gt;JBoss Integration and SOA Development&lt;/h3&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS and SwitchYard to Red Hat JBoss Fuse and Fuse Fabric containers.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;All of the Business Process and Rules Development plugins plus SwitchYard. Switchyard is deprecated as of this release.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tools.jboss.org/features/fusetools.html&quot;&gt;Fuse Tooling&lt;/a&gt; has moved out of the Integration Stack to be a core part of JBoss Tools and Developer Studio.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect2&quot;&gt;
+      &lt;h3 id=&quot;the-jboss-tools-website-features-tab&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#the-jboss-tools-website-features-tab&quot;&gt;&lt;/a&gt;The JBoss Tools website features tab&lt;/h3&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Don’t miss the &lt;a href=&quot;https://tools.jboss.org/features&quot;&gt;Features tab&lt;/a&gt; for up to date information on your favorite Integration Stack components.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;installation&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The easiest way to install the Integration Stack components is through the &lt;a href=&quot;https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&amp;amp;product=jbossdeveloperstudio&amp;amp;version=11.2.0&quot;&gt;stand-alone installer&lt;/a&gt; or through our &lt;a href=&quot;http://tools.jboss.org/downloads/overview.html&quot;&gt;JBoss Tools Download Site&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;For a complete set of Integration Stack installation instructions, see &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/installation_guide/&quot;&gt;Integration Stack Installation Guide&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;em&gt;Let us know how it goes!&lt;/em&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Paul Leacu.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Mon, 19 Feb 2018 14:13:29 +0000</pubDate>
+</item>
+<item>
+	<title>EclipseCon France 2018: Is your JUG an EclipseCon France partner?</title>
+	<guid isPermaLink="false">https://www.eclipsecon.org/france2018/news/3672 at https://www.eclipsecon.org/france2018</guid>
+	<link>https://www.eclipsecon.org/france2018/news/your-jug-eclipsecon-france-partner</link>
+	<description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;JUG partners are helping to spread the word about EclipseCon France. Find out more about the program on the &lt;a href=&quot;https://www.eclipsecon.org/france2018/jugs&quot;&gt;JUG partner page&lt;/a&gt;. And, welcome our first partners from Nantes, Paris, Toulouse and Bordeaux!&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-news-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2018/news/your-jug-eclipsecon-france-partner&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;img-responsive block-center&quot; height=&quot;250&quot; src=&quot;https://www.eclipsecon.org/france2018/sites/default/files/styles/solstice_news_-_default_-_thumbnail/public/news/Duke360x360.png?itok=v85YbLha&quot; width=&quot;250&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Mon, 19 Feb 2018 11:36:44 +0000</pubDate>
+</item>
+<item>
+	<title>Melanie Bats: CheConf18</title>
+	<guid isPermaLink="true">http://melb.enix.org/2018/02/16/che-conf/</guid>
+	<link>http://melb.enix.org/2018/02/16/che-conf/</link>
+	<description>&lt;p&gt;A small post to announce that I will be speaking at &lt;a href=&quot;https://www.eclipse.org/che/checonf18/index.html&quot;&gt;CheConf18&lt;/a&gt;, a one day conference dedicated to &lt;a href=&quot;https://eclipse.org/che/&quot;&gt;Eclipse Che&lt;/a&gt; an extensible cloud development platform. I am really excited to participate to this event! I will co speak with Stevan Le Meur, Che maintainer from RedHat about &lt;strong&gt;Building Extensibility and Community for Che&lt;/strong&gt;. During our session, you’ll get a preview of the work we prototyped at &lt;a href=&quot;https://www.obeo.fr/en&quot;&gt;Obeo&lt;/a&gt; to bring the modeling stack to the web and what class of tools one can envision.&lt;/p&gt;
+
+&lt;p&gt;Perhaps you hadn’t hear about CheConf so far ? No problem: it’s not too late to participate. Indeed, there’s no need to negotiate with your boss, no need to book a flight and an hotel: this conference happens entirely online and is free!&lt;/p&gt;
+
+&lt;p&gt;You just need to &lt;a href=&quot;https://visitor.r20.constantcontact.com/d.jsp?llr=7kv7dn9ab&amp;amp;p=oi&amp;amp;m=1127869207900&amp;amp;sit=dqf8xmplb&amp;amp;f=ab2389bc-9888-4ff7-978e-f922c1210d52&quot;&gt;subscribe&lt;/a&gt; on the web site, and you’ll be able to join the conference when you want.
+Have a look at the great &lt;a href=&quot;https://www.eclipse.org/che/checonf18/sessions.html&quot;&gt;schedule&lt;/a&gt;.
+And do not forget our session &lt;strong&gt;Wednesday February 21, 2018 17:30-18:00 Paris Time&lt;/strong&gt; or &lt;strong&gt;wherever you are&lt;/strong&gt; in the world!&lt;/p&gt;
+
+&lt;p&gt;Stay tuned!&lt;/p&gt;</description>
+	<pubDate>Fri, 16 Feb 2018 12:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Chris Aniszczyk: Cloud Native and Serverless Landscape</title>
+	<guid isPermaLink="false">http://aniszczyk.org/?p=4200</guid>
+	<link>http://aniszczyk.org/2018/02/16/cloud-native-and-serverless-landscape/</link>
+	<description>&lt;p&gt;For the last year or so, the CNCF has been &lt;a href=&quot;https://www.cncf.io/blog/2018/02/14/cncf-takes-first-step-towards-serverless-computing/&quot;&gt;exploring&lt;/a&gt; the intersection of cloud native and serverless through the &lt;a href=&quot;https://github.com/cncf/wg-serverless&quot;&gt;CNCF Serverless WG&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;[NEWS] &lt;a href=&quot;https://twitter.com/CloudNativeFdn?ref_src=twsrc%5Etfw&quot;&gt;@CloudNativeFdn&lt;/a&gt; takes steps toward &lt;a href=&quot;https://twitter.com/hashtag/serverless?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#serverless&lt;/a&gt; computing, in collaboration w/ &lt;a href=&quot;https://twitter.com/AstasiaMyers?ref_src=twsrc%5Etfw&quot;&gt;@AstasiaMyers&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/sraney?ref_src=twsrc%5Etfw&quot;&gt;@SRaney&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://twitter.com/redpointvc?ref_src=twsrc%5Etfw&quot;&gt;@RedpointVC&lt;/a&gt; &lt;img alt=&quot;➡&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/27a1.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;a href=&quot;https://t.co/BHg9lgPIFu&quot;&gt;https://t.co/BHg9lgPIFu&lt;/a&gt; &lt;a href=&quot;https://t.co/sbOO85rZqT&quot;&gt;pic.twitter.com/sbOO85rZqT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— CNCF (@CloudNativeFdn) &lt;a href=&quot;https://twitter.com/CloudNativeFdn/status/963822190356348928?ref_src=twsrc%5Etfw&quot;&gt;February 14, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;As the first artifacts of the working group, we are happy to announce a &lt;a href=&quot;https://github.com/cncf/wg-serverless/tree/master/whitepaper&quot;&gt;whitepaper&lt;/a&gt; and &lt;a href=&quot;https://github.com/cncf/wg-serverless#landscape&quot;&gt;landscape&lt;/a&gt; to bring some clarity to this early and evolving technology space. The CNCF Serverless WG is also working on a &lt;a href=&quot;https://github.com/cloudevents/spec&quot;&gt;draft specification&lt;/a&gt; for describing event data in a common way to ease event declaration and delivery, focused on the serverless space. The goal is to eventually present this project to the CNCF TOC to formalize it as an official CNCF project:&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;the CloudEvents draft specification finally has a logo, so we're a bit more legitimate as an open source project &lt;img alt=&quot;🙂&quot; class=&quot;wp-smiley&quot; src=&quot;https://s.w.org/images/core/emoji/2.4/72x72/1f642.png&quot; style=&quot;height: 1em;&quot; /&gt; &lt;a href=&quot;https://t.co/FlO8q8eHT3&quot;&gt;https://t.co/FlO8q8eHT3&lt;/a&gt; &lt;a href=&quot;https://t.co/6LlfPpX3v0&quot;&gt;pic.twitter.com/6LlfPpX3v0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Chris Aniszczyk (@cra) &lt;a href=&quot;https://twitter.com/cra/status/964440866604703744?ref_src=twsrc%5Etfw&quot;&gt;February 16, 2018&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;We’re still early days, but in my opinion, serverless is one application/programming built on cloud native technology. There are some open source efforts out there for serverless but they tend to be focused on specific projects (e.g., &lt;a href=&quot;https://github.com/openfaas/faas&quot;&gt;OpenFaaS&lt;/a&gt;, &lt;a href=&quot;https://github.com/kubeless/kubeless&quot;&gt;kubeless&lt;/a&gt;) versus collaboration across cloud providers and startups. The CNCF is looking to enable collaboration/projects in this space that adhere to our values. What are our values? See these from our &lt;a href=&quot;https://www.cncf.io/about/charter/&quot;&gt;charter&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fast is better than slow&lt;/strong&gt;. The foundation enables projects to progress at high velocity to support aggressive adoption by users.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open&lt;/strong&gt;. The foundation is open and accessible, and operates independently of specific partisan interests. The foundation accepts all contributors based on the merit of their contributions, and the foundation’s technology must be available to all according to open source values. The technical community and its decisions shall be transparent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fair&lt;/strong&gt;. The foundation will avoid undue influence, bad behavior or “pay-to-play” decision-making.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strong technical identity&lt;/strong&gt;. The foundation will achieve and maintain a high degree of its own technical identify that is shared across the projects.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clear boundaries&lt;/strong&gt;. The foundation shall establish clear goals, and in some cases, what the non-goals of the foundation are to allow projects to effectively co-exist, and to help the ecosystem understand where to focus for new innovation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scalable&lt;/strong&gt;. Ability to support all scales of deployment, from small developer centric environments to the scale of enterprises and service providers. This implies that in some deployments some optional components may not be deployed, but the overall design and architecture should still be applicable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Platform agnostic&lt;/strong&gt;. The specifications developed will not be platform specific such that they can be implemented on a variety of architectures and operating systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyways, if you’re interested in this space, I highly recommend you attend the &lt;a href=&quot;https://github.com/cncf/wg-serverless&quot;&gt;CNCF Serverless WG meetings&lt;/a&gt; which are public and currently happen on a weekly basis.&lt;/p&gt;</description>
+	<pubDate>Fri, 16 Feb 2018 10:21:03 +0000</pubDate>
+</item>
+
+</channel>
+</rss>

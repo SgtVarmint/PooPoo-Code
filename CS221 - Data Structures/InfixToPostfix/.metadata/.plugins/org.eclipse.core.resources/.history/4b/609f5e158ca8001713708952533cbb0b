@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class test {
+	public static void main(String[] args){
+		Scanner in=new Scanner(System.in);
+
+		String test="-145.0125";
+
+		String something="";
+
+		int i=0;
+		while(i<test.length()){
+			if(Character.isDigit(test.charAt(i)) || test.charAt(i)=='.'){
+				something+=test.charAt(i);
+			}	
+			i++;
+		}
+		System.out.println(something);
+
+		double num=Integer.parseInt(something);
+		double other=num+1;
+		System.out.println(other);
+
+	}
+}
