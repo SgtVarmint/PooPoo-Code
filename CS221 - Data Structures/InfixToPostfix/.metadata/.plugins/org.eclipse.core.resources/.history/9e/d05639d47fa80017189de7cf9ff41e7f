@@ -1,0 +1,9 @@
+
+public class operatorStack<T>{
+	
+	
+	public void push(T value){
+		if()
+	}
+
+}

@@ -1,0 +1,148 @@
+Enter infix notation: ((((((((((((((((((((((((((((((5))))))))))))))))))))))))))))))
+Standard Infix Notation: ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( 5.0 ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) 
+Postfix Notation: 5.0 
+Answer: 5.0
+
+Enter infix notation: ((((((((((((((((((((((((((((((25 +56*58/2))))))))))))))))))))))))))))))
+Standard Infix Notation: ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( 25.0 + 56.0 * 58.0 / 2.0 ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) 
+Postfix Notation: 25.0 56.0 58.0 * 2.0 / + 
+Answer: 1649.0
+
+Enter infix notation: 25 +69
+Standard Infix Notation: 25.0 + 69.0 
+Postfix Notation: 25.0 69.0 + 
+Answer: 94.0
+
+Enter infix notation: 44444444444444444444444444444444444 + 56
+Standard Infix Notation: 4.444444444444444E34 + 56.0 
+Postfix Notation: 4.444444444444444E34 56.0 + 
+Answer: 4.444444444444444E34
+
+Enter infix notation: 666 * 10.13
+Standard Infix Notation: 666.0 * 10.13 
+Postfix Notation: 666.0 10.13 * 
+Answer: 6746.580000000001
+
+Enter infix notation: 89.2256331458871/2
+Standard Infix Notation: 89.2256331458871 / 2.0 
+Postfix Notation: 89.2256331458871 2.0 / 
+Answer: 44.61281657294355
+
+Enter infix notation: 1000-258
+Standard Infix Notation: 1000.0 - 258.0 
+Postfix Notation: 1000.0 258.0 - 
+Answer: 742.0
+
+Enter infix notation: 5+8*6
+Standard Infix Notation: 5.0 + 8.0 * 6.0 
+Postfix Notation: 5.0 8.0 6.0 * + 
+Answer: 53.0
+
+Enter infix notation: 452 + 22512+ +22589
+Standard Infix Notation: 452.0 + 22512.0 + 22589.0 
+Postfix Notation: 452.0 22512.0 + 22589.0 + 
+Answer: 45553.0
+
+Enter infix notation: 25+56-25
+Standard Infix Notation: 25.0 + 56.0 - 25.0 
+Postfix Notation: 25.0 56.0 + 25.0 - 
+Answer: 56.0
+
+Enter infix notation: 300+56/6
+Standard Infix Notation: 300.0 + 56.0 / 6.0 
+Postfix Notation: 300.0 56.0 6.0 / + 
+Answer: 309.3333333333333
+
+Enter infix notation: 9--6
+Standard Infix Notation: 9.0 - -6.0 
+Postfix Notation: 9.0 -6.0 - 
+Answer: 15.0
+
+Enter infix notation: 225- 58 * 21
+Standard Infix Notation: 225.0 - 58.0 * 21.0 
+Postfix Notation: 225.0 58.0 21.0 * - 
+Answer: -993.0
+
+Enter infix notation: 5548 - 2252 /45
+Standard Infix Notation: 5548.0 - 2252.0 / 45.0 
+Postfix Notation: 5548.0 2252.0 45.0 / - 
+Answer: 5497.955555555555
+
+Enter infix notation: 25 - 66669666646464646464 +258
+Standard Infix Notation: 25.0 - 6.666966664646464E19 + 258.0 
+Postfix Notation: 25.0 6.666966664646464E19 - 258.0 + 
+Answer: -6.666966664646464E19
+
+Enter infix notation: 5000 * 588 / 2
+Standard Infix Notation: 5000.0 * 588.0 / 2.0 
+Postfix Notation: 5000.0 588.0 * 2.0 / 
+Answer: 1470000.0
+
+Enter infix notation: (2 + 8) * 25
+Standard Infix Notation: ( 2.0 + 8.0 ) * 25.0 
+Postfix Notation: 2.0 8.0 + 25.0 * 
+Answer: 250.0
+
+Enter infix notation: ( 20 + 56) * (25 +1) - 12
+Standard Infix Notation: ( 20.0 + 56.0 ) * ( 25.0 + 1.0 ) - 12.0 
+Postfix Notation: 20.0 56.0 + 25.0 1.0 + * 12.0 - 
+Answer: 1964.0
+
+Enter infix notation: 25 + 56 *-2
+Standard Infix Notation: 25.0 + 56.0 * -2.0 
+Postfix Notation: 25.0 56.0 -2.0 * + 
+Answer: -87.0
+
+Enter infix notation: 25 - +65
+Standard Infix Notation: 25.0 - 65.0 
+Postfix Notation: 25.0 65.0 - 
+Answer: -40.0
+
+Enter infix notation: 25 + 65 (200.0012*10)-(5*6)
+Standard Infix Notation: 25.0 + 65.0 ( 200.0012 * 10.0 ) - ( 5.0 * 6.0 ) 
+Postfix Notation: 25.0 65.0 200.0012 10.0 * + 5.0 6.0 * - 
+Answer: 2035.0120000000002
+
+Enter infix notation: 1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+11+1+1+2
+Standard Infix Notation: 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 11.0 + 1.0 + 1.0 + 2.0 
+Postfix Notation: 1.0 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + 11.0 + 1.0 + 1.0 + 2.0 + 
+Answer: 43.0
+
+Enter infix notation: 25     +    (52           * 25)
+Standard Infix Notation: 25.0 + ( 52.0 * 25.0 ) 
+Postfix Notation: 25.0 52.0 25.0 * + 
+Answer: 1325.0
+
+Enter infix notation: 556 + 55 + +55 -6 *55/4
+Standard Infix Notation: 556.0 + 55.0 + 55.0 - 6.0 * 55.0 / 4.0 
+Postfix Notation: 556.0 55.0 + 55.0 + 6.0 55.0 * 4.0 / - 
+Answer: 583.5
+
+Enter infix notation: 77 + 563.00122564 - 5 *-556
+Standard Infix Notation: 77.0 + 563.00122564 - 5.0 * -556.0 
+Postfix Notation: 77.0 563.00122564 + 5.0 -556.0 * - 
+Answer: 3420.00122564
+
+Enter infix notation: 25 + 6 -9 + -9 * 25 ( 12-96) + 225.236
+Standard Infix Notation: 25.0 + 6.0 - 9.0 + -9.0 * 25.0 ( 12.0 - 96.0 ) + 225.236 
+Postfix Notation: 25.0 6.0 + 9.0 - -9.0 25.0 12.0 96.0 - * + 225.236 + 
+Answer: -1883.7640000000001
+
+Enter infix notation: 55555 * -6665
+Standard Infix Notation: 55555.0 * -6665.0 
+Postfix Notation: 55555.0 -6665.0 * 
+Answer: -3.70274075E8
+
+Enter infix notation: (( 5+6 )
+Standard Infix Notation: ( ( 5.0 + 6.0 ) 
+Unbalanced Left Parentheses '('
+
+Enter infix notation: ( 56 + 58))
+Standard Infix Notation: ( 56.0 + 58.0 ) ) 
+Unbalanced Right Parentheses ')'
+
+Enter infix notation: 2.2.2.2.2+5
+Invalid Operand
+
+Enter infix notation: 225652..223+5568
+Invalid Operand

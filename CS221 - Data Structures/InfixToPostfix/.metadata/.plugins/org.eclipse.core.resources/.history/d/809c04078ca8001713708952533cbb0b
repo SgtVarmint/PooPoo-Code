@@ -1,0 +1,34 @@
+/*
+ * Project 2: Inifx to postfix Expression
+ * 
+ * 
+ * special cases:
+ * 	(num)(num) == num*num
+ */
+import java.util.Scanner;
+
+public class InfixToPostfix {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int i=0;
+		operatorStack<Character> stack=new operatorStack<Character>();
+		operandStack operandStack=new operandStack();
+
+		
+		System.out.print("Enter infix notation: ");
+		String infixExp=in.next();
+		
+		
+		while(i<infixExp.length()){
+			if(Character.isDigit(infixExp.charAt(i)))//if the char at the index is a digit
+				operandStack.push(infixExp.charAt(i));//pushes operators onto operatorStack
+			
+			else if(infixExp.charAt(i)=='+' || infixExp.charAt(i)=='-' || infixExp.charAt(i)=='*' || infixExp.charAt(i)=='/' || infixExp.charAt(i)=='(')
+				stack.push(infixExp.charAt(i));
+		}
+		
+		System.out.println(infixExp);
+
+	}
+}
