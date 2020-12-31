@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+D:\Etown\CS322 - Algorithms\.metadata\.plugins\org.eclipse.jdt.core
+1253961944.index
+9067425.index
+3266173620.index
+3903836572.index
+2420995280.index
+1657330681.index
+1943792258.index

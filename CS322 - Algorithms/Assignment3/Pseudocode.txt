@@ -1,0 +1,8 @@
+printCombos(n):
+	if n<1
+		print A
+	else
+		A[n-1] = 0
+		printCombos(n-1)
+		A[n-1] = 1
+		printCombos(n-1)

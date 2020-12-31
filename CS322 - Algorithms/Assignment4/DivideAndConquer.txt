@@ -1,0 +1,28 @@
+MinMax(arr, left, right){
+	if left == right:
+		minValue = arr[left]
+		maxValue = arr[right]
+	else if right-left == 1:
+		if arr[left] < arr[right]:
+			minValue = arr[left]
+			maxValue = arr[right]
+		else:
+			minValue = arr[right]
+			maxValue = arr[left]
+	else:
+		leftArr = MinMax(arr, left, (left+right)/2)
+		rightArr = MinMax(arr, ((left+right)/2)+1, right)
+		
+		if leftArr[0] < rightArr[0]:
+			minValue = leftArr[0]
+		else
+			minValue = rightArr[0]
+		
+		if leftArr[1] < rightArr[1]:
+			maxValue = rightArr[1]
+		else
+			maxValue = leftArr[1]
+	
+	minmax = {minValue, maxValue}
+	return minmax
+}
