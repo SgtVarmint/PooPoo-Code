@@ -1,0 +1,5 @@
+OneTimePad: OneTimePad.c
+	gcc -o OneTimePad OneTimePad.c
+
+clean:
+	rm -f OneTimePad

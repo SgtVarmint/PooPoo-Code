@@ -1,0 +1,35 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		happyNumbers(1,50);
+	}
+	
+	public static void happyNumbers(int startNum, int limit){
+		int numCount=0;
+		while(numCount<limit){
+			int num = startNum;
+			while(num!=1 && num!=4){
+				num=check(num);
+			}
+			if(num==1){
+				System.out.printf("%d ", startNum);
+				numCount++;
+			}
+			startNum++;
+		}
+		System.out.println("\n");
+	}
+	
+	public static int check(int num){
+		int sum=0;
+		while(num/10>0){
+			int x = num%10;
+			sum+=x*x;
+			num/=10;
+		}
+		if(num<10)
+			sum+=num*num;
+		return sum;
+	}
+}

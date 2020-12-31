@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+
+
+int main(){
+  unsigned char plainText[2048];
+  unsigned char key[2048];
+  unsigned char cipherText[2048];
+  int value = getchar();
+  int i=0;
+  do{
+    if(value>=0 && value<128){
+	plainText[i] = value;
+      }
+    value = getchar();
+    i++;
+  }while( (i<2048) || (value != 255) );
+
+  for(i=0;i<2048;i++)
+    putchar(plainText[i]);
+
+  return 0;
+}
